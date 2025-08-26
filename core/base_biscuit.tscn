@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b433p4cjgtoxq"]
 
-[ext_resource type="PackedScene" uid="uid://bu42b3tcof457" path="res://assets/cookie.glb" id="1_hhplf"]
+[ext_resource type="Script" uid="uid://b7sybyv1d8fx3" path="res://core/base_biscuit.gd" id="1_4ijl2"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pqt5l"]
 height = 0.1
@@ -10,6 +10,7 @@ radius = 0.25
 transform = Transform3D(-4.37114e-08, 0, -0.999996, 0, 0.999996, 0, 1, 0, -4.37112e-08, 0, 0, 0)
 cubic_interp = false
 loop = false
+script = ExtResource("1_4ijl2")
 metadata/_edit_group_ = true
 
 [node name="Body" type="AnimatableBody3D" parent="."]
@@ -19,6 +20,3 @@ sync_to_physics = false
 [node name="Collision" type="CollisionShape3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
 shape = SubResource("CylinderShape3D_pqt5l")
-
-[node name="Cookie" parent="." instance=ExtResource("1_hhplf")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.025, 0)

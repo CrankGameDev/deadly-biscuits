@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://qwg7wbh6xwvx"]
+
+[resource]
+resource_name = "material_6"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+roughness = 0.643137

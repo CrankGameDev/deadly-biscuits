@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bfb1excecuvcl"]
+
+[resource]
+resource_name = "material_1"
+vertex_color_use_as_albedo = true
+metallic_specular = 0.2
+roughness = 0.6

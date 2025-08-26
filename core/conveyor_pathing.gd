@@ -5,7 +5,7 @@ extends Node3D
 signal changed(product_rejected: bool)
 
 ## The speed (in meters per second) of the conveyor.
-@export var conveyor_speed: float = 2.0
+@export var conveyor_speed: float = 1.0
 
 ## Whether products are currently being rejected.
 @export var reject_product: bool = false
@@ -24,20 +24,8 @@ func _ready() -> void:
 			biscuit_pathers.append(child)
 
 
-func _process(delta: float) -> void:
-	for biscuit_pather in biscuit_pathers:
-		biscuit_pather.progress += conveyor_speed * delta
-		if biscuit_pather.progress_ratio >= 1.0:
-			# TODO: Matching the parent is probably not the most optimal choice.
-			#		Just temporary prototyping for now.
-			match biscuit_pather.get_parent():
-				base_path:
-					biscuit_pather.reparent(denied_path if reject_product else accepted_path)
-					biscuit_pather.progress = 0.0
-				accepted_path, denied_path:
-					# TODO: Handle biscuit reaching destination.
-					biscuit_pather.reparent(base_path)
-					biscuit_pather.progress = 0.0
+func get_target_path() -> Path3D:
+	return denied_path if reject_product else accepted_path
 
 
 func _unhandled_input(event: InputEvent) -> void:

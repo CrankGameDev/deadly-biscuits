@@ -14,3 +14,8 @@ config/name="Deadly Biscuits"
 run/main_scene="uid://dsf6itp1pf21l"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/icon.svg"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

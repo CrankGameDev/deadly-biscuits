@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ce17kfifbaaij"]
 
-[ext_resource type="PackedScene" uid="uid://d16eyyodacm3x" path="res://assets/evil_cookie.glb" id="1_5kwr8"]
+[ext_resource type="PackedScene" uid="uid://d16eyyodacm3x" path="res://assets/evil_cookie.glb" id="1_3j7xc"]
 
 [sub_resource type="Animation" id="Animation_m48fj"]
 length = 0.001
@@ -112,13 +112,16 @@ _data = {
 &"idle": SubResource("Animation_auepd")
 }
 
-[node name="evil_cookie" instance=ExtResource("1_5kwr8")]
+[node name="evil_cookie" instance=ExtResource("1_3j7xc")]
 
 [node name="Cylinder" parent="Mirror 1" index="0"]
 blend_shapes/Layer = 0.6
 
 [node name="Cylinder 1" parent="." index="1"]
 blend_shapes/Layer = 0.5
+
+[node name="Tube" parent="." index="2"]
+transform = Transform3D(1, -7.12661e-10, -8.20924e-11, 7.12661e-10, 1, 8.52741e-10, 8.20924e-11, -8.52741e-10, 1, -8.5413e-11, 0.0112259, 0.938163)
 
 [node name="Cylinder2" parent="." index="5"]
 blend_shapes/Layer = 0.8
