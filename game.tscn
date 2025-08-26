@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=23 format=3 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://conveyor_pathing.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://b433p4cjgtoxq" path="res://biscuit.tscn" id="2_feb5d"]
@@ -48,14 +48,14 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_pqt5l"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1, 1, 0, -4.4, 0, 0, 4.4, 0, 0, 7, 1.1, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1, 0.95, 0, -4.4, 0, 0, 4.4, 0, 0, 7, 0.95, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_choak"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1, 1, 0, -0.4, 0, -0.2, 0.4, 0, 0.2, 1.7, 1, 0.8, -0.2, 0.2, 0, 0.2, -0.2, 0, 2.2, 0.8, 0.9),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1, 0.95, 0, -0.4, 0, -0.2, 0.4, 0, 0.2, 1.7, 1, 0.8, -0.2, 0.2, 0, 0.2, -0.2, 0, 2.2, 0.8, 0.9),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -68,6 +68,9 @@ size = Vector3(0.025, 1, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_choak"]
 height = 0.25
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_feb5d"]
+size = Vector3(0.2, 1.4, 1.4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_x0m8b"]
 size = Vector3(0.1, 1, 0.1)
@@ -102,7 +105,7 @@ mesh = SubResource("BoxMesh_8vnw3")
 skeleton = NodePath("../..")
 
 [node name="PathMarker" type="MeshInstance3D" parent="ConveyerBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.46, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0.46, 0)
 mesh = SubResource("PlaneMesh_yitki")
 
 [node name="RejectionBin" type="CSGCombiner3D" parent="."]
@@ -162,15 +165,23 @@ angular_limit/enable = true
 angular_limit/lower = -0.0872665
 
 [node name="Lever" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 script = ExtResource("3_7jktm")
 
 [node name="BaseMesh" type="MeshInstance3D" parent="Lever"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0.5)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_choak")
 
+[node name="ClickableArea" type="Area3D" parent="Lever"]
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="Shape" type="CollisionShape3D" parent="Lever/ClickableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 0.7, 0)
+shape = SubResource("BoxShape3D_feb5d")
+
 [node name="Handle" type="Node3D" parent="Lever"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 
 [node name="Mesh" type="MeshInstance3D" parent="Lever/Handle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
@@ -178,3 +189,4 @@ mesh = SubResource("BoxMesh_x0m8b")
 skeleton = NodePath("../..")
 
 [connection signal="changed" from="ConveyorPathing" to="Lever" method="_on_conveyor_pathing_changed"]
+[connection signal="input_event" from="Lever/ClickableArea" to="Lever" method="_on_clickable_area_input_event"]

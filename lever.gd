@@ -21,3 +21,8 @@ func _on_conveyor_pathing_changed(product_rejected: bool) -> void:
 	else:
 		tween = create_tween()
 		tween.tween_property(handle, "rotation:x", HANDLE_ACCEPT_POSITION, 0.25).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+
+
+func _on_clickable_area_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		conveyor_pathing.toggle_rejection()

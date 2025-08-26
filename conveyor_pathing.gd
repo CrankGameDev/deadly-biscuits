@@ -43,5 +43,9 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	# TODO: Temporary control
 	if event.is_action_pressed("ui_accept"):
+		toggle_rejection()
+
+
+func toggle_rejection() -> void:
 		reject_product = !reject_product
 		changed.emit(reject_product)
