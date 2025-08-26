@@ -1,8 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=32 format=3 uid="uid://dsf6itp1pf21l"]
 
+[ext_resource type="Script" uid="uid://8apl5uo3qam7" path="res://core/biscuit_manager.gd" id="1_a04qp"]
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://cpylw10v2xhi3" path="res://biscuit_types/choc_chip_biscuit.tscn" id="2_8xnxh"]
 [ext_resource type="Script" uid="uid://7bc4aivpmago" path="res://core/lever.gd" id="3_7jktm"]
+[ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="5_sjcnv"]
+[ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="6_cjuek"]
 
 [sub_resource type="Environment" id="Environment_v1l5v"]
 ambient_light_source = 2
@@ -48,7 +51,7 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_pqt5l"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2, 0.95, 0, -4.4, 0, 0, 4.4, 0, 0, 7, 0.95, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2, 0.95, 0, -4.4, 0, 0, 4.4, 0, 0, 5.4, 0.95, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -77,6 +80,47 @@ size = Vector3(0.2, 1.4, 1.4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_x0m8b"]
 size = Vector3(0.1, 1, 0.1)
+
+[sub_resource type="Resource" id="Resource_cjuek"]
+script = ExtResource("6_cjuek")
+biscuit_scene = ExtResource("2_8xnxh")
+spawn_settings = Dictionary[String, Variant]({
+"choc_chip_count": 7
+})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"
+
+[sub_resource type="Resource" id="Resource_sjcnv"]
+script = ExtResource("5_sjcnv")
+spawn_events = Dictionary[ExtResource("6_cjuek"), int]({
+SubResource("Resource_cjuek"): 3
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[sub_resource type="Resource" id="Resource_vhpdd"]
+script = ExtResource("6_cjuek")
+biscuit_scene = ExtResource("2_8xnxh")
+spawn_settings = Dictionary[String, Variant]({
+"choc_chip_max": 5,
+"choc_chip_min": 3
+})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"
+
+[sub_resource type="Resource" id="Resource_4cdhi"]
+script = ExtResource("6_cjuek")
+biscuit_scene = ExtResource("2_8xnxh")
+spawn_settings = Dictionary[String, Variant]({
+"choc_chip_max": 9,
+"choc_chip_min": 6
+})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"
+
+[sub_resource type="Resource" id="Resource_gjr3k"]
+script = ExtResource("5_sjcnv")
+spawn_events = Dictionary[ExtResource("6_cjuek"), int]({
+SubResource("Resource_vhpdd"): 3,
+SubResource("Resource_4cdhi"): 3
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 
 [node name="Game" type="Node3D"]
 
@@ -110,7 +154,7 @@ mesh = SubResource("BoxMesh_8vnw3")
 skeleton = NodePath("../..")
 
 [node name="PathMarker" type="MeshInstance3D" parent="ConveyerBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0.46, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06589, 0.46, 0)
 mesh = SubResource("PlaneMesh_yitki")
 
 [node name="RejectionBin" type="CSGCombiner3D" parent="."]
@@ -127,26 +171,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 operation = 2
 mesh = SubResource("BoxMesh_ahsco")
 
-[node name="ConveyorPathing" type="Node3D" parent="."]
+[node name="ConveyorPathing" type="Node3D" parent="." groups=["ConveyorPathing"]]
 unique_name_in_owner = true
 script = ExtResource("1_feb5d")
 
 [node name="BasePath" type="Path3D" parent="ConveyorPathing"]
 curve = SubResource("Curve3D_v1l5v")
-
-[node name="ChocChipBiscuit1" parent="ConveyorPathing/BasePath" instance=ExtResource("2_8xnxh")]
-transform = Transform3D(-4.37114e-08, 0, -0.999996, 0, 0.999996, 0, 1, 0, -4.37112e-08, -7, 0.85, 0)
-chocolate_chip_count = 6
-
-[node name="ChocChipBiscuit2" parent="ConveyorPathing/BasePath" instance=ExtResource("2_8xnxh")]
-transform = Transform3D(-4.37114e-08, 0, -0.999996, 0, 0.999996, 0, 1, 0, -4.37112e-08, -4, 0.85, 0)
-progress = 3.0
-chocolate_chip_count = 6
-
-[node name="ChocChipBiscuit3" parent="ConveyorPathing/BasePath" instance=ExtResource("2_8xnxh")]
-transform = Transform3D(-4.37114e-08, 0, -0.999996, 0, 0.999996, 0, 1, 0, -4.37112e-08, -1, 0.85, 0)
-progress = 6.0
-chocolate_chip_count = 6
 
 [node name="AcceptedPath" type="Path3D" parent="ConveyorPathing"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
@@ -200,6 +230,10 @@ shape = SubResource("BoxShape3D_feb5d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 mesh = SubResource("BoxMesh_x0m8b")
 skeleton = NodePath("../..")
+
+[node name="BiscuitManager" type="Node" parent="."]
+script = ExtResource("1_a04qp")
+spawn_waves = Array[ExtResource("5_sjcnv")]([SubResource("Resource_sjcnv"), SubResource("Resource_gjr3k")])
 
 [connection signal="changed" from="ConveyorPathing" to="Lever" method="_on_conveyor_pathing_changed"]
 [connection signal="input_event" from="Lever/ClickableArea" to="Lever" method="_on_clickable_area_input_event"]

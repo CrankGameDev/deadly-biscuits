@@ -673,7 +673,7 @@ metadata/extras = {
 
 [node name="ChocChipBiscuit" instance=ExtResource("1_1xq0o")]
 script = ExtResource("2_km0pl")
-chocolate_chip_count = 14
+choc_chip_count = 14
 
 [node name="Model" type="Node3D" parent="." index="1"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

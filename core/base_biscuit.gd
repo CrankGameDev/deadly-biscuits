@@ -1,7 +1,13 @@
 class_name Biscuit
 extends PathFollow3D
 
-@onready var conveyor_pathing: ConveyorPathing = %ConveyorPathing
+signal destination_reached(accepted: bool)
+
+@onready var conveyor_pathing: ConveyorPathing = get_tree().get_first_node_in_group(&"ConveyorPathing")
+
+## A dictionary of dynamic settings passed in during spawning. [br]
+## These are typically read and applied in the [code]_ready[/code] function.
+var spawn_settings: Dictionary
 
 
 func _process(delta: float) -> void:
@@ -15,7 +21,9 @@ func _process(delta: float) -> void:
 			conveyor_pathing.base_path:
 				reparent(conveyor_pathing.get_target_path())
 				progress = 0.0
-			conveyor_pathing.accepted_path, conveyor_pathing.denied_path:
-				# TODO: Handle biscuit reaching destination.
-				reparent(conveyor_pathing.base_path)
-				progress = 0.0
+			conveyor_pathing.accepted_path:
+				destination_reached.emit(true)
+				set_process(false)
+			conveyor_pathing.denied_path:
+				destination_reached.emit(false)
+				set_process(false)
