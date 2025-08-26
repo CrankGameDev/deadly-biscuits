@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=25 format=3 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://conveyor_pathing.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://b433p4cjgtoxq" path="res://biscuit.tscn" id="2_feb5d"]
 [ext_resource type="Script" uid="uid://7bc4aivpmago" path="res://lever.gd" id="3_7jktm"]
+[ext_resource type="PackedScene" uid="uid://ce17kfifbaaij" path="res://evil_cookie.tscn" id="3_fc0e3"]
 
 [sub_resource type="Environment" id="Environment_v1l5v"]
 ambient_light_source = 2
@@ -46,6 +47,10 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pqt5l"]
+height = 0.1
+radius = 0.25
+
 [sub_resource type="Curve3D" id="Curve3D_pqt5l"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1, 0.95, 0, -4.4, 0, 0, 4.4, 0, 0, 7, 0.95, 0),
@@ -84,8 +89,9 @@ environment = SubResource("Environment_v1l5v")
 transform = Transform3D(0.866025, 0.482963, -0.12941, 0, 0.258819, 0.965926, 0.5, -0.836516, 0.224144, 0, 0, 0)
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(0.258819, -0.482963, 0.836516, 0, 0.866025, 0.5, -0.965926, -0.12941, 0.224144, 4.5, 3, 1.5)
-fov = 45.0
+transform = Transform3D(0.965926, -0.183013, 0.183013, 0, 0.707107, 0.707107, -0.258819, -0.683013, 0.683013, 1, 5, 4)
+keep_aspect = 0
+fov = 90.0
 size = 4.0
 
 [node name="Factory" type="MeshInstance3D" parent="."]
@@ -135,9 +141,23 @@ transform = Transform3D(-4.37114e-08, 0, -0.999996, 0, 0.999996, 0, 1, 0, -4.371
 transform = Transform3D(-4.37114e-08, 0, -0.999996, 0, 0.999996, 0, 1, 0, -4.37112e-08, -4, 0.85, 0)
 progress = 3.0
 
-[node name="Biscuit3" parent="ConveyorPathing/BasePath" instance=ExtResource("2_feb5d")]
-transform = Transform3D(-4.37114e-08, 0, -0.999996, 0, 0.999996, 0, 1, 0, -4.37112e-08, -1, 0.85, 0)
+[node name="Biscuit3" type="PathFollow3D" parent="ConveyorPathing/BasePath"]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -1, 0.85, 0)
 progress = 6.0
+cubic_interp = false
+loop = false
+metadata/_edit_group_ = true
+
+[node name="Body" type="AnimatableBody3D" parent="ConveyorPathing/BasePath/Biscuit3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
+sync_to_physics = false
+
+[node name="Collision" type="CollisionShape3D" parent="ConveyorPathing/BasePath/Biscuit3/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
+shape = SubResource("CylinderShape3D_pqt5l")
+
+[node name="evil_cookie" parent="ConveyorPathing/BasePath/Biscuit3" instance=ExtResource("3_fc0e3")]
+transform = Transform3D(-0.642788, 0, 0.766045, 0, 1, 0, -0.766045, 0, -0.642788, 0, 0.2, 0)
 
 [node name="AcceptedPath" type="Path3D" parent="ConveyorPathing"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
@@ -165,7 +185,7 @@ angular_limit/enable = true
 angular_limit/lower = -0.0872665
 
 [node name="Lever" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 1.5)
 script = ExtResource("3_7jktm")
 
 [node name="BaseMesh" type="MeshInstance3D" parent="Lever"]
