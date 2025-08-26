@@ -8,6 +8,8 @@ extends Node
 @export_range(0.0, 10.0, 0.01, "or_greater", "suffix:seconds")
 var biscuit_interval: float = 3.0
 
+@export var biscuit_criteria: Array[Criteria]
+
 var timer: Timer
 
 var _spawn_events_left: Array[SpawnEvent]
@@ -45,4 +47,14 @@ func spawn_biscuit(biscuit: Biscuit) -> void:
 
 func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 	print(("%s was accepted!" if accepted else "%s was rejected!") % biscuit.name)
+	var should_be_accepted: bool = true
+	for entry in biscuit_criteria:
+		if not entry._check_biscuit(biscuit):
+			should_be_accepted = false
+			break
+	if accepted == should_be_accepted:
+		print("Good job!")
+	else:
+		print("How could you!")
 	biscuit.queue_free()
+	

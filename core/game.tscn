@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=35 format=3 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://8apl5uo3qam7" path="res://core/biscuit_manager.gd" id="1_a04qp"]
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_feb5d"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://7bc4aivpmago" path="res://core/lever.gd" id="3_7jktm"]
 [ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="5_sjcnv"]
 [ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="6_cjuek"]
+[ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="7_gjr3k"]
+[ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://core/criteria/choc_chip_count_criteria.gd" id="8_4cdhi"]
 
 [sub_resource type="Environment" id="Environment_v1l5v"]
 ambient_light_source = 2
@@ -122,6 +124,12 @@ SubResource("Resource_4cdhi"): 3
 })
 metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 
+[sub_resource type="Resource" id="Resource_fgh25"]
+script = ExtResource("8_4cdhi")
+count = 5
+operation = 0
+metadata/_custom_type_script = "uid://bg3awv8d0fhd2"
+
 [node name="Game" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -234,6 +242,7 @@ skeleton = NodePath("../..")
 [node name="BiscuitManager" type="Node" parent="."]
 script = ExtResource("1_a04qp")
 spawn_waves = Array[ExtResource("5_sjcnv")]([SubResource("Resource_sjcnv"), SubResource("Resource_gjr3k")])
+biscuit_criteria = Array[ExtResource("7_gjr3k")]([SubResource("Resource_fgh25")])
 
 [connection signal="changed" from="ConveyorPathing" to="Lever" method="_on_conveyor_pathing_changed"]
 [connection signal="input_event" from="Lever/ClickableArea" to="Lever" method="_on_clickable_area_input_event"]

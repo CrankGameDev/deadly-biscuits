@@ -1,3 +1,4 @@
+class_name ChocChipBiscuit
 extends Biscuit
 
 const MAX_CHOC_CHIPS: int = 14
