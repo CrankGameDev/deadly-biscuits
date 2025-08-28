@@ -1,0 +1,10 @@
+join unit_test_character center
+boss: Welcome new employees! We are glad to welcome you to the Basilisk Bakery family!!!
+boss: Your job as a Quality Insurance Officer to ensure only all cookies meet our strict  buscuit standards while minimising waste! Our share holders hate lost profits!
+boss: Your job is so simply a child could do it! Ensure every cookie has at least six chips! Pull the lever to throw out any unacceptable cookies!
+join  center
+boss: Don't throw out too many good buscuits! AND NO EATING ON THE JOB! Those are profits!
+set 
+[end_timeline]
+[signal arg="lever"]
+jump loudspeaker/

@@ -16,6 +16,7 @@ var _spawn_events_left: Array[SpawnEvent]
 
 
 func _ready() -> void:
+
 	timer = Timer.new()
 	timer.autostart = true
 	timer.wait_time = biscuit_interval

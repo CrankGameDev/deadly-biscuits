@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bcgjkpkf7p7bg"]
+
+[node name="Report" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="clipboard" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -6.0
+offset_top = -2.0
+offset_right = 1142.0
+offset_bottom = 651.0
+
+[node name="Clipboard" type="ColorRect" parent="clipboard"]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 60.0
+offset_right = 836.0
+offset_bottom = 644.0
+color = Color(0.409819, 0.315779, 0.161181, 1)
+
+[node name="ColorRect" type="ColorRect" parent="clipboard/Clipboard"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 26.0
+offset_right = 445.0
+offset_bottom = 569.0
+
+[node name="Control" type="Control" parent="clipboard"]
+layout_mode = 1
+anchor_left = 0.535
+anchor_top = 0.061
+anchor_right = 0.535
+anchor_bottom = 0.061
+offset_left = -614.18
+offset_top = -39.833
+offset_right = -574.18
+offset_bottom = 0.166996
+
+[node name="ColorRect" type="ColorRect" parent="clipboard/Control"]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 56.0
+offset_right = 712.0
+offset_bottom = 105.0
+color = Color(0.423651, 0.423651, 0.423651, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="clipboard/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 15.337
+anchor_top = 1.125
+anchor_right = 15.337
+anchor_bottom = 1.125
+offset_left = -35.48
+offset_top = -26.0
+offset_right = 45.52
+offset_bottom = 14.0
+color = Color(0.423529, 0.423529, 0.423529, 1)
