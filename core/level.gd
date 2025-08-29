@@ -1,0 +1,103 @@
+class_name Level
+extends Node
+
+signal level_completed
+signal level_failed
+
+signal spawning_completed
+
+signal biscuit_rejected(biscuit: Biscuit, was_correct: bool)
+signal biscuit_accepted(biscuit: Biscuit, was_correct: bool)
+
+signal biscuit_correct(biscuit: Biscuit)
+signal biscuit_incorrect(biscuit: Biscuit)
+
+@export var level_data: LevelData
+
+@onready var conveyor_pathing: ConveyorPathing = %ConveyorPathing
+
+var mistakes_made: int = 0
+
+var level_timer: Timer
+
+var _spawn_events_left: Array[SpawnEvent]
+
+var active_biscuits: Dictionary[Biscuit, bool]
+
+
+func _ready() -> void:
+	if not level_data:
+		printerr("No level data provided.")
+		return
+		
+	level_timer = Timer.new()
+	level_timer.autostart = true
+	level_timer.wait_time = level_data.spawn_interval
+	level_timer.timeout.connect(_on_spawn_interval)
+	add_child(level_timer, false, Node.INTERNAL_MODE_FRONT)
+	
+	for spawn_wave in level_data.spawn_waves:
+		_spawn_events_left.append_array(spawn_wave.get_shuffled_wave_array())
+	_spawn_events_left.reverse()
+	
+	for criteria in level_data.critera:
+		criteria._setup(self)
+
+
+func _on_spawn_interval() -> void:
+	if _spawn_events_left.is_empty():
+		_check_spawning_complete()
+		return
+	var event: SpawnEvent = _spawn_events_left.pop_back()
+	var biscuit: Biscuit = event.spawn()
+	spawn_biscuit(biscuit)
+	_check_spawning_complete()
+
+
+func _check_spawning_complete() -> void:
+	if _spawn_events_left.is_empty():
+		spawning_completed.emit()
+
+
+func spawn_biscuit(biscuit: Biscuit) -> void:
+	if not biscuit.is_inside_tree():
+		conveyor_pathing.base_path.add_child(biscuit, true)
+	elif not biscuit.get_parent() == conveyor_pathing.base_path:
+		biscuit.reparent(conveyor_pathing.base_path)
+	biscuit.progress = 0.0
+	if not biscuit.destination_reached.is_connected(_on_biscuit_destination_reached):
+		biscuit.destination_reached.connect(_on_biscuit_destination_reached.bind(biscuit))
+	biscuit.set_process(true)
+	active_biscuits[biscuit] = true
+
+
+func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
+	var should_be_accepted: bool = true
+	for entry in level_data.critera:
+		if not entry._check_biscuit(biscuit):
+			should_be_accepted = false
+			break
+	var was_correct: bool = accepted == should_be_accepted
+	if accepted:
+		biscuit_accepted.emit(biscuit, was_correct)
+	else:
+		biscuit_rejected.emit(biscuit, was_correct)
+	if was_correct:
+		biscuit_correct.emit(biscuit)
+	else:
+		biscuit_incorrect.emit(biscuit)
+		mistakes_made += 1
+		if mistakes_made >= 3:
+			_on_level_failed()
+	active_biscuits.erase(biscuit)
+	if _spawn_events_left.is_empty() and active_biscuits.is_empty():
+		_on_level_succeeded()
+	biscuit.queue_free()
+
+
+func _on_level_failed() -> void:
+	print("Level failed! :(")
+
+
+func _on_level_succeeded() -> void:
+	print("Level succeeded! Made %d mistakes.")

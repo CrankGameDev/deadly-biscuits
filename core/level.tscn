@@ -1,0 +1,324 @@
+[gd_scene load_steps=34 format=3 uid="uid://dsf6itp1pf21l"]
+
+[ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
+[ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
+[ext_resource type="Script" uid="uid://7bc4aivpmago" path="res://core/lever.gd" id="2_v1dmi"]
+[ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="4_setdq"]
+[ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="4_wsccs"]
+[ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="5_t0ybl"]
+[ext_resource type="PackedScene" uid="uid://cpylw10v2xhi3" path="res://biscuit_types/choc_chip_biscuit.tscn" id="6_ppale"]
+[ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="7_nuv7q"]
+[ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://criteria/choc_chip_count_criteria.gd" id="8_pj88p"]
+
+[sub_resource type="Resource" id="Resource_fgh25"]
+script = ExtResource("8_pj88p")
+operation = 0
+count = 5
+metadata/_custom_type_script = "uid://bg3awv8d0fhd2"
+
+[sub_resource type="Resource" id="Resource_cjuek"]
+script = ExtResource("5_t0ybl")
+biscuit_scene = ExtResource("6_ppale")
+spawn_settings = Dictionary[String, Variant]({
+"choc_chip_count": 7
+})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"
+
+[sub_resource type="Resource" id="Resource_sjcnv"]
+script = ExtResource("4_setdq")
+spawn_events = Dictionary[ExtResource("5_t0ybl"), int]({
+SubResource("Resource_cjuek"): 3
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[sub_resource type="Resource" id="Resource_vhpdd"]
+script = ExtResource("5_t0ybl")
+biscuit_scene = ExtResource("6_ppale")
+spawn_settings = Dictionary[String, Variant]({
+"choc_chip_max": 5,
+"choc_chip_min": 3
+})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"
+
+[sub_resource type="Resource" id="Resource_4cdhi"]
+script = ExtResource("5_t0ybl")
+biscuit_scene = ExtResource("6_ppale")
+spawn_settings = Dictionary[String, Variant]({
+"choc_chip_max": 9,
+"choc_chip_min": 6
+})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"
+
+[sub_resource type="Resource" id="Resource_gjr3k"]
+script = ExtResource("4_setdq")
+spawn_events = Dictionary[ExtResource("5_t0ybl"), int]({
+SubResource("Resource_vhpdd"): 3,
+SubResource("Resource_4cdhi"): 3
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[sub_resource type="Resource" id="Resource_setdq"]
+script = ExtResource("4_wsccs")
+conveyor_speed = 1.0
+spawn_interval = 3.0
+critera = Array[ExtResource("7_nuv7q")]([SubResource("Resource_fgh25")])
+spawn_waves = Array[ExtResource("4_setdq")]([SubResource("Resource_sjcnv"), SubResource("Resource_gjr3k")])
+metadata/_custom_type_script = "uid://bn1b8j2k5er3j"
+
+[sub_resource type="Environment" id="Environment_v1l5v"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqt5l"]
+albedo_color = Color(0.26, 0.2418, 0.2418, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_choak"]
+flip_faces = true
+size = Vector3(12, 6, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pqt5l"]
+size = Vector3(0.1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fc0e3"]
+albedo_color = Color(0.197937, 0.197937, 0.197937, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yitki"]
+size = Vector3(0.025, 1, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_v1l5v"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7, 0.85, 0, 0, 0, 0, 0, 0, 0, 2, 0.85, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1dmi"]
+albedo_color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wsccs"]
+albedo_color = Color(0.377919, 0.377919, 0.377919, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_pqt5l"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2, 0.95, 0, -1.5, 0, 0, 0, 0, 0, 4.5, 0.95, -0.8),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_choak"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2, 0.95, 0, -1.5, 0, 0, 2, 0, 0, 4.5, 0.95, 0.9),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_setdq"]
+albedo_color = Color(0.51, 0.24123, 0.1938, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_choak"]
+height = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0ybl"]
+albedo_color = Color(0.252027, 0.252028, 0.252028, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x0m8b"]
+size = Vector3(0.1, 1, 0.1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_v1dmi"]
+radius = 0.125
+height = 0.25
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_feb5d"]
+size = Vector3(0.2, 1.4, 1.4)
+
+[node name="Level" type="Node"]
+script = ExtResource("1_v1dmi")
+level_data = SubResource("Resource_setdq")
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v1l5v")
+
+[node name="OverheadLight" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.866025, 0.482963, -0.12941, 0, 0.258819, 0.965926, 0.5, -0.836516, 0.224144, 0, 0, 0)
+light_energy = 0.25
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(0.928905, -0.218709, 0.298837, -0.0616284, 0.704417, 0.707108, -0.365156, -0.675252, 0.640857, 1, 4, 3)
+keep_aspect = 0
+current = true
+fov = 90.0
+size = 4.0
+
+[node name="Factory" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+material_override = SubResource("StandardMaterial3D_pqt5l")
+mesh = SubResource("BoxMesh_choak")
+
+[node name="Conveyor" type="Node3D" parent="."]
+
+[node name="Flap" type="RigidBody3D" parent="Conveyor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, 1.8, 0)
+collision_layer = 0
+can_sleep = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Conveyor/Flap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_pqt5l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Conveyor/Flap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_fc0e3")
+mesh = SubResource("BoxMesh_yitki")
+
+[node name="HingeJoint" type="HingeJoint3D" parent="Conveyor/Flap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 0)
+node_a = NodePath("..")
+angular_limit/enable = true
+angular_limit/lower = -0.0872665
+
+[node name="ConveyorPathing" type="Node3D" parent="." groups=["ConveyorPathing"]]
+unique_name_in_owner = true
+script = ExtResource("1_b0hrx")
+
+[node name="BasePath" type="Path3D" parent="ConveyorPathing"]
+curve = SubResource("Curve3D_v1l5v")
+
+[node name="Belt" type="CSGPolygon3D" parent="ConveyorPathing/BasePath"]
+material_override = SubResource("StandardMaterial3D_v1dmi")
+polygon = PackedVector2Array(-0.5, -0.1, -0.5, 0, 0.5, 0, 0.5, -0.1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Support" type="CSGPolygon3D" parent="ConveyorPathing/BasePath"]
+polygon = PackedVector2Array(0.4, -0.1, -0.4, -0.1, -0.4, -0.2, -0.1, -0.4, -0.2, -0.9, 0.2, -0.9, 0.1, -0.4, 0.4, -0.2)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_wsccs")
+
+[node name="AcceptedPath" type="Path3D" parent="ConveyorPathing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+curve = SubResource("Curve3D_pqt5l")
+
+[node name="Belt" type="CSGPolygon3D" parent="ConveyorPathing/AcceptedPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+material_override = SubResource("StandardMaterial3D_v1dmi")
+polygon = PackedVector2Array(-0.5, -0.1, -0.5, 0, 0.5, 0, 0.5, -0.1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Support" type="CSGPolygon3D" parent="ConveyorPathing/AcceptedPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+polygon = PackedVector2Array(0.4, -0.1, -0.4, -0.1, -0.4, -0.2, -0.1, -0.4, -0.2, -0.9, 0.2, -0.9, 0.1, -0.4, 0.4, -0.2)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_wsccs")
+
+[node name="DeniedPath" type="Path3D" parent="ConveyorPathing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+curve = SubResource("Curve3D_choak")
+
+[node name="Belt" type="CSGPolygon3D" parent="ConveyorPathing/DeniedPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+material_override = SubResource("StandardMaterial3D_v1dmi")
+polygon = PackedVector2Array(-0.5, -0.1, -0.5, 0, 0.5, 0, 0.5, -0.1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Support" type="CSGPolygon3D" parent="ConveyorPathing/DeniedPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+polygon = PackedVector2Array(0.4, -0.1, -0.4, -0.1, -0.4, -0.2, -0.1, -0.4, -0.2, -0.9, 0.2, -0.9, 0.1, -0.4, 0.4, -0.2)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_wsccs")
+
+[node name="Lever" type="Node3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 1, 0, 1.3)
+script = ExtResource("2_v1dmi")
+metadata/_edit_group_ = true
+
+[node name="BaseMesh" type="MeshInstance3D" parent="Lever"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_setdq")
+mesh = SubResource("CylinderMesh_choak")
+
+[node name="Handle" type="Node3D" parent="Lever"]
+
+[node name="Cube" type="MeshInstance3D" parent="Lever/Handle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+material_override = SubResource("StandardMaterial3D_t0ybl")
+mesh = SubResource("BoxMesh_x0m8b")
+skeleton = NodePath("../..")
+
+[node name="Sphere" type="MeshInstance3D" parent="Lever/Handle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+material_override = SubResource("StandardMaterial3D_setdq")
+mesh = SubResource("SphereMesh_v1dmi")
+
+[node name="ClickableArea" type="Area3D" parent="Lever"]
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="Shape" type="CollisionShape3D" parent="Lever/ClickableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 0.7, 0)
+shape = SubResource("BoxShape3D_feb5d")
+
+[connection signal="changed" from="ConveyorPathing" to="Lever" method="_on_conveyor_pathing_changed"]
+[connection signal="input_event" from="Lever/ClickableArea" to="Lever" method="_on_clickable_area_input_event"]
