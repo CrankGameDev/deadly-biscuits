@@ -36,6 +36,8 @@ func _ready() -> void:
 	level_timer.timeout.connect(_on_spawn_interval)
 	add_child(level_timer, false, Node.INTERNAL_MODE_FRONT)
 	
+	conveyor_pathing.conveyor_speed = level_data.conveyor_speed
+	
 	for spawn_wave in level_data.spawn_waves:
 		_spawn_events_left.append_array(spawn_wave.get_shuffled_wave_array())
 	_spawn_events_left.reverse()
@@ -88,9 +90,11 @@ func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 		biscuit_incorrect.emit(biscuit)
 		mistakes_made += 1
 		if mistakes_made >= 3:
+			level_failed.emit()
 			_on_level_failed()
 	active_biscuits.erase(biscuit)
 	if _spawn_events_left.is_empty() and active_biscuits.is_empty():
+		level_completed.emit()
 		_on_level_succeeded()
 	biscuit.queue_free()
 
@@ -100,4 +104,4 @@ func _on_level_failed() -> void:
 
 
 func _on_level_succeeded() -> void:
-	print("Level succeeded! Made %d mistakes.")
+	print("Level succeeded! Made %d mistakes." % mistakes_made)
