@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b433p4cjgtoxq" path="res://core/base_biscuit.tscn" id="1_1xq0o"]
 [ext_resource type="Script" uid="uid://cof42lmbteqh6" path="res://biscuit_types/choc_chip_biscuit.gd" id="2_km0pl"]
-[ext_resource type="ArrayMesh" uid="uid://cedovyl2s2wm3" path="res://assets/models/cookie_mesh.tres" id="3_yredn"]
+[ext_resource type="ArrayMesh" uid="uid://d30vgh5gti186" path="res://assets/models/biscuit.mesh" id="3_6hw0k"]
 [ext_resource type="Material" uid="uid://bfb1excecuvcl" path="res://assets/materials/material_chocolate_1.tres" id="4_6hw0k"]
 [ext_resource type="Material" uid="uid://bjp783rlkv76y" path="res://assets/materials/material_chocolate_2.tres" id="5_senod"]
 [ext_resource type="Shader" uid="uid://bncf5urr3nayd" path="res://assets/shaders/radial_running_bugs.particles.visual_shader.tres" id="6_yredn"]
@@ -691,7 +691,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 [node name="CookieBase" type="MeshInstance3D" parent="Model" index="0"]
 transform = Transform3D(0.999872, 0.0147742, 0.00716479, -0.014423, 1.03477, 0.0213355, -0.0068579, -0.0221888, 0.999746, -1.13745e-05, -0.00079666, 1.70828e-05)
 material_override = SubResource("StandardMaterial3D_hhplf")
-mesh = ExtResource("3_yredn")
+mesh = ExtResource("3_6hw0k")
 skeleton = NodePath("")
 blend_shapes/Layer = 0.0
 metadata/extras = {

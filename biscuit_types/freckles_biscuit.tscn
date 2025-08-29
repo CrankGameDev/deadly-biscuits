@@ -1,0 +1,104 @@
+[gd_scene load_steps=6 format=3 uid="uid://dx338wrl1in8p"]
+
+[ext_resource type="PackedScene" uid="uid://b433p4cjgtoxq" path="res://core/base_biscuit.tscn" id="1_662fu"]
+[ext_resource type="ArrayMesh" uid="uid://d30vgh5gti186" path="res://assets/models/biscuit.mesh" id="2_662fu"]
+[ext_resource type="Script" uid="uid://dl2grakgr8nx2" path="res://biscuit_types/freckles_biscuit.gd" id="2_k1mej"]
+[ext_resource type="ArrayMesh" uid="uid://57o50bqwyshl" path="res://assets/models/freckle.mesh" id="3_1sq1u"]
+[ext_resource type="ArrayMesh" uid="uid://d1beg8ancxwf" path="res://assets/models/freckle_mushroom.mesh" id="4_y1is5"]
+
+[node name="FrecklesBiscuit" instance=ExtResource("1_662fu")]
+script = ExtResource("2_k1mej")
+mushroom_count = 0
+
+[node name="Model" type="Node3D" parent="." index="1"]
+transform = Transform3D(0.5, 0, 1.77636e-15, 0, 0.5, 0, -1.77636e-15, 0, 0.5, 0, 0, 0)
+
+[node name="Biscuit" type="MeshInstance3D" parent="Model" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37116e-08, 0, 0, 0)
+mesh = ExtResource("2_662fu")
+skeleton = NodePath("../..")
+blend_shapes/Layer = 0.0
+
+[node name="Freckle1" type="MeshInstance3D" parent="Model" index="1"]
+transform = Transform3D(-1.88745e-08, -2.18557e-08, -0.25, -2.18557e-08, -0.25, 2.18557e-08, -0.25, 2.18557e-08, 1.88745e-08, 0.0175576, 0.117789, -7.67472e-10)
+lod_bias = 4.0
+mesh = ExtResource("3_1sq1u")
+skeleton = NodePath("../..")
+
+[node name="Freckle2" type="MeshInstance3D" parent="Model" index="2"]
+transform = Transform3D(-0.249049, 1.98677e-08, -0.0217889, -2.18557e-08, -0.25, 2.18557e-08, -0.0217889, 2.36774e-08, 0.249049, 0.1, 0.121513, 0.261631)
+lod_bias = 4.0
+mesh = ExtResource("3_1sq1u")
+skeleton = NodePath("../..")
+
+[node name="Freckle3" type="MeshInstance3D" parent="Model" index="3"]
+transform = Transform3D(0.169178, -0.0333124, 0.181022, -0.0202634, -0.247748, -0.0266538, 0.182943, 0.00336439, -0.170354, 0.294942, 0.0974026, 0.0230204)
+lod_bias = 4.0
+mesh = ExtResource("3_1sq1u")
+skeleton = NodePath("../..")
+
+[node name="Freckle4" type="MeshInstance3D" parent="Model" index="4"]
+transform = Transform3D(-0.206216, -0.0264449, -0.138836, 0.0229681, -0.248591, 0.0132355, 0.139453, 0.00183765, -0.207483, 0.176755, 0.0956155, -0.276222)
+lod_bias = 4.0
+mesh = ExtResource("3_1sq1u")
+skeleton = NodePath("../..")
+
+[node name="Freckle5" type="MeshInstance3D" parent="Model" index="5"]
+transform = Transform3D(0.204788, -3.25896e-08, -0.143394, -0.00466673, -0.249867, -0.00666472, -0.143318, 0.00813615, -0.204679, -0.131923, 0.0902021, -0.237676)
+lod_bias = 4.0
+mesh = ExtResource("3_1sq1u")
+skeleton = NodePath("../..")
+
+[node name="Freckle6" type="MeshInstance3D" parent="Model" index="6"]
+transform = Transform3D(0.203952, 0.0139613, -0.143906, 0.0206568, -0.249092, 0.00510975, -0.143098, -0.016059, -0.204365, -0.254346, 0.0831051, 0.000509484)
+lod_bias = 4.0
+mesh = ExtResource("3_1sq1u")
+skeleton = NodePath("../..")
+
+[node name="Freckle7" type="MeshInstance3D" parent="Model" index="7"]
+transform = Transform3D(-0.248755, -0.00358565, -0.0246567, 0.00572943, -0.249, -0.0215923, -0.0242483, -0.0220499, 0.247842, -0.122812, 0.0897112, 0.212567)
+lod_bias = 4.0
+mesh = ExtResource("3_1sq1u")
+skeleton = NodePath("../..")
+
+[node name="Mushroom1" type="MeshInstance3D" parent="Model" index="8"]
+transform = Transform3D(4.75637e-09, 5.50764e-09, -0.063, 0, 0.063, 5.50764e-09, 0.063, -4.15815e-16, 4.75637e-09, 0.0175576, 0.117789, -7.67472e-10)
+lod_bias = 4.0
+mesh = ExtResource("4_y1is5")
+skeleton = NodePath("../..")
+
+[node name="Mushroom2" type="MeshInstance3D" parent="Model" index="9"]
+transform = Transform3D(0.0627603, 4.80022e-10, -0.00549081, 0, 0.063, 5.50764e-09, 0.00549081, -5.48668e-09, 0.0627603, 0.1, 0.121513, 0.261631)
+lod_bias = 4.0
+mesh = ExtResource("4_y1is5")
+skeleton = NodePath("../..")
+
+[node name="Mushroom3" type="MeshInstance3D" parent="Model" index="10"]
+transform = Transform3D(-0.0431753, 0.00489142, 0.0456177, 0, 0.0626409, -0.00671677, -0.0458792, -0.00460315, -0.0429292, 0.294942, 0.0974026, 0.0230204)
+lod_bias = 4.0
+mesh = ExtResource("4_y1is5")
+skeleton = NodePath("../..")
+
+[node name="Mushroom4" type="MeshInstance3D" parent="Model" index="11"]
+transform = Transform3D(0.052352, 0.0018342, 0.0349986, 0, 0.0629137, -0.00329717, -0.0350466, 0.00273989, 0.0522803, 0.176755, 0.0956155, -0.276222)
+lod_bias = 4.0
+mesh = ExtResource("4_y1is5")
+skeleton = NodePath("../..")
+
+[node name="Mushroom5" type="MeshInstance3D" parent="Model" index="12"]
+transform = Transform3D(-0.0515976, -0.000963672, -0.0361353, 0, 0.0629776, -0.00167951, 0.0361482, -0.00137554, -0.0515792, -0.131923, 0.0902021, -0.237676)
+lod_bias = 4.0
+mesh = ExtResource("4_y1is5")
+skeleton = NodePath("../..")
+
+[node name="Mushroom6" type="MeshInstance3D" parent="Model" index="13"]
+transform = Transform3D(-0.0515108, 0.000741358, -0.0362642, 0, 0.0629868, 0.00128766, 0.0362718, 0.00105283, -0.0515, -0.254346, 0.0831051, 0.000509484)
+lod_bias = 4.0
+mesh = ExtResource("4_y1is5")
+skeleton = NodePath("../..")
+
+[node name="Mushroom7" type="MeshInstance3D" parent="Model" index="14"]
+transform = Transform3D(0.0626905, -0.000538667, -0.00621347, 0, 0.0627646, -0.00544127, 0.00623677, 0.00541455, 0.0624563, -0.122812, 0.0897112, 0.212567)
+lod_bias = 4.0
+mesh = ExtResource("4_y1is5")
+skeleton = NodePath("../..")

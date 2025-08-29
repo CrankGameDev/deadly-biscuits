@@ -1,2 +1,11 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
+
+# Use LFS for binary asset types.
+*.png filter=lfs diff=lfs merge=lfs -text # PNG Textures
+*.glb filter=lfs diff=lfs merge=lfs -text # glTF Binary models
+*.wav filter=lfs diff=lfs merge=lfs -text # WAV Audio files
+*.ogg filter=lfs diff=lfs merge=lfs -text # OGG vorbis Audio Files
+*.ttf filter=lfs diff=lfs merge=lfs -text # True-type fonts
+*.res filter=lfs diff=lfs merge=lfs -text # Godot Binary Resource Files
+*.mesh filter=lfs diff=lfs merge=lfs -text # Godot Mesh Files

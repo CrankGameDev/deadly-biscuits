@@ -51,11 +51,11 @@ transform = Transform3D(-4.37116e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 
 [node name="GoodModel" parent="Model" index="0" instance=ExtResource("2_q388c")]
 unique_name_in_owner = true
-transform = Transform3D(0.499998, 0, -9.23706e-14, 0, 0.499998, 0, -9.23706e-14, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.333, 0, 6.1519e-14, 0, 0.333, 0, -6.1519e-14, 0, 0.333, 0, 0, 0)
 
 [node name="EvilModel" parent="Model" index="1" instance=ExtResource("3_e3cud")]
 unique_name_in_owner = true
-transform = Transform3D(0.499998, 0, -9.23706e-14, 0, 0.499998, 0, -9.23706e-14, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.333, 0, 6.1519e-14, 0, 0.333, 0, -6.1519e-14, 0, 0.333, 0, 0, 0)
 
 [node name="Animation" type="AnimationPlayer" parent="." index="2"]
 unique_name_in_owner = true
