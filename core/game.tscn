@@ -1,6 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=38 format=3 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://8apl5uo3qam7" path="res://core/biscuit_manager.gd" id="1_a04qp"]
+[ext_resource type="Script" uid="uid://dn5i52svpf5b3" path="res://core/game.gd" id="1_bpu47"]
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://cpylw10v2xhi3" path="res://biscuit_types/choc_chip_biscuit.tscn" id="2_8xnxh"]
 [ext_resource type="Script" uid="uid://7bc4aivpmago" path="res://core/lever.gd" id="3_7jktm"]
@@ -9,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="7_gjr3k"]
 [ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://core/criteria/choc_chip_count_criteria.gd" id="8_4cdhi"]
 [ext_resource type="Script" uid="uid://c2cltkcnqt75h" path="res://core/dialogue_manager.gd" id="9_4cdhi"]
+[ext_resource type="PackedScene" uid="uid://dwcdfsgobmmn2" path="res://UI/ui/checklist.tscn" id="10_fgh25"]
 
 [sub_resource type="Environment" id="Environment_v1l5v"]
 ambient_light_source = 2
@@ -132,6 +134,7 @@ operation = 0
 metadata/_custom_type_script = "uid://bg3awv8d0fhd2"
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_bpu47")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_v1l5v")
@@ -247,6 +250,9 @@ biscuit_criteria = Array[ExtResource("7_gjr3k")]([SubResource("Resource_fgh25")]
 
 [node name="DialogueManager" type="Node" parent="."]
 script = ExtResource("9_4cdhi")
+
+[node name="Checklist" parent="." instance=ExtResource("10_fgh25")]
+visible = false
 
 [connection signal="changed" from="ConveyorPathing" to="Lever" method="_on_conveyor_pathing_changed"]
 [connection signal="input_event" from="Lever/ClickableArea" to="Lever" method="_on_clickable_area_input_event"]

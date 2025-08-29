@@ -1,8 +1,9 @@
-join unit_test_character center
+join boss right
 boss: Welcome new employees! We are glad to welcome you to the Basilisk Bakery family!!!
 boss: Your job as a Quality Insurance Officer to ensure only all cookies meet our strict  buscuit standards while minimising waste! Our share holders hate lost profits!
+boss: Click the lever (or press the space bar) to change the pathway of the conveyor belt and throw out the biscuits, don’t forget to change it back before an acceptable cookie gets thrown out. 
 boss: Your job is so simply a child could do it! Ensure every cookie has at least six chips! Pull the lever to throw out any unacceptable cookies!
-join  center
+boss: To see the quality assurance guidelines press the escape button!
 boss: Don't throw out too many good buscuits! AND NO EATING ON THE JOB! Those are profits!
 set 
 [end_timeline]
