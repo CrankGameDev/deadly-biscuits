@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://7ofsx1rqs35h"]
+[gd_scene load_steps=65 format=4 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
