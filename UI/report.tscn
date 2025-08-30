@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcgjkpkf7p7bg"]
+[gd_scene load_steps=4 format=3 uid="uid://bcgjkpkf7p7bg"]
+
+[ext_resource type="Script" uid="uid://p5sc4syqrpg1" path="res://UI/report.gd" id="1_c0r6n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fskqw"]
 bg_color = Color(0.521751, 0.154608, 0.499388, 1)
@@ -22,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_c0r6n")
 
 [node name="report card" type="Control" parent="."]
 anchors_preset = 0
@@ -46,10 +49,10 @@ color = Color(0.615686, 0.470588, 0.368627, 1)
 
 [node name="Label" type="Label" parent="report card"]
 layout_mode = 0
-offset_left = 258.0
-offset_top = 39.0
-offset_right = 690.0
-offset_bottom = 94.0
+offset_left = 255.0
+offset_top = 7.0
+offset_right = 687.0
+offset_bottom = 62.0
 theme = SubResource("Theme_fskqw")
 text = "End of Day Report "
 
@@ -63,3 +66,58 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Report stats" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 193.0
+offset_top = 253.0
+offset_right = 233.0
+offset_bottom = 293.0
+
+[node name="GridContainer" type="GridContainer" parent="Report stats"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2
+
+[node name="Feedback" type="Label" parent="Report stats/GridContainer"]
+layout_mode = 2
+text = "Supervisor feedback: "
+
+[node name="PassLabel" type="Label" parent="Report stats/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = " {failed}"
+
+[node name="Biscuits_processed" type="Label" parent="Report stats/GridContainer"]
+layout_mode = 2
+text = "Biscuits Processed:"
+
+[node name="ProcessedLabel" type="Label" parent="Report stats/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "{biscuits_processed}"
+
+[node name="Label" type="Label" parent="Report stats/GridContainer"]
+layout_mode = 2
+text = "Mistakes Made: "
+
+[node name="MistakesLabel" type="Label" parent="Report stats/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "{mistakes_made}"
+
+[node name="DayLabel" type="Label" parent="Report stats"]
+layout_mode = 0
+offset_left = 306.0
+offset_top = -97.0
+offset_right = 431.0
+offset_bottom = -67.0
+text = "Day {level}"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Report stats"]
+layout_mode = 0
+offset_left = -29.0
+offset_top = -25.0
+offset_right = 214.0
+offset_bottom = 15.0
