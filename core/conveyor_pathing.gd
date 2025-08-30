@@ -37,6 +37,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	# TODO: Temporary control
 	if event.is_action_pressed("ui_accept"):
 		toggle_rejection()
+		get_viewport().set_input_as_handled()
 
 
 func toggle_rejection() -> void:

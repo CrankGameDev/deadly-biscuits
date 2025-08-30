@@ -22,7 +22,6 @@ func set_overhead(value: bool) -> void:
 	if tween:
 		tween.kill()
 	tween = create_tween().set_parallel(true)
-	print("Tweening")
 	var target_transform: Transform3D
 	var target_fov: float
 	if is_overhead:
@@ -31,6 +30,6 @@ func set_overhead(value: bool) -> void:
 	else:
 		target_transform = first_person_pos.global_transform
 		target_fov = FOV_FIRST_PERSON
-	tween.tween_property(self, "global_transform", target_transform, TWEEN_DURATION)
-	tween.tween_property(self, "fov", target_fov, TWEEN_DURATION)
+	tween.tween_property(self, "global_transform", target_transform, TWEEN_DURATION).set_trans(Tween.TRANS_EXPO)
+	tween.tween_property(self, "fov", target_fov, TWEEN_DURATION).set_trans(Tween.TRANS_EXPO)
 	tween.chain().tween_callback(aligned.emit)

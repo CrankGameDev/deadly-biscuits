@@ -16,6 +16,10 @@ signal biscuit_incorrect(biscuit: Biscuit)
 
 @onready var conveyor_pathing: ConveyorPathing = %ConveyorPathing
 @onready var camera: LevelCamera3D = $Camera
+@onready var intercom_sfx: AudioStreamPlayer3D = %IntercomSFX
+@onready var intercom_animation: AnimationPlayer = %IntercomAnimation
+@onready var enviornment_animation: AnimationPlayer = %EnviornmentAnimation
+
 
 var mistakes_made: int = 0
 
@@ -93,11 +97,18 @@ func spawn_biscuit(biscuit: Biscuit) -> void:
 
 func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 	biscuits_processed += 1
+	
+	# Randomly add intercom chatter just to make players think it means something :)
+	if not intercom_animation.is_playing() and randi_range(0, 5) == 0:
+		intercom_animation.play("talk")
+		intercom_sfx.play()
+		intercom_sfx.finished.connect(intercom_animation.stop, CONNECT_ONE_SHOT)
+	
 	var should_be_accepted: bool = true
 	for entry in level_data.critera:
 		if not entry._check_biscuit(biscuit):
 			should_be_accepted = false
-			break
+			break	
 	var was_correct: bool = accepted == should_be_accepted
 	if accepted:
 		biscuit_accepted.emit(biscuit, was_correct)
@@ -119,6 +130,8 @@ func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 
 
 func _on_level_failed() -> void:
+	enviornment_animation.play("fade_in", -1, -0.5, true)
+	await enviornment_animation.animation_finished
 	LevelManager.notify_level_finished(level_data, false, {
 		"mistakes_made": mistakes_made,
 		"biscuits_processed": biscuits_processed,
@@ -126,6 +139,8 @@ func _on_level_failed() -> void:
 
 
 func _on_level_succeeded() -> void:
+	enviornment_animation.play_backwards("fade_in")
+	await enviornment_animation.animation_finished
 	LevelManager.notify_level_finished(level_data, true, {
 		"mistakes_made": mistakes_made,
 		"biscuits_processed": biscuits_processed,

@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=61 format=4 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
@@ -22,6 +22,67 @@ ambient_light_color = Color(0.779157, 0.555735, 0.493454, 1)
 reflected_light_source = 1
 glow_enabled = true
 glow_hdr_luminance_cap = 22.78
+adjustment_enabled = true
+
+[sub_resource type="Animation" id="Animation_nuv7q"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Environment:environment:adjustment_brightness")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Environment:environment:adjustment_saturation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_721q5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Environment:environment:adjustment_brightness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Environment:environment:adjustment_saturation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bmeqk"]
+_data = {
+&"RESET": SubResource("Animation_721q5"),
+&"fade_in": SubResource("Animation_nuv7q")
+}
 
 [sub_resource type="Curve3D" id="Curve3D_v1l5v"]
 _data = {
@@ -1228,6 +1289,14 @@ spot_range = 2.264
 spot_attenuation = -5.08
 spot_angle_attenuation = 2.0
 
+[node name="EnviornmentAnimation" type="AnimationPlayer" parent="Environment"]
+unique_name_in_owner = true
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_bmeqk")
+}
+autoplay = "fade_in"
+
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(0.91257, 0, 0.40892, 0, 1, 0, -0.40892, 0, 0.91257, 2.72678, 1.4775, 2.4338)
 keep_aspect = 0
@@ -1374,6 +1443,7 @@ libraries = {
 }
 
 [node name="IntercomSFX" type="AudioStreamPlayer3D" parent="Intercom"]
+unique_name_in_owner = true
 stream = ExtResource("6_setdq")
 pitch_scale = 1.25
 bus = &"SFX"
