@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=63 format=4 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
@@ -103,10 +103,10 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_choak"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3, 0.75, 0.3, 0, 0, 3, 0, 0, -3, 3.2, 0.75, -3.2),
-"tilts": PackedFloat32Array(0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3, 0.75, 0.3, 0, 0, 1, 0, 0, -1, 3.1, 0.75, -0.6, 0, 0, 0, 0, 0, 0, 3.1, 0.75, -2.8),
+"tilts": PackedFloat32Array(0, 0, 0)
 }
-point_count = 2
+point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ua8ht"]
 resource_name = "material_2"
@@ -1123,7 +1123,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.91986, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, -1.18682, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_0mn0c"]
@@ -1146,6 +1146,38 @@ _data = {
 &"RESET": SubResource("Animation_0mn0c"),
 &"open": SubResource("Animation_3wu0q")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3wu0q"]
+animation = &"open"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0mn0c"]
+animation = &"open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_721q5"]
+xfade_time = 0.13
+advance_mode = 2
+advance_condition = &"is_closed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bmeqk"]
+xfade_time = 0.13
+advance_mode = 2
+advance_expression = "not get(\"parameters/conditions/is_closed\")"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3wu0q"]
+advance_mode = 2
+advance_expression = "not get(\"parameters/conditions/is_closed\")"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0mn0c"]
+advance_mode = 2
+advance_condition = &"is_closed"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2on84"]
+states/close/node = SubResource("AnimationNodeAnimation_3wu0q")
+states/close/position = Vector2(468, 143)
+states/open/node = SubResource("AnimationNodeAnimation_0mn0c")
+states/open/position = Vector2(468, 44)
+transitions = ["open", "close", SubResource("AnimationNodeStateMachineTransition_721q5"), "close", "open", SubResource("AnimationNodeStateMachineTransition_bmeqk"), "Start", "open", SubResource("AnimationNodeStateMachineTransition_3wu0q"), "Start", "close", SubResource("AnimationNodeStateMachineTransition_0mn0c")]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2kg0"]
 vertex_color_use_as_albedo = true
@@ -1367,11 +1399,15 @@ metadata/extras = {
 }
 }
 
-[node name="DiverterAnimation" type="AnimationPlayer" parent="uv_unwrapped_test_scene/Diverter"]
-unique_name_in_owner = true
+[node name="AnimationPlayer" type="AnimationPlayer" parent="uv_unwrapped_test_scene/Diverter"]
 libraries = {
 &"": SubResource("AnimationLibrary_721q5")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="uv_unwrapped_test_scene/Diverter"]
+tree_root = SubResource("AnimationNodeStateMachine_2on84")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/is_closed = false
 
 [node name="intercom_unwrapped" parent="." instance=ExtResource("15_pj88p")]
 transform = Transform3D(0.573576, 0.769751, -0.280166, -3.05715e-08, -0.34202, -0.939693, -0.819152, 0.538986, -0.196175, -1.5, 2.1, -0.4)
@@ -1396,8 +1432,8 @@ libraries = {
 }
 
 [connection signal="changed" from="ConveyorPathing" to="Lever" method="_on_conveyor_pathing_changed"]
-[connection signal="started_rejecting" from="ConveyorPathing" to="uv_unwrapped_test_scene/Diverter/DiverterAnimation" method="play_backwards" binds= [&"open", 0.5]]
-[connection signal="stopped_rejecting" from="ConveyorPathing" to="uv_unwrapped_test_scene/Diverter/DiverterAnimation" method="play" binds= [&"open", 0.5]]
+[connection signal="started_rejecting" from="ConveyorPathing" to="uv_unwrapped_test_scene/Diverter/AnimationTree" method="set" binds= [&"parameters/conditions/is_closed", true]]
+[connection signal="stopped_rejecting" from="ConveyorPathing" to="uv_unwrapped_test_scene/Diverter/AnimationTree" method="set" binds= [&"parameters/conditions/is_closed", false]]
 [connection signal="input_event" from="Lever/ClickableArea" to="Lever" method="_on_clickable_area_input_event"]
 
 [editable path="intercom_unwrapped"]
