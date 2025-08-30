@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SpawnEvent" load_steps=3 format=3 uid="uid://nlu2qepn7ijd"]
+
+[ext_resource type="PackedScene" uid="uid://cpylw10v2xhi3" path="res://biscuit_types/choc_chip_biscuit.tscn" id="1_8cox0"]
+[ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="2_iyvag"]
+
+[resource]
+resource_name = "Choc Chip: 3-5"
+script = ExtResource("2_iyvag")
+biscuit_scene = ExtResource("1_8cox0")
+spawn_settings = Dictionary[String, Variant]({
+"choc_chip_max": 5,
+"choc_chip_min": 3
+})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"

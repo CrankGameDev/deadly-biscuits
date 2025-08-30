@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelList" load_steps=3 format=3 uid="uid://dkjf0raciy1bl"]
+
+[ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="1_63l8r"]
+[ext_resource type="Script" uid="uid://dxwoapjkwo2iu" path="res://core/level_list.gd" id="2_qwlvj"]
+
+[resource]
+script = ExtResource("2_qwlvj")
+levels = Array[ExtResource("1_63l8r")]([])
+metadata/_custom_type_script = "uid://dxwoapjkwo2iu"

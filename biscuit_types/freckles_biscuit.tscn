@@ -26,7 +26,7 @@ mesh = ExtResource("3_1sq1u")
 skeleton = NodePath("../..")
 
 [node name="Freckle2" type="MeshInstance3D" parent="Model" index="2"]
-transform = Transform3D(-0.249049, 1.98677e-08, -0.0217889, -2.18557e-08, -0.25, 2.18557e-08, -0.0217889, 2.36774e-08, 0.249049, 0.1, 0.121513, 0.261631)
+transform = Transform3D(-0.248379, -0.0154726, -0.0238416, 0.0189134, -0.246514, -0.037057, -0.0212157, -0.0386204, 0.246086, 0.1, 0.100585, 0.261631)
 lod_bias = 4.0
 mesh = ExtResource("3_1sq1u")
 skeleton = NodePath("../..")

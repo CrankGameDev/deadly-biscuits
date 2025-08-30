@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SpawnEvent" load_steps=3 format=3 uid="uid://d3dwnustqr7iv"]
+
+[ext_resource type="PackedScene" uid="uid://dx338wrl1in8p" path="res://biscuit_types/freckles_biscuit.tscn" id="1_pyptc"]
+[ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="2_1cdlf"]
+
+[resource]
+resource_name = "Freckle: Poison"
+script = ExtResource("2_1cdlf")
+biscuit_scene = ExtResource("1_pyptc")
+spawn_settings = Dictionary[String, Variant]({
+"mushroom_max": 2,
+"mushroom_min": 1
+})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"

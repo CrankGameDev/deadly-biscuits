@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SpawnEvent" load_steps=3 format=3 uid="uid://c6k6dwx66r2h4"]
+
+[ext_resource type="PackedScene" uid="uid://dx338wrl1in8p" path="res://biscuit_types/freckles_biscuit.tscn" id="1_kk5ta"]
+[ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="2_c0tux"]
+
+[resource]
+resource_name = "Freckle: Clean"
+script = ExtResource("2_c0tux")
+biscuit_scene = ExtResource("1_kk5ta")
+spawn_settings = Dictionary[String, Variant]({
+"mushroom_count": 0
+})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"

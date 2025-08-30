@@ -25,6 +25,12 @@ var _spawn_events_left: Array[SpawnEvent]
 var active_biscuits: Dictionary[Biscuit, bool]
 
 
+func _enter_tree() -> void:
+	var data_param: Variant = SceneManager.scene_params.get("level_data")
+	if data_param is LevelData:
+		level_data = data_param
+
+
 func _ready() -> void:
 	if not level_data:
 		printerr("No level data provided.")
