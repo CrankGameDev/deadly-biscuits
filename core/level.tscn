@@ -1,11 +1,11 @@
-[gd_scene load_steps=68 format=4 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=69 format=4 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
 [ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="2_721q5"]
 [ext_resource type="Script" uid="uid://7bc4aivpmago" path="res://core/lever.gd" id="2_v1dmi"]
 [ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://criteria/choc_chip_count_criteria.gd" id="3_bmeqk"]
-[ext_resource type="Resource" uid="uid://c0oyuwabmpocl" path="res://UI/dialogue/boss_1.dtl" id="4_2on84"]
+[ext_resource type="Resource" path="res://UI/dialogue/boss_1.dtl" id="4_2on84"]
 [ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="5_n4fnk"]
 [ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="6_3k7ia"]
 [ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="7_gkffv"]
@@ -20,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://c2xq17jbjkxv2" path="res://level_data/biscuit_spawns/heart_biscuit/heart_biscuit_evil.tres" id="14_fnwb2"]
 [ext_resource type="PackedScene" uid="uid://crgaj1isc3jib" path="res://assets/intercom_unwrapped.glb" id="15_pj88p"]
 [ext_resource type="Material" uid="uid://d3h7e83iani2f" path="res://assets/materials/MoldyFlore.tres" id="20_bmeqk"]
+[ext_resource type="PackedScene" uid="uid://b6mdrsec0nbbu" path="res://assets/audio/ambient_audio.tscn" id="21_2on84"]
 
 [sub_resource type="Resource" id="Resource_fgh25"]
 script = ExtResource("3_bmeqk")
@@ -1510,6 +1511,8 @@ metadata/extras = {
 "visible": true
 }
 }
+
+[node name="ambient_audio" parent="." instance=ExtResource("21_2on84")]
 
 [connection signal="changed" from="ConveyorPathing" to="Lever" method="_on_conveyor_pathing_changed"]
 [connection signal="started_rejecting" from="ConveyorPathing" to="Conveyor/Diverter/AnimationTree" method="set" binds= [&"parameters/conditions/is_closed", true]]
