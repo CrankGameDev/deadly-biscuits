@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
 [ext_resource type="Script" uid="uid://7bc4aivpmago" path="res://core/lever.gd" id="2_v1dmi"]
 [ext_resource type="Resource" uid="uid://bvrpvl2rvq5u8" path="res://level_data/level_1.tres" id="2_wsccs"]
+[ext_resource type="Script" uid="uid://brcm7tud6e3w5" path="res://core/camera.gd" id="3_nuv7q"]
 [ext_resource type="Material" uid="uid://guk1wyxx10aa" path="res://assets/materials/EmmisiveMaterial.tres" id="5_t0ybl"]
 [ext_resource type="AudioStream" uid="uid://dmjhcyim8ulhq" path="res://assets/audio/sfx/flame.ogg" id="6_ppale"]
 [ext_resource type="AudioStream" uid="uid://droye24uthduy" path="res://assets/audio/boss/voice_quips.tres" id="6_setdq"]
@@ -21,20 +22,6 @@ ambient_light_color = Color(0.779157, 0.555735, 0.493454, 1)
 reflected_light_source = 1
 glow_enabled = true
 glow_hdr_luminance_cap = 22.78
-
-[sub_resource type="GDScript" id="GDScript_bmeqk"]
-script/source = "extends Camera3D
-
-@onready var camera: Camera3D = $\"../Camera\"
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed(\"ui_left\"):
-		if is_current():
-			camera.make_current()
-		else:
-			make_current()
-"
 
 [sub_resource type="Curve3D" id="Curve3D_v1l5v"]
 _data = {
@@ -1242,21 +1229,21 @@ spot_attenuation = -5.08
 spot_angle_attenuation = 2.0
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(0.866026, -0.353554, 0.353554, 0, 0.707108, 0.707107, -0.500001, -0.612373, 0.612373, 2.5, 3, 2)
-keep_aspect = 0
-current = true
-fov = 90.0
-size = 4.0
-
-[node name="Camera2" type="Camera3D" parent="."]
 transform = Transform3D(0.91257, 0, 0.40892, 0, 1, 0, -0.40892, 0, 0.91257, 2.72678, 1.4775, 2.4338)
 keep_aspect = 0
 doppler_tracking = 1
 current = true
-fov = 103.6
+fov = 105.0
 size = 4.57226
-near = 0.286
-script = SubResource("GDScript_bmeqk")
+script = ExtResource("3_nuv7q")
+
+[node name="FirstPersonCameraPos" type="Marker3D" parent="Camera"]
+transform = Transform3D(0.91257, 0, 0.40892, 0, 1, 0, -0.40892, 0, 0.91257, 2.72678, 1.4775, 2.4338)
+top_level = true
+
+[node name="OverheadCameraPos" type="Marker3D" parent="Camera"]
+transform = Transform3D(0.866025, -0.353554, 0.353554, 0, 0.707107, 0.707107, -0.500001, -0.612372, 0.612372, 2.5, 3, 2)
+top_level = true
 
 [node name="ConveyorPathing" type="Node3D" parent="." groups=["ConveyorPathing"]]
 unique_name_in_owner = true

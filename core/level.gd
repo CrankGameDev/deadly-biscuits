@@ -15,6 +15,7 @@ signal biscuit_incorrect(biscuit: Biscuit)
 @export var level_data: LevelData
 
 @onready var conveyor_pathing: ConveyorPathing = %ConveyorPathing
+@onready var camera: LevelCamera3D = $Camera
 
 var mistakes_made: int = 0
 
@@ -43,6 +44,9 @@ func _ready() -> void:
 		%IntercomAnimation.play("talk")
 		await Dialogic.timeline_ended
 		%IntercomAnimation.stop()
+	
+	camera.is_overhead = true
+	# Maybe await alignment?
 	
 	level_timer = Timer.new()
 	level_timer.autostart = true
