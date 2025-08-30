@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var conveyor_pathing: ConveyorPathing = $"../ConveyorPathing"
 @onready var handle: Node3D = $Handle
+@onready var sfx: AudioStreamPlayer3D = $LeverSFX
 
 var tween: Tween
 
@@ -13,6 +14,7 @@ func _ready() -> void:
 func _on_conveyor_pathing_changed(product_rejected: bool) -> void:
 	const HANDLE_ACCEPT_POSITION: float = deg_to_rad(-30)
 	const HANDLE_REJECT_POSITION: float = deg_to_rad(30)
+	sfx.play()
 	if tween:
 		tween.kill()
 	if product_rejected:
