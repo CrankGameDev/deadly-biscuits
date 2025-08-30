@@ -1,16 +1,41 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://dyioliwdb4llg"]
 
-[ext_resource type="StyleBox" uid="uid://wihgrgvo6j2x" path="res://UI/ui/buttons/hover.tres" id="1_pu2uj"]
-[ext_resource type="StyleBox" uid="uid://baotyqefgd2nh" path="res://UI/ui/buttons/buttons.tres" id="2_wcepo"]
 [ext_resource type="StyleBox" uid="uid://cey5hud7kirsw" path="res://UI/ui/buttons/pressed.tres" id="3_2klwg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihxos"]
+bg_color = Color(0.376471, 0, 0.0470588, 1)
+border_width_left = 4
+border_width_top = 2
+border_width_right = 4
+border_width_bottom = 8
+border_color = Color(0.478535, 0, 0.0711999, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfwqm"]
+bg_color = Color(0.375849, 0.000751983, 0.045527, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 14
+border_color = Color(0.530321, 0, 0.0834492, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 4
 
 [resource]
 Button/colors/font_color = Color(0.880174, 0.906788, 0.942921, 1)
-Button/styles/hover = ExtResource("1_pu2uj")
-Button/styles/normal = ExtResource("2_wcepo")
+Button/styles/hover = SubResource("StyleBoxFlat_ihxos")
+Button/styles/normal = SubResource("StyleBoxFlat_bfwqm")
 Button/styles/pressed = ExtResource("3_2klwg")
-Label/colors/font_color = Color(0.529412, 0, 0.0823529, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0)
-Label/constants/line_spacing = 3
-Label/constants/outline_size = 10
-Label/font_sizes/font_size = 24
+Label/colors/font_color = Color(0.648669, 8.29052e-06, 0.110383, 1)
+Label/colors/font_outline_color = Color(0.376471, 0, 0.0470588, 1)
+Label/colors/font_shadow_color = Color(0.595633, 0.483443, 0.354024, 0)
+Label/constants/line_spacing = 10
+Label/constants/outline_size = 20
+Label/font_sizes/font_size = 32

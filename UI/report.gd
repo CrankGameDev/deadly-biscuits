@@ -4,6 +4,8 @@ extends Control
 @onready var mistakes_label: Label = %MistakesLabel
 @onready var processed_label: Label = %ProcessedLabel
 @onready var pass_label: Label = %PassLabel
+@onready var next_level: Button = %NextLevel
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,11 +17,17 @@ func _ready() -> void:
 	
 	if SceneManager.scene_params.get("failed"):
 		pass_label.text = [
-			#"You are the worst. YOU ARE FIRED!", 
-			#"FIRED! Get out of my face!!!", 
+			"You are the worst. YOU ARE FIRED!", 
+			"FIRED! Get out of my face!!!", 
 			"You are the worst employee we have ever had!!! GET OUT OF MY FACE"
 		].pick_random()
+		next_level.hide()
 	else:	
 		pass_label.text = [
-			"Acceptable", "Good Enough", 
+			"Acceptable", 
+			"Good Enough", 
+			"Pass"
 		].pick_random()
+		next_level.show()
+
+		

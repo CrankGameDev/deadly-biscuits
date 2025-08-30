@@ -1,24 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwcdfsgobmmn2"]
+[gd_scene load_steps=8 format=3 uid="uid://dwcdfsgobmmn2"]
 
 [ext_resource type="Script" uid="uid://b74o31pnod7yj" path="res://checklist.gd" id="1_t7f0y"]
 [ext_resource type="Texture2D" uid="uid://c0npxa02moxax" path="res://UI/dialogue/clipboarde.png" id="2_51e2v"]
 [ext_resource type="Shader" uid="uid://bvtdsyws53sby" path="res://UI/ui/blur.gdshader" id="2_vgfp8"]
-[ext_resource type="FontFile" uid="uid://822ppajjhiia" path="res://UI/dialogue/OpenDyslexic-Regular.otf" id="4_vgfp8"]
+[ext_resource type="FontFile" uid="uid://bl76grad0gmxb" path="res://UI/ui/OpenDyslexic-Regular.otf" id="4_vgfp8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2icag"]
 shader = ExtResource("2_vgfp8")
 shader_parameter/amount = 0.0
 
 [sub_resource type="Theme" id="Theme_laqw0"]
-Label/colors/font_color = Color(0.302456, 0.169883, 0.169782, 1)
-Label/colors/font_outline_color = Color(0.49412, 0.346265, 0.454539, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0)
-Label/constants/line_spacing = 10
-Label/constants/outline_size = 10
-Label/constants/paragraph_spacing = 10
-Label/constants/shadow_offset_x = 10
+Label/colors/font_color = Color(0.0666667, 0.00784314, 0.00784314, 1)
+Label/colors/font_shadow_color = Color(0.412084, 0.201091, 0.625031, 0)
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("4_vgfp8")
+
+[sub_resource type="Theme" id="Theme_vgfp8"]
+Label/colors/font_color = Color(0.109804, 0.00784314, 0.0117647, 1)
 
 [node name="Checklist" type="CanvasLayer"]
 script = ExtResource("1_t7f0y")
@@ -71,8 +69,11 @@ metadata/_edit_use_anchors_ = true
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 458.0
+offset_top = 203.0
+offset_right = 498.0
+offset_bottom = 243.0
+theme = SubResource("Theme_vgfp8")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control"]
 layout_mode = 0

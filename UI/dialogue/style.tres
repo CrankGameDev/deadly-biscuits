@@ -24,7 +24,7 @@ overrides = {}
 script = ExtResource("1_24sq4")
 scene = ExtResource("4_1q4xc")
 overrides = {
-"box_size": "Vector2(900.001, 200)",
+"box_size": "Vector2(900.001, 220)",
 "name_label_color_mode": "2",
 "name_label_custom_color": "Color(0.894531, 0.714358, 0.684875, 1)",
 "name_label_custom_size": "30.0",

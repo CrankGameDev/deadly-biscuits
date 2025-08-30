@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://gqc47timvn3j"]
 
 [ext_resource type="StyleBox" uid="uid://wihgrgvo6j2x" path="res://UI/ui/buttons/hover.tres" id="1_lxsu0"]
-[ext_resource type="StyleBox" uid="uid://baotyqefgd2nh" path="res://UI/ui/buttons/buttons.tres" id="2_ir4vo"]
+[ext_resource type="StyleBox" uid="uid://djumibdifdqnx" path="res://UI/ui/buttons/buttons2.tres" id="2_lxsu0"]
 [ext_resource type="StyleBox" uid="uid://cey5hud7kirsw" path="res://UI/ui/buttons/pressed.tres" id="3_errvb"]
 
 [sub_resource type="Theme" id="Theme_ypuls"]
 Button/colors/font_color = Color(0.880174, 0.906788, 0.942921, 1)
 Button/styles/hover = ExtResource("1_lxsu0")
-Button/styles/normal = ExtResource("2_ir4vo")
+Button/styles/normal = ExtResource("2_lxsu0")
 Button/styles/pressed = ExtResource("3_errvb")
 
 [node name="Control" type="Control"]

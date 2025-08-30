@@ -8,3 +8,9 @@ func _ready() -> void:
 		var label : Label = Label.new()
 		label.text = criteria._get_text() 
 		checklist_items.add_child(label) 
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		visible = !visible 
+		
+		
