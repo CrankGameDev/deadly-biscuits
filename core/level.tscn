@@ -1,73 +1,11 @@
-[gd_scene load_steps=64 format=4 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=46 format=4 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
+[ext_resource type="Resource" uid="uid://bvrpvl2rvq5u8" path="res://level_data/level_1.tres" id="2_q5p7b"]
 [ext_resource type="Script" uid="uid://7bc4aivpmago" path="res://core/lever.gd" id="2_v1dmi"]
-[ext_resource type="Resource" uid="uid://c0oyuwabmpocl" path="res://UI/dialogue/boss_1.dtl" id="4_0mn0c"]
-[ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="4_setdq"]
-[ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="4_wsccs"]
-[ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="5_t0ybl"]
-[ext_resource type="Resource" uid="uid://c6k6dwx66r2h4" path="res://level_data/biscuit_spawns/freckles/freckle_clean.tres" id="7_0mn0c"]
-[ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="7_nuv7q"]
-[ext_resource type="Resource" uid="uid://d3dwnustqr7iv" path="res://level_data/biscuit_spawns/freckles/freckle_poison.tres" id="8_721q5"]
-[ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://criteria/choc_chip_count_criteria.gd" id="8_pj88p"]
-[ext_resource type="Resource" uid="uid://m5pnqi0oskiy" path="res://level_data/biscuit_spawns/heart_biscuit/heart_biscuit_good.tres" id="8_setdq"]
-[ext_resource type="Resource" uid="uid://c047hgnglvg2p" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_7_chips.tres" id="9_bmeqk"]
-[ext_resource type="Resource" uid="uid://c2xq17jbjkxv2" path="res://level_data/biscuit_spawns/heart_biscuit/heart_biscuit_evil.tres" id="9_t0ybl"]
-[ext_resource type="Resource" uid="uid://nlu2qepn7ijd" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_3_to_5.tres" id="10_2on84"]
-[ext_resource type="Resource" uid="uid://bn7dtg7dtq1mi" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_6_to_9.tres" id="11_n4fnk"]
 [ext_resource type="PackedScene" uid="uid://dvycejlthfgxu" path="res://assets/uv_unwrapped_test_scene.glb" id="13_ppale"]
 [ext_resource type="PackedScene" uid="uid://crgaj1isc3jib" path="res://assets/intercom_unwrapped.glb" id="15_pj88p"]
-
-[sub_resource type="Resource" id="Resource_fgh25"]
-script = ExtResource("8_pj88p")
-operation = 0
-count = 5
-metadata/_custom_type_script = "uid://bg3awv8d0fhd2"
-
-[sub_resource type="Resource" id="Resource_pj88p"]
-resource_name = "Freckles"
-script = ExtResource("4_setdq")
-spawn_events = Dictionary[ExtResource("5_t0ybl"), int]({
-ExtResource("7_0mn0c"): 3,
-ExtResource("8_721q5"): 3
-})
-metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
-
-[sub_resource type="Resource" id="Resource_sjcnv"]
-resource_name = "Easy Cookies"
-script = ExtResource("4_setdq")
-spawn_events = Dictionary[ExtResource("5_t0ybl"), int]({
-ExtResource("9_bmeqk"): 3
-})
-metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
-
-[sub_resource type="Resource" id="Resource_gjr3k"]
-resource_name = "50/50 Cookies"
-script = ExtResource("4_setdq")
-spawn_events = Dictionary[ExtResource("5_t0ybl"), int]({
-ExtResource("10_2on84"): 3,
-ExtResource("11_n4fnk"): 3
-})
-metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
-
-[sub_resource type="Resource" id="Resource_v1dmi"]
-resource_name = "Hearts"
-script = ExtResource("4_setdq")
-spawn_events = Dictionary[ExtResource("5_t0ybl"), int]({
-ExtResource("8_setdq"): 3,
-ExtResource("9_t0ybl"): 3
-})
-metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
-
-[sub_resource type="Resource" id="Resource_setdq"]
-script = ExtResource("4_wsccs")
-level_start_dialogue = ExtResource("4_0mn0c")
-conveyor_speed = 1.0
-spawn_interval = 1.0
-critera = Array[ExtResource("7_nuv7q")]([SubResource("Resource_fgh25")])
-spawn_waves = Array[ExtResource("4_setdq")]([SubResource("Resource_pj88p"), SubResource("Resource_sjcnv"), SubResource("Resource_gjr3k"), SubResource("Resource_v1dmi")])
-metadata/_custom_type_script = "uid://bn1b8j2k5er3j"
 
 [sub_resource type="Environment" id="Environment_v1l5v"]
 ambient_light_source = 2
@@ -1225,7 +1163,7 @@ _data = {
 
 [node name="Level" type="Node"]
 script = ExtResource("1_v1dmi")
-level_data = SubResource("Resource_setdq")
+level_data = ExtResource("2_q5p7b")
 
 [node name="Environment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_v1l5v")
