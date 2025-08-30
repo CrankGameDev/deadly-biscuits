@@ -56,6 +56,7 @@ ExtResource("13_4jpbn"): 3
 metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 
 [resource]
+resource_name = "Level 1"
 script = ExtResource("4_32dv8")
 level_start_dialogue = ExtResource("3_pe841")
 conveyor_speed = 1.0
