@@ -22,13 +22,17 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"boss": "res://UI/dialogue/Boss.dch",
+"Boss": "res://UI/dialogue/Boss.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"boss_1": "res://UI/dialogue/boss_1.dtl",
+"heartcookies": "res://UI/dialogue/heartcookies.dtl",
+"heartcookies_bad": "res://UI/dialogue/heartcookies_bad.dtl",
 "level_3": "res://UI/dialogue/level_3.dtl",
 "loudspeak_l2": "res://UI/dialogue/loudspeak_l2.dtl",
-"loudspeaker": "res://UI/dialogue/boss_1.dtl"
+"rainbowcooke_1": "res://UI/dialogue/rainbowcooke_1.dtl",
+"rainbowcookie_bad": "res://UI/dialogue/rainbowcookie_bad.dtl"
 }
 layout/style_list=["res://UI/dialogue/style.tres"]
 layout/default_style="res://UI/dialogue/style.tres"
@@ -68,6 +72,10 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 ConveyorPathing=""
 
+[gui]
+
+theme/custom_font="uid://bl76grad0gmxb"
+
 [input]
 
 dialogic_default_action={
@@ -87,5 +95,6 @@ pause={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

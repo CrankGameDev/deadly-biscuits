@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="6_cjuek"]
 [ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="7_gjr3k"]
 [ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://core/criteria/choc_chip_count_criteria.gd" id="8_4cdhi"]
-[ext_resource type="Script" uid="uid://c2cltkcnqt75h" path="res://core/dialogue_manager.gd" id="9_4cdhi"]
+[ext_resource type="Script" uid="uid://c2cltkcnqt75h" path="res://core/dialogue_manager.gd" id="10_bpu47"]
 [ext_resource type="PackedScene" uid="uid://dwcdfsgobmmn2" path="res://UI/ui/checklist.tscn" id="10_fgh25"]
 
 [sub_resource type="Environment" id="Environment_v1l5v"]
@@ -249,7 +249,7 @@ spawn_waves = Array[ExtResource("5_sjcnv")]([SubResource("Resource_sjcnv"), SubR
 biscuit_criteria = Array[ExtResource("7_gjr3k")]([SubResource("Resource_fgh25")])
 
 [node name="DialogueManager" type="Node" parent="."]
-script = ExtResource("9_4cdhi")
+script = ExtResource("10_bpu47")
 
 [node name="Checklist" parent="." instance=ExtResource("10_fgh25")]
 visible = false

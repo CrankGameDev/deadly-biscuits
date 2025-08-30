@@ -12,10 +12,10 @@ func _process(delta: float) -> void:
 func checklistMenu(): 
 	if paused:
 		checklist.hide() 
-		Engine.time_scale = 1
+		#Engine.time_scale = 1
 	else:
 		checklist.show()
-		Engine.time_scale = 0
+		#Engine.time_scale = 0
 		
 	paused = !paused 	
 		
