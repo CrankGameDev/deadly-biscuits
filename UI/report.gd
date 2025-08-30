@@ -5,6 +5,7 @@ extends Control
 @onready var processed_label: Label = %ProcessedLabel
 @onready var pass_label: Label = %PassLabel
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SceneManager.scene_params
@@ -13,11 +14,10 @@ func _ready() -> void:
 	processed_label.text = processed_label.text.format(SceneManager.scene_params.get("stats")) 
 	
 	if SceneManager.scene_params.get("failed"):
-		pass_label.text = "You are the worst. You are fired!"
+		pass_label.text = [
+			"You are the worst. YOU ARE FIRED!",
+		].pick_random()
 	else:	
-		pass_label.text = "Acceptable"
-		
-		
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+		pass_label.text = [
+			"Acceptable",
+		].pick_random()
