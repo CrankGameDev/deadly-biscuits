@@ -4,4 +4,5 @@
 resource_name = "material_10"
 cull_mode = 2
 vertex_color_use_as_albedo = true
+albedo_color = Color(0.337544, 0.348225, 0.332267, 1)
 roughness = 0.643137

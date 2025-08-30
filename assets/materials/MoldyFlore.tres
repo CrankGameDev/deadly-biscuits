@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d3h7e83iani2f"]
+
+[ext_resource type="Texture2D" uid="uid://dttdpvdvmpu6a" path="res://assets/materials/MoldyFlore_albedo.png" id="1"]
+
+[resource]
+albedo_color = Color(0.39198, 0.444463, 0.348167, 1)
+albedo_texture = ExtResource("1")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
