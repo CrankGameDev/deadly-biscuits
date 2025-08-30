@@ -15,9 +15,11 @@ func _ready() -> void:
 	
 	if SceneManager.scene_params.get("failed"):
 		pass_label.text = [
-			"You are the worst. YOU ARE FIRED!",
+			#"You are the worst. YOU ARE FIRED!", 
+			#"FIRED! Get out of my face!!!", 
+			"You are the worst employee we have ever had!!! GET OUT OF MY FACE"
 		].pick_random()
 	else:	
 		pass_label.text = [
-			"Acceptable",
+			"Acceptable", "Good Enough", 
 		].pick_random()

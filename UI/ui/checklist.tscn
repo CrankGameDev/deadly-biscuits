@@ -67,3 +67,19 @@ offset_bottom = -143.0
 theme = SubResource("Theme_laqw0")
 text = "QA Checklist"
 metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+horizontal_scroll_mode = 0
+
+[node name="ChecklistItems" type="VBoxContainer" parent="Control/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
