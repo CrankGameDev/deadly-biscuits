@@ -115,14 +115,14 @@ func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 
 
 func _on_level_failed() -> void:
-	LevelManager.notify_level_failed(level_data, {
+	LevelManager.notify_level_finished(level_data, false, {
 		"mistakes_made": mistakes_made,
 		"biscuits_processed": biscuits_processed,
 	})
 
 
 func _on_level_succeeded() -> void:
-	LevelManager.notify_level_passed(level_data, {
+	LevelManager.notify_level_finished(level_data, true, {
 		"mistakes_made": mistakes_made,
 		"biscuits_processed": biscuits_processed,
 	})

@@ -6,7 +6,8 @@ extends Resource
 
 func get_level_number(level: LevelData) -> int:
 	# Returns 0 if not found.
-	return levels.find(level) + 1
+	var level_number: int = levels.find(level) + 1
+	return level_number
 
 
 func get_level(number: int) -> LevelData:

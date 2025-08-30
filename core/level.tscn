@@ -1,77 +1,14 @@
-[gd_scene load_steps=69 format=4 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=51 format=4 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
-[ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="2_721q5"]
 [ext_resource type="Script" uid="uid://7bc4aivpmago" path="res://core/lever.gd" id="2_v1dmi"]
-[ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://criteria/choc_chip_count_criteria.gd" id="3_bmeqk"]
-[ext_resource type="Resource" path="res://UI/dialogue/boss_1.dtl" id="4_2on84"]
-[ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="5_n4fnk"]
-[ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="6_3k7ia"]
-[ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="7_gkffv"]
-[ext_resource type="Resource" uid="uid://c6k6dwx66r2h4" path="res://level_data/biscuit_spawns/freckles/freckle_clean.tres" id="8_p3mki"]
-[ext_resource type="Resource" uid="uid://d3dwnustqr7iv" path="res://level_data/biscuit_spawns/freckles/freckle_poison.tres" id="9_lhfi3"]
-[ext_resource type="Resource" uid="uid://c047hgnglvg2p" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_7_chips.tres" id="10_1u17o"]
-[ext_resource type="Resource" uid="uid://nlu2qepn7ijd" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_3_to_5.tres" id="11_vtn5v"]
-[ext_resource type="Resource" uid="uid://bn7dtg7dtq1mi" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_6_to_9.tres" id="12_tpt81"]
+[ext_resource type="Resource" uid="uid://bvrpvl2rvq5u8" path="res://level_data/level_1.tres" id="2_wsccs"]
 [ext_resource type="PackedScene" uid="uid://dvycejlthfgxu" path="res://assets/uv_unwrapped_test_scene.glb" id="13_ppale"]
-[ext_resource type="Resource" uid="uid://m5pnqi0oskiy" path="res://level_data/biscuit_spawns/heart_biscuit/heart_biscuit_good.tres" id="13_u0m8w"]
 [ext_resource type="Material" uid="uid://bfxho35wxcpo1" path="res://assets/materials/brick.tres" id="14_721q5"]
-[ext_resource type="Resource" uid="uid://c2xq17jbjkxv2" path="res://level_data/biscuit_spawns/heart_biscuit/heart_biscuit_evil.tres" id="14_fnwb2"]
 [ext_resource type="PackedScene" uid="uid://crgaj1isc3jib" path="res://assets/intercom_unwrapped.glb" id="15_pj88p"]
 [ext_resource type="Material" uid="uid://d3h7e83iani2f" path="res://assets/materials/MoldyFlore.tres" id="20_bmeqk"]
 [ext_resource type="PackedScene" uid="uid://b6mdrsec0nbbu" path="res://assets/audio/ambient_audio.tscn" id="21_2on84"]
-
-[sub_resource type="Resource" id="Resource_fgh25"]
-script = ExtResource("3_bmeqk")
-operation = 0
-count = 5
-metadata/_custom_type_script = "uid://bg3awv8d0fhd2"
-
-[sub_resource type="Resource" id="Resource_pj88p"]
-resource_name = "Freckles"
-script = ExtResource("6_3k7ia")
-spawn_events = Dictionary[ExtResource("7_gkffv"), int]({
-ExtResource("8_p3mki"): 3,
-ExtResource("9_lhfi3"): 3
-})
-metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
-
-[sub_resource type="Resource" id="Resource_sjcnv"]
-resource_name = "Easy Cookies"
-script = ExtResource("6_3k7ia")
-spawn_events = Dictionary[ExtResource("7_gkffv"), int]({
-ExtResource("10_1u17o"): 3
-})
-metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
-
-[sub_resource type="Resource" id="Resource_gjr3k"]
-resource_name = "50/50 Cookies"
-script = ExtResource("6_3k7ia")
-spawn_events = Dictionary[ExtResource("7_gkffv"), int]({
-ExtResource("11_vtn5v"): 3,
-ExtResource("12_tpt81"): 3
-})
-metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
-
-[sub_resource type="Resource" id="Resource_v1dmi"]
-resource_name = "Hearts"
-script = ExtResource("6_3k7ia")
-spawn_events = Dictionary[ExtResource("7_gkffv"), int]({
-ExtResource("13_u0m8w"): 3,
-ExtResource("14_fnwb2"): 3
-})
-metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
-
-[sub_resource type="Resource" id="Resource_jk6sp"]
-resource_name = "Level 1"
-script = ExtResource("5_n4fnk")
-level_start_dialogue = ExtResource("4_2on84")
-conveyor_speed = 1.0
-spawn_interval = 1.0
-critera = Array[ExtResource("2_721q5")]([SubResource("Resource_fgh25")])
-spawn_waves = Array[ExtResource("6_3k7ia")]([SubResource("Resource_pj88p"), SubResource("Resource_sjcnv"), SubResource("Resource_gjr3k"), SubResource("Resource_v1dmi")])
-metadata/_custom_type_script = "uid://bn1b8j2k5er3j"
 
 [sub_resource type="Environment" id="Environment_5jcfi"]
 background_mode = 1
@@ -104,14 +41,14 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_pqt5l"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3, 0.75, 0.3, -1.5, 0, 0, 0, 0, 0, 4.4, 0.75, 0.3),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3, 0.65, 0.3, -1.5, 0, 0, 0, 0, 0, 4.4, 0.65, 0.3),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_choak"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3, 0.75, 0.3, 0, 0, 1, 0, 0, -1, 3.1, 0.75, -0.6, 0, 0, 0, 0, 0, 0, 3.1, 0.75, -2.8),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3, 0.65, 0.3, 0, 0, 1, 0, 0, -1, 3.1, 0.65, -0.6, 0, 0, 0, 0, 0, 0, 3.1, 0.65, -2.8),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -1249,7 +1186,7 @@ metadata/extras = {
 
 [node name="Level" type="Node"]
 script = ExtResource("1_v1dmi")
-level_data = SubResource("Resource_jk6sp")
+level_data = ExtResource("2_wsccs")
 
 [node name="Environment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5jcfi")
@@ -1312,11 +1249,9 @@ script = ExtResource("1_b0hrx")
 curve = SubResource("Curve3D_v1l5v")
 
 [node name="AcceptedPath" type="Path3D" parent="ConveyorPathing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 curve = SubResource("Curve3D_pqt5l")
 
 [node name="DeniedPath" type="Path3D" parent="ConveyorPathing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 curve = SubResource("Curve3D_choak")
 
 [node name="Conveyor" parent="." instance=ExtResource("13_ppale")]
