@@ -63,6 +63,7 @@ text/autopauses={}
 
 [display]
 
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [editor_plugins]
