@@ -17,8 +17,9 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-SceneManager="*res://core/scene_manager.gd"
-LevelManager="*res://core/level_manager.gd"
+SceneManager="*res://core/global/SceneManager.gd"
+LevelManager="*res://core/global/LevelManager.gd"
+Persistence="*res://core/global/Persistence.gd"
 
 [global_group]
 
