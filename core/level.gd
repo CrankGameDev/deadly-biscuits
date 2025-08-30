@@ -35,7 +35,13 @@ func _ready() -> void:
 	if not level_data:
 		printerr("No level data provided.")
 		return
-		
+	
+	if level_data.level_start_dialogue:
+		Dialogic.start(level_data.level_start_dialogue)
+		%IntercomAnimation.play("talk")
+		await Dialogic.timeline_ended
+		%IntercomAnimation.stop()
+	
 	level_timer = Timer.new()
 	level_timer.autostart = true
 	level_timer.wait_time = level_data.spawn_interval

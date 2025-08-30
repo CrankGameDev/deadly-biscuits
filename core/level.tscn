@@ -1,8 +1,9 @@
-[gd_scene load_steps=63 format=4 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=64 format=4 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
 [ext_resource type="Script" uid="uid://7bc4aivpmago" path="res://core/lever.gd" id="2_v1dmi"]
+[ext_resource type="Resource" uid="uid://c0oyuwabmpocl" path="res://UI/dialogue/boss_1.dtl" id="4_0mn0c"]
 [ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="4_setdq"]
 [ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="4_wsccs"]
 [ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="5_t0ybl"]
@@ -61,6 +62,7 @@ metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 
 [sub_resource type="Resource" id="Resource_setdq"]
 script = ExtResource("4_wsccs")
+level_start_dialogue = ExtResource("4_0mn0c")
 conveyor_speed = 1.0
 spawn_interval = 1.0
 critera = Array[ExtResource("7_nuv7q")]([SubResource("Resource_fgh25")])
@@ -77,15 +79,6 @@ albedo_color = Color(0.26, 0.2418, 0.2418, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_choak"]
 flip_faces = true
 size = Vector3(12, 6, 12)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_pqt5l"]
-size = Vector3(0.1, 0.5, 0.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fc0e3"]
-albedo_color = Color(0.152941, 0.0941176, 0.0666667, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_yitki"]
-size = Vector3(0.025, 0.5, 0.5)
 
 [sub_resource type="Curve3D" id="Curve3D_v1l5v"]
 _data = {
@@ -1110,6 +1103,21 @@ metadata/extras = {
 }
 }
 
+[sub_resource type="Animation" id="Animation_0mn0c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_3wu0q"]
 resource_name = "open"
 length = 0.25
@@ -1124,21 +1132,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, -1.18682, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_0mn0c"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_721q5"]
@@ -1178,6 +1171,15 @@ states/close/position = Vector2(468, 143)
 states/open/node = SubResource("AnimationNodeAnimation_0mn0c")
 states/open/position = Vector2(468, 44)
 transitions = ["open", "close", SubResource("AnimationNodeStateMachineTransition_721q5"), "close", "open", SubResource("AnimationNodeStateMachineTransition_bmeqk"), "Start", "open", SubResource("AnimationNodeStateMachineTransition_3wu0q"), "Start", "close", SubResource("AnimationNodeStateMachineTransition_0mn0c")]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pqt5l"]
+size = Vector3(0.1, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fc0e3"]
+albedo_color = Color(0.152941, 0.0941176, 0.0666667, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yitki"]
+size = Vector3(0.025, 0.5, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2kg0"]
 vertex_color_use_as_albedo = true
@@ -1243,29 +1245,6 @@ size = 4.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 material_override = SubResource("StandardMaterial3D_pqt5l")
 mesh = SubResource("BoxMesh_choak")
-
-[node name="Conveyor" type="Node3D" parent="."]
-
-[node name="Flap" type="RigidBody3D" parent="Conveyor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1.2, 0.3)
-collision_layer = 0
-can_sleep = false
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Conveyor/Flap"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.250305, 0)
-shape = SubResource("BoxShape3D_pqt5l")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Conveyor/Flap"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.250305, 0)
-material_override = SubResource("StandardMaterial3D_fc0e3")
-mesh = SubResource("BoxMesh_yitki")
-
-[node name="HingeJoint" type="HingeJoint3D" parent="Conveyor/Flap"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 0)
-node_a = NodePath("..")
-angular_limit/enable = true
-angular_limit/lower = -0.0872665
 
 [node name="ConveyorPathing" type="Node3D" parent="." groups=["ConveyorPathing"]]
 unique_name_in_owner = true
@@ -1355,10 +1334,10 @@ metadata/extras = {
 }
 }
 
-[node name="uv_unwrapped_test_scene" parent="." instance=ExtResource("13_ppale")]
+[node name="Conveyor" parent="." instance=ExtResource("13_ppale")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.3, 0, 0.3)
 
-[node name="Box 1" type="MeshInstance3D" parent="uv_unwrapped_test_scene"]
+[node name="Box 1" type="MeshInstance3D" parent="Conveyor"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 14.9684, 1.88143, -0.0477791)
 mesh = SubResource("ArrayMesh_krw8y")
 skeleton = NodePath("")
@@ -1377,10 +1356,10 @@ metadata/extras = {
 }
 }
 
-[node name="Diverter" type="Node3D" parent="uv_unwrapped_test_scene"]
+[node name="Diverter" type="Node3D" parent="Conveyor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7, 2.7, -1.342)
 
-[node name="Box" type="MeshInstance3D" parent="uv_unwrapped_test_scene/Diverter"]
+[node name="Box" type="MeshInstance3D" parent="Conveyor/Diverter"]
 transform = Transform3D(0.230604, 0, -0.106267, 0, 0.25, 0, 0.0965501, 0, 0.253812, -0.43432, 0.06424, 1.11605)
 mesh = SubResource("ArrayMesh_uid4a")
 skeleton = NodePath("")
@@ -1399,41 +1378,63 @@ metadata/extras = {
 }
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="uv_unwrapped_test_scene/Diverter"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Conveyor/Diverter"]
 libraries = {
 &"": SubResource("AnimationLibrary_721q5")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="uv_unwrapped_test_scene/Diverter"]
+[node name="AnimationTree" type="AnimationTree" parent="Conveyor/Diverter"]
 tree_root = SubResource("AnimationNodeStateMachine_2on84")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_closed = false
 
-[node name="intercom_unwrapped" parent="." instance=ExtResource("15_pj88p")]
+[node name="Flap" type="RigidBody3D" parent="Conveyor"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.8, 4.8, 0)
+collision_layer = 0
+can_sleep = false
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Conveyor/Flap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.250305, 0)
+shape = SubResource("BoxShape3D_pqt5l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Conveyor/Flap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.250305, 0)
+material_override = SubResource("StandardMaterial3D_fc0e3")
+mesh = SubResource("BoxMesh_yitki")
+
+[node name="HingeJoint" type="HingeJoint3D" parent="Conveyor/Flap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 0)
+node_a = NodePath("..")
+angular_limit/enable = true
+angular_limit/lower = -0.0872665
+
+[node name="Intercom" parent="." instance=ExtResource("15_pj88p")]
 transform = Transform3D(0.573576, 0.769751, -0.280166, -3.05715e-08, -0.34202, -0.939693, -0.819152, 0.538986, -0.196175, -1.5, 2.1, -0.4)
 metadata/_edit_group_ = true
 
-[node name="Tube 1" parent="intercom_unwrapped" index="0"]
+[node name="Tube 1" parent="Intercom" index="0"]
 material_override = SubResource("StandardMaterial3D_u2kg0")
 
-[node name="Tube" parent="intercom_unwrapped" index="1"]
+[node name="Tube" parent="Intercom" index="1"]
 material_override = SubResource("StandardMaterial3D_u2kg0")
 
-[node name="Triplanar" parent="intercom_unwrapped" index="2"]
+[node name="Triplanar" parent="Intercom" index="2"]
 material_override = SubResource("StandardMaterial3D_u2kg0")
 
-[node name="Cylinder" parent="intercom_unwrapped" index="3"]
+[node name="Cylinder" parent="Intercom" index="3"]
 material_override = SubResource("StandardMaterial3D_u2kg0")
 
-[node name="IntercomAnimation" type="AnimationPlayer" parent="intercom_unwrapped"]
+[node name="IntercomAnimation" type="AnimationPlayer" parent="Intercom"]
+unique_name_in_owner = true
 root_node = NodePath("../Tube 1")
 libraries = {
 &"": SubResource("AnimationLibrary_3wu0q")
 }
 
 [connection signal="changed" from="ConveyorPathing" to="Lever" method="_on_conveyor_pathing_changed"]
-[connection signal="started_rejecting" from="ConveyorPathing" to="uv_unwrapped_test_scene/Diverter/AnimationTree" method="set" binds= [&"parameters/conditions/is_closed", true]]
-[connection signal="stopped_rejecting" from="ConveyorPathing" to="uv_unwrapped_test_scene/Diverter/AnimationTree" method="set" binds= [&"parameters/conditions/is_closed", false]]
+[connection signal="started_rejecting" from="ConveyorPathing" to="Conveyor/Diverter/AnimationTree" method="set" binds= [&"parameters/conditions/is_closed", true]]
+[connection signal="stopped_rejecting" from="ConveyorPathing" to="Conveyor/Diverter/AnimationTree" method="set" binds= [&"parameters/conditions/is_closed", false]]
 [connection signal="input_event" from="Lever/ClickableArea" to="Lever" method="_on_clickable_area_input_event"]
 
-[editable path="intercom_unwrapped"]
+[editable path="Intercom"]

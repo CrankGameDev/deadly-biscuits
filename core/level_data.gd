@@ -1,6 +1,8 @@
 class_name LevelData
 extends Resource
 
+@export
+var level_start_dialogue: DialogicTimeline
 
 @export_range(0.01, 10.0, 0.01, "or_greater", "suffix:m/s")
 var conveyor_speed: float = 1.0
