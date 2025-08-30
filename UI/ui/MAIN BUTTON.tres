@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cb1dcswxuwp8m"]
+
+[ext_resource type="StyleBox" uid="uid://dv3le7ii8rqvj" path="res://buttons/buttons as.tres" id="1_1dhwc"]
+[ext_resource type="StyleBox" uid="uid://bdcu0bbari1pl" path="res://buttons/buttohover.tres" id="2_8g1ob"]
+[ext_resource type="StyleBox" uid="uid://cs3q4ohfijtec" path="res://buttons/standard.tres" id="3_hsd0u"]
+[ext_resource type="StyleBox" uid="uid://prek4x5ow43m" path="res://buttons/pressed button.tres" id="4_lqrdb"]
+
+[resource]
+Button/colors/font_color = Color(0.501961, 0.658824, 0.866667, 1)
+Button/colors/font_focus_color = Color(0.501961, 0.658824, 0.866667, 1)
+Button/colors/font_hover_color = Color(0.501961, 0.658824, 0.866667, 1)
+Button/colors/font_hover_pressed_color = Color(0.501961, 0.658824, 0.866667, 1)
+Button/colors/font_outline_color = Color(0.0430392, 0.0430392, 0.0430392, 1)
+Button/colors/font_pressed_color = Color(0.501961, 0.658824, 0.866667, 1)
+Button/constants/outline_size = 10
+Button/styles/focus = ExtResource("1_1dhwc")
+Button/styles/hover = ExtResource("2_8g1ob")
+Button/styles/hover_pressed = ExtResource("2_8g1ob")
+Button/styles/normal = ExtResource("3_hsd0u")
+Button/styles/pressed = ExtResource("4_lqrdb")
