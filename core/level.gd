@@ -18,6 +18,8 @@ signal biscuit_incorrect(biscuit: Biscuit)
 
 var mistakes_made: int = 0
 
+var biscuits_processed: int = 0
+
 var level_timer: Timer
 
 var _spawn_events_left: Array[SpawnEvent]
@@ -86,6 +88,7 @@ func spawn_biscuit(biscuit: Biscuit) -> void:
 
 
 func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
+	biscuits_processed += 1
 	var should_be_accepted: bool = true
 	for entry in level_data.critera:
 		if not entry._check_biscuit(biscuit):
@@ -114,10 +117,12 @@ func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 func _on_level_failed() -> void:
 	LevelManager.notify_level_failed(level_data, {
 		"mistakes_made": mistakes_made,
+		"biscuits_processed": biscuits_processed,
 	})
 
 
 func _on_level_succeeded() -> void:
 	LevelManager.notify_level_passed(level_data, {
 		"mistakes_made": mistakes_made,
+		"biscuits_processed": biscuits_processed,
 	})
