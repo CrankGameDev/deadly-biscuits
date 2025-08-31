@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=4 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=90 format=4 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
@@ -20,6 +20,8 @@
 [ext_resource type="Material" uid="uid://d3h7e83iani2f" path="res://assets/materials/MoldyFlore.tres" id="20_bmeqk"]
 [ext_resource type="Material" uid="uid://clswmjeaawq7j" path="res://assets/materials/tentacle.material" id="20_n4fnk"]
 [ext_resource type="PackedScene" uid="uid://b6mdrsec0nbbu" path="res://assets/audio/ambient_audio.tscn" id="21_2on84"]
+[ext_resource type="PackedScene" uid="uid://dnadugevbihon" path="res://biscuit_types/oat_monster_biscuit.tscn" id="21_n4fnk"]
+[ext_resource type="PackedScene" uid="uid://csky8ote40usc" path="res://biscuit_types/evil_biscuit.tscn" id="22_n4fnk"]
 
 [sub_resource type="Environment" id="Environment_5jcfi"]
 background_mode = 1
@@ -1729,6 +1731,12 @@ surface_material_override/0 = ExtResource("20_n4fnk")
 
 [node name="Volume65" parent="Feetee Creep-1/Root" index="3"]
 surface_material_override/0 = ExtResource("20_n4fnk")
+
+[node name="EvilBiscuit" parent="." instance=ExtResource("22_n4fnk")]
+transform = Transform3D(-4.37114e-08, 0, -0.999996, 0, 0.999996, 0, 1, 0, -4.37112e-08, 0.0134342, 0.861741, 0.375087)
+
+[node name="OatMonsterBiscuit" parent="." instance=ExtResource("21_n4fnk")]
+transform = Transform3D(-4.37114e-08, 0, -0.999996, 0, 0.999996, 0, 1, 0, -4.37112e-08, 0.858971, 0.666367, 0.397002)
 
 [connection signal="biscuit_rejected" from="." to="Conveyor/FurnaceBurnSFX" method="play" unbinds=2]
 [connection signal="changed" from="ConveyorPathing" to="Lever" method="_on_conveyor_pathing_changed"]
