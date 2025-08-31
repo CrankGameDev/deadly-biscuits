@@ -136,14 +136,21 @@ func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 		intercom_sfx.finished.connect(camera.set.bind("is_overhead", true), CONNECT_ONE_SHOT)
 	
 	var should_be_accepted: bool = true
+	var failed_criteria: Criteria
 	for entry in level_data.critera:
 		if not entry._check_biscuit(biscuit):
 			should_be_accepted = false
-			break	
+			failed_criteria = entry
+			break
 	var was_correct: bool = accepted == should_be_accepted
+	
 	if biscuit is TentacleObject:
 		was_correct = true
 		tentacle_state = TentacleState.TENTACLE_FREED if accepted else TentacleState.TENTACLE_INCINERATED
+	
+	if not was_correct:
+		print(failed_criteria)
+	
 	if accepted:
 		biscuit_accepted.emit(biscuit, was_correct)
 	else:

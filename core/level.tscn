@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
-[ext_resource type="Resource" uid="uid://dmut8ty270qbu" path="res://level_data/level_2.tres" id="2_bmeqk"]
+[ext_resource type="Resource" uid="uid://c2fo1vt1d0x7p" path="res://level_data/level_3.tres" id="2_2on84"]
 [ext_resource type="Script" uid="uid://7bc4aivpmago" path="res://core/lever.gd" id="2_v1dmi"]
 [ext_resource type="Script" uid="uid://brcm7tud6e3w5" path="res://core/camera.gd" id="3_nuv7q"]
 [ext_resource type="Material" uid="uid://guk1wyxx10aa" path="res://assets/materials/EmmisiveMaterial.tres" id="5_t0ybl"]
@@ -1374,7 +1374,7 @@ size = Vector3(0.35, 0.1, 0.5)
 
 [node name="Level" type="Node"]
 script = ExtResource("1_v1dmi")
-level_data = ExtResource("2_bmeqk")
+level_data = ExtResource("2_2on84")
 
 [node name="Environment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5jcfi")

@@ -8,6 +8,7 @@ func _check_biscuit(biscuit: Biscuit) -> bool:
 		or biscuit is OatMonsterBiscuit
 		or (biscuit is Donut and biscuit.has_eye)
 		or (biscuit is FrecklesBiscuit and biscuit.mushroom_count > 0)
+		or biscuit is HeartBiscuit and biscuit.is_evil
 	):
 		return false
 	else:
