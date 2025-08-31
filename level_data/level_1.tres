@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="1_mpmwp"]
 [ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://criteria/choc_chip_count_criteria.gd" id="2_l1rhe"]
-[ext_resource type="Resource" uid="uid://c0oyuwabmpocl" path="res://UI/dialogue/boss_1.dtl" id="3_pe841"]
+[ext_resource type="Resource" uid="uid://c0oyuwabmpocl" path="res://UI/dialogue/level_1.dtl" id="3_ap7nq"]
 [ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="4_32dv8"]
 [ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="5_g4of5"]
 [ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="6_aeate"]
@@ -36,7 +36,7 @@ metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 [resource]
 resource_name = "Level 1"
 script = ExtResource("4_32dv8")
-level_start_dialogue = ExtResource("3_pe841")
+level_start_dialogue = ExtResource("3_ap7nq")
 conveyor_speed = 1.0
 spawn_interval = 3.0
 critera = Array[ExtResource("1_mpmwp")]([SubResource("Resource_fgh25")])

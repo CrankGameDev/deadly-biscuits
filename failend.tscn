@@ -90,10 +90,6 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Play Again"
 
-[node name="MainMenu" type="Button" parent="Label/VBoxContainer"]
-layout_mode = 2
-text = "Menu Menu"
-
 [node name="Quit Job" type="Button" parent="Label/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -101,5 +97,4 @@ text = "Leave..."
 
 [connection signal="pressed" from="TextureRect/ResetSave" to="TextureRect/ResetSave/ResetSaveConfirmation" method="show"]
 [connection signal="pressed" from="Label/VBoxContainer/Start Day" to="." method="_on_start_day_pressed"]
-[connection signal="pressed" from="Label/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Label/VBoxContainer/Quit Job" to="." method="_on_quit_job_pressed"]
