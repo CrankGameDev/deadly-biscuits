@@ -28,6 +28,26 @@ scale = Vector2(0.76, 0.76)
 texture = ExtResource("1_xrt6j")
 stretch_mode = 3
 
+[node name="ResetSave" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -57.0
+offset_right = 149.0
+offset_bottom = -9.0
+grow_vertical = 0
+size_flags_vertical = 3
+theme = ExtResource("2_ydj7w")
+text = "Reset Save"
+
+[node name="ResetSaveConfirmation" type="ConfirmationDialog" parent="TextureRect/ResetSave"]
+auto_translate_mode = 1
+initial_position = 2
+size = Vector2i(397, 133)
+dialog_text = "Reset save data?"
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -43,8 +63,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_ydj7w")
-text = "You failed...
-They live..."
+text = "You won...
+The world will never..."
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Label"]
@@ -70,10 +90,16 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Play Again"
 
+[node name="MainMenu" type="Button" parent="Label/VBoxContainer"]
+layout_mode = 2
+text = "Menu Menu"
+
 [node name="Quit Job" type="Button" parent="Label/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Leave..."
 
+[connection signal="pressed" from="TextureRect/ResetSave" to="TextureRect/ResetSave/ResetSaveConfirmation" method="show"]
 [connection signal="pressed" from="Label/VBoxContainer/Start Day" to="." method="_on_start_day_pressed"]
+[connection signal="pressed" from="Label/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Label/VBoxContainer/Quit Job" to="." method="_on_quit_job_pressed"]
