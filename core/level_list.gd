@@ -15,3 +15,7 @@ func get_level(number: int) -> LevelData:
 	if idx < 0 or idx >= levels.size():
 		return null
 	return levels[idx]
+
+
+func has_level(number: int) -> bool:
+	return number > 0 and levels.size() <= number

@@ -44,7 +44,6 @@ func _ready() -> void:
 	if not level_data:
 		printerr("No level data provided.")
 		return
-	
 	if level_data.level_start_dialogue:
 		Dialogic.start(level_data.level_start_dialogue)
 		%IntercomAnimation.play("talk")

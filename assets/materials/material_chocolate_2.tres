@@ -4,4 +4,4 @@
 resource_name = "material_2"
 vertex_color_use_as_albedo = true
 metallic_specular = 0.25
-roughness = 0.65
+roughness = 0.9

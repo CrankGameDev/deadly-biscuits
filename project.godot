@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Deadly Biscuits"
+config/name="Creepy Cookie"
 run/main_scene="uid://bia5rf3vkvbx7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/icon.svg"
@@ -29,7 +29,7 @@ directories/dch_directory={
 "WTF": "res://UI/dialogue/WTF.dch"
 }
 directories/dtl_directory={
-"ANZAC": "res://UI/dialogue/anzac.dtl",
+"ANZAC": "res://UI/dialogue/ANZAC.dtl",
 "anzac_bad": "res://UI/dialogue/anzac_bad.dtl",
 "boss_1": "res://UI/dialogue/boss_1.dtl",
 "coolandnormal": "res://UI/dialogue/coolandnormal.dtl",

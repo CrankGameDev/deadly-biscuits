@@ -61,10 +61,10 @@ func change_scene_to_packed(packed_scene: PackedScene, params: Dictionary = {}) 
 	var old_path: String = get_node_scene_path(get_tree().current_scene)
 	var new_path: String = packed_scene.resource_path
 	scene_changing.emit(new_path, get_tree().current_scene.scene_file_path)
+	scene_params = params
 	var error: Error = get_tree().change_scene_to_packed(packed_scene)
 	if not error:
 		await get_tree().node_added
-		scene_params = params
 		scene_changed.emit(new_path, old_path)
 		scene_reset.emit()
 	return error
