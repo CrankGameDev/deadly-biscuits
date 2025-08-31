@@ -29,7 +29,7 @@ directories/dch_directory={
 "WTF": "res://UI/dialogue/WTF.dch"
 }
 directories/dtl_directory={
-"ANZAC": "res://UI/dialogue/ANZAC.dtl",
+"ANZAC": "res://UI/dialogue/anzac.dtl",
 "anzac_bad": "res://UI/dialogue/anzac_bad.dtl",
 "boss_1": "res://UI/dialogue/boss_1.dtl",
 "coolandnormal": "res://UI/dialogue/coolandnormal.dtl",
