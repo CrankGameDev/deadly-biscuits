@@ -59,5 +59,26 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Quit Job"
 
+[node name="ResetSave" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -57.0
+offset_right = 149.0
+offset_bottom = -9.0
+grow_vertical = 0
+size_flags_vertical = 3
+theme = ExtResource("2_kwdus")
+text = "Reset Save"
+
+[node name="ResetSaveConfirmation" type="ConfirmationDialog" parent="ResetSave"]
+initial_position = 2
+size = Vector2i(397, 133)
+dialog_text = "Reset save data?"
+
 [connection signal="pressed" from="VBoxContainer/Start Day" to="." method="_on_start_day_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit Job" to="." method="_on_quit_job_pressed"]
+[connection signal="pressed" from="ResetSave" to="ResetSave/ResetSaveConfirmation" method="show"]
+[connection signal="confirmed" from="ResetSave/ResetSaveConfirmation" to="." method="_on_reset_save_confirmed"]
