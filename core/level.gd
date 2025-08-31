@@ -147,10 +147,7 @@ func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 	if biscuit is TentacleObject:
 		was_correct = true
 		tentacle_state = TentacleState.TENTACLE_FREED if accepted else TentacleState.TENTACLE_INCINERATED
-	
-	if not was_correct:
-		print(failed_criteria)
-	
+
 	if accepted:
 		biscuit_accepted.emit(biscuit, was_correct)
 	else:
