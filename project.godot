@@ -33,6 +33,7 @@ directories/dtl_directory={
 "anzac_bad": "res://UI/dialogue/anzac_bad.dtl",
 "boss_1": "res://UI/dialogue/boss_1.dtl",
 "coolandnormal": "res://UI/dialogue/coolandnormal.dtl",
+"dialogue/ANZAC": "res://UI/dialogue/ANZAC.dtl",
 "doughnut_eye": "res://UI/dialogue/doughnut_eye.dtl",
 "doughtnut": "res://UI/dialogue/doughtnut.dtl",
 "heartcookies": "res://UI/dialogue/heartcookies.dtl",
