@@ -25,16 +25,22 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"Boss": "res://UI/dialogue/Boss.dch"
+"Boss": "res://UI/dialogue/Boss.dch",
+"WTF": "res://UI/dialogue/WTF.dch"
 }
 directories/dtl_directory={
+"ANZAC": "res://UI/dialogue/ANZAC.dtl",
+"anzac_bad": "res://UI/dialogue/anzac_bad.dtl",
 "boss_1": "res://UI/dialogue/boss_1.dtl",
+"coolandnormal": "res://UI/dialogue/coolandnormal.dtl",
+"doughnut_eye": "res://UI/dialogue/doughnut_eye.dtl",
+"doughtnut": "res://UI/dialogue/doughtnut.dtl",
 "heartcookies": "res://UI/dialogue/heartcookies.dtl",
 "heartcookies_bad": "res://UI/dialogue/heartcookies_bad.dtl",
-"level_3": "res://UI/dialogue/level_3.dtl",
 "loudspeak_l2": "res://UI/dialogue/loudspeak_l2.dtl",
 "rainbowcooke_1": "res://UI/dialogue/rainbowcooke_1.dtl",
-"rainbowcookie_bad": "res://UI/dialogue/rainbowcookie_bad.dtl"
+"rainbowcookie_bad": "res://UI/dialogue/rainbowcookie_bad.dtl",
+"secondtolastlevel": "res://UI/dialogue/secondtolastlevel.dtl"
 }
 layout/style_list=["res://UI/dialogue/style.tres"]
 layout/default_style="res://UI/dialogue/style.tres"

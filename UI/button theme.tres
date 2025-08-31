@@ -3,7 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://cey5hud7kirsw" path="res://UI/ui/buttons/pressed.tres" id="3_2klwg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihxos"]
-bg_color = Color(0.376471, 0, 0.0470588, 1)
+bg_color = Color(0.670588, 0.254902, 0.152941, 1)
 border_width_left = 4
 border_width_top = 2
 border_width_right = 4
@@ -16,12 +16,12 @@ corner_radius_bottom_left = 8
 corner_detail = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfwqm"]
-bg_color = Color(0.375849, 0.000751983, 0.045527, 1)
+bg_color = Color(0.491649, 0.175232, 0.0974594, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 14
-border_color = Color(0.530321, 0, 0.0834492, 1)
+border_color = Color(0.362461, 0.209052, 0.174432, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8

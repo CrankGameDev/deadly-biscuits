@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcgjkpkf7p7bg"]
+[gd_scene load_steps=9 format=3 uid="uid://bcgjkpkf7p7bg"]
 
 [ext_resource type="Script" uid="uid://p5sc4syqrpg1" path="res://UI/report.gd" id="1_c0r6n"]
 [ext_resource type="StyleBox" uid="uid://djumibdifdqnx" path="res://UI/ui/buttons/buttons2.tres" id="2_4qlgn"]
+[ext_resource type="Texture2D" uid="uid://c1dk25u8g2nmn" path="res://assets/backgrounds/backgorundstart.png" id="2_tq27r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fskqw"]
 bg_color = Color(0.521751, 0.154608, 0.499388, 1)
@@ -74,6 +75,22 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_c0r6n")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -212.0
+offset_right = 1340.0
+offset_bottom = 726.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.767539, 0.767539)
+texture = ExtResource("2_tq27r")
 
 [node name="report card" type="Control" parent="."]
 anchors_preset = 0
