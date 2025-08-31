@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=24 format=3 uid="uid://bw8qk142yon8o"]
+
+[ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="1_lbj5x"]
+[ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://criteria/choc_chip_count_criteria.gd" id="2_2fdgy"]
+[ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="2_3ewbm"]
+[ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="3_djxui"]
+[ext_resource type="Script" uid="uid://pf48cd5f1hra" path="res://criteria/no_bugs_criteria.gd" id="3_nxjmq"]
+[ext_resource type="Script" uid="uid://coik1fkqmtc5q" path="res://criteria/no_donuts_criteria.gd" id="4_12st7"]
+[ext_resource type="Script" uid="uid://bwgi2yfg3d0p1" path="res://criteria/bad_stock_criteria.gd" id="5_nxjmq"]
+[ext_resource type="Resource" uid="uid://lrus1mhncq66" path="res://UI/dialogue/level4.dtl" id="6_12st7"]
+[ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="9_38m3b"]
+[ext_resource type="Resource" uid="uid://m5pnqi0oskiy" path="res://level_data/biscuit_spawns/heart_biscuit/heart_biscuit_normal.tres" id="10_2ixar"]
+[ext_resource type="Resource" uid="uid://c2xq17jbjkxv2" path="res://level_data/biscuit_spawns/heart_biscuit/heart_biscuit_beating.tres" id="11_dhq6w"]
+[ext_resource type="Resource" uid="uid://bn7dtg7dtq1mi" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_6_to_9.tres" id="12_2ixar"]
+[ext_resource type="Resource" uid="uid://byvrrnec1h6ok" path="res://level_data/biscuit_spawns/choc_chip/evil_biscuit.tres" id="13_dhq6w"]
+[ext_resource type="Resource" uid="uid://ti42o0wq15xu" path="res://level_data/biscuit_spawns/oat/oat_regular.tres" id="14_hysxh"]
+[ext_resource type="Resource" uid="uid://dl85xip6nani8" path="res://level_data/biscuit_spawns/oat/oat_monster.tres" id="15_bb1v1"]
+
+[sub_resource type="Resource" id="Resource_3wqv1"]
+script = ExtResource("2_2fdgy")
+operation = 0
+count = 5
+metadata/_custom_type_script = "uid://bg3awv8d0fhd2"
+
+[sub_resource type="Resource" id="Resource_8oqq4"]
+script = ExtResource("3_nxjmq")
+metadata/_custom_type_script = "uid://pf48cd5f1hra"
+
+[sub_resource type="Resource" id="Resource_38m3b"]
+script = ExtResource("4_12st7")
+metadata/_custom_type_script = "uid://coik1fkqmtc5q"
+
+[sub_resource type="Resource" id="Resource_12st7"]
+script = ExtResource("5_nxjmq")
+metadata/_custom_type_script = "uid://bwgi2yfg3d0p1"
+
+[sub_resource type="Resource" id="Resource_5wy7h"]
+script = ExtResource("3_djxui")
+spawn_events = Dictionary[ExtResource("9_38m3b"), int]({
+ExtResource("10_2ixar"): 3,
+ExtResource("11_dhq6w"): 3
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[sub_resource type="Resource" id="Resource_dhq6w"]
+script = ExtResource("3_djxui")
+spawn_events = Dictionary[ExtResource("9_38m3b"), int]({
+ExtResource("12_2ixar"): 3,
+ExtResource("13_dhq6w"): 2
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[sub_resource type="Resource" id="Resource_hysxh"]
+script = ExtResource("3_djxui")
+spawn_events = Dictionary[ExtResource("9_38m3b"), int]({
+ExtResource("12_2ixar"): 2,
+ExtResource("13_dhq6w"): 1
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[sub_resource type="Resource" id="Resource_i02o6"]
+script = ExtResource("3_djxui")
+spawn_events = Dictionary[ExtResource("9_38m3b"), int]({
+ExtResource("14_hysxh"): 2,
+ExtResource("15_bb1v1"): 1
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[resource]
+script = ExtResource("2_3ewbm")
+level_start_dialogue = ExtResource("6_12st7")
+conveyor_speed = 1.0
+spawn_interval = 3.0
+critera = Array[ExtResource("1_lbj5x")]([SubResource("Resource_3wqv1"), SubResource("Resource_8oqq4"), SubResource("Resource_38m3b"), SubResource("Resource_12st7")])
+spawn_waves = Array[ExtResource("3_djxui")]([SubResource("Resource_5wy7h"), SubResource("Resource_dhq6w"), SubResource("Resource_5wy7h"), SubResource("Resource_hysxh"), SubResource("Resource_i02o6")])
+metadata/_custom_type_script = "uid://bn1b8j2k5er3j"

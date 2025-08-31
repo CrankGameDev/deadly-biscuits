@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://dnadugevbihon"]
 
 [ext_resource type="PackedScene" uid="uid://b433p4cjgtoxq" path="res://core/base_biscuit.tscn" id="1_f24f1"]
-[ext_resource type="Script" path="res://biscuit_types/oat_monster_biscuit.gd" id="2_j7xiu"]
+[ext_resource type="Script" uid="uid://sfv1htkwjem8" path="res://biscuit_types/oat_monster_biscuit.gd" id="2_j7xiu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p75ac"]
 resource_name = "material_0"
@@ -192,6 +192,16 @@ metadata/extras = {
 }
 }
 
+[sub_resource type="Animation" id="Animation_j2gqb"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/Cylinder")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+
 [sub_resource type="Animation" id="Animation_j7xiu"]
 resource_name = "Scream"
 length = 5.0
@@ -210,16 +220,6 @@ tracks/1/path = NodePath("Model/Cylinder")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.62, 1, 0, 0.1, 0, 1.35, 1, 0, 0, 0, 1.57667, 1, 0, 0.1, 0, 1.91, 1, 0, 0.1, 0, 2.21, 1, 0, 0, 0, 2.61667, 1, 0, 0.1, 0, 3, 1, 0, 0, 0, 5, 1, 0, 0, 0)
-
-[sub_resource type="Animation" id="Animation_j2gqb"]
-length = 0.001
-tracks/0/type = "scale_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Model/Cylinder")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2tycq"]
 _data = {

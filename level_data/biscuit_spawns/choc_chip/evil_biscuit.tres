@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SpawnEvent" load_steps=3 format=3 uid="uid://byvrrnec1h6ok"]
+
+[ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="1_nn3r2"]
+[ext_resource type="PackedScene" uid="uid://csky8ote40usc" path="res://biscuit_types/evil_biscuit.tscn" id="1_uwr03"]
+
+[resource]
+resource_name = "Evil Biscuit"
+script = ExtResource("1_nn3r2")
+biscuit_scene = ExtResource("1_uwr03")
+spawn_settings = Dictionary[String, Variant]({})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"

@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=13 format=3 uid="uid://bvrpvl2rvq5u8"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=16 format=3 uid="uid://bvrpvl2rvq5u8"]
 
 [ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="1_mpmwp"]
 [ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://criteria/choc_chip_count_criteria.gd" id="2_l1rhe"]
+[ext_resource type="Resource" uid="uid://dyugljsrxe1wm" path="res://level_1.dtl" id="3_x1yre"]
 [ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="4_32dv8"]
 [ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="5_g4of5"]
 [ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="6_aeate"]
 [ext_resource type="Resource" uid="uid://c047hgnglvg2p" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_7_chips.tres" id="9_tcshw"]
 [ext_resource type="Resource" uid="uid://nlu2qepn7ijd" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_3_to_5.tres" id="10_v1bcw"]
+[ext_resource type="PackedScene" uid="uid://cpylw10v2xhi3" path="res://biscuit_types/choc_chip_biscuit.tscn" id="10_x1yre"]
 [ext_resource type="Resource" uid="uid://bn7dtg7dtq1mi" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_6_to_9.tres" id="11_rkdwg"]
 
 [sub_resource type="Resource" id="Resource_fgh25"]
@@ -14,9 +16,6 @@ script = ExtResource("2_l1rhe")
 operation = 0
 count = 5
 metadata/_custom_type_script = "uid://bg3awv8d0fhd2"
-
-[sub_resource type="Resource" id="Resource_grql6"]
-metadata/__load_path__ = "res://UI/dialogue/level_1.dtl"
 
 [sub_resource type="Resource" id="Resource_sjcnv"]
 resource_name = "Easy Cookies"
@@ -35,12 +34,29 @@ ExtResource("11_rkdwg"): 3
 })
 metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 
+[sub_resource type="Resource" id="Resource_nsa63"]
+script = ExtResource("6_aeate")
+biscuit_scene = ExtResource("10_x1yre")
+spawn_settings = Dictionary[String, Variant]({
+"bug_count": 2,
+"choc_chip_count": 7
+})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"
+
+[sub_resource type="Resource" id="Resource_ssd3e"]
+resource_name = "Roachy Surprise"
+script = ExtResource("5_g4of5")
+spawn_events = Dictionary[ExtResource("6_aeate"), int]({
+SubResource("Resource_nsa63"): 1
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
 [resource]
 resource_name = "Level 1"
 script = ExtResource("4_32dv8")
-level_start_dialogue = SubResource("Resource_grql6")
+level_start_dialogue = ExtResource("3_x1yre")
 conveyor_speed = 1.0
 spawn_interval = 3.0
 critera = Array[ExtResource("1_mpmwp")]([SubResource("Resource_fgh25")])
-spawn_waves = Array[ExtResource("5_g4of5")]([SubResource("Resource_sjcnv"), SubResource("Resource_gjr3k")])
+spawn_waves = Array[ExtResource("5_g4of5")]([SubResource("Resource_sjcnv"), SubResource("Resource_gjr3k"), SubResource("Resource_ssd3e")])
 metadata/_custom_type_script = "uid://bn1b8j2k5er3j"

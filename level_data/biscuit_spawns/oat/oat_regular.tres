@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpawnEvent" load_steps=3 format=3 uid="uid://ti42o0wq15xu"]
+
+[ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="1_myx2v"]
+[ext_resource type="PackedScene" uid="uid://ctc1kxct57ui3" path="res://biscuit_types/oat_biscuit.tscn" id="1_x6crg"]
+
+[resource]
+script = ExtResource("1_myx2v")
+biscuit_scene = ExtResource("1_x6crg")
+spawn_settings = Dictionary[String, Variant]({})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"

@@ -18,4 +18,4 @@ func get_level(number: int) -> LevelData:
 
 
 func has_level(number: int) -> bool:
-	return number > 0 and levels.size() <= number
+	return number > 0 and levels.size() >= number

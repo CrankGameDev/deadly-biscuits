@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Creepy Cookie"
+config/name="Basilisk Biskuits"
 run/main_scene="uid://bia5rf3vkvbx7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/icon.svg"
@@ -34,7 +34,6 @@ directories/dtl_directory={
 "Level3": "res://UI/dialogue/Level3.dtl",
 "anzac_bad": "res://UI/dialogue/anzac_bad.dtl",
 "coolandnormal": "res://UI/dialogue/coolandnormal.dtl",
-"dialogue/ANZAC": "res://UI/dialogue/ANZAC.dtl",
 "heartcookies": "res://UI/dialogue/heartcookies.dtl",
 "heartcookies_bad": "res://UI/dialogue/heartcookies_bad.dtl",
 "level4": "res://UI/dialogue/level4.dtl",

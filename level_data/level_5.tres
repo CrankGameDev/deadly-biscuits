@@ -1,0 +1,112 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=33 format=3 uid="uid://camqpb57yo5y7"]
+
+[ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="1_6elam"]
+[ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="2_de01j"]
+[ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://criteria/choc_chip_count_criteria.gd" id="2_oeg8g"]
+[ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="3_ai7qs"]
+[ext_resource type="Script" uid="uid://pf48cd5f1hra" path="res://criteria/no_bugs_criteria.gd" id="3_nmkjx"]
+[ext_resource type="Script" uid="uid://coik1fkqmtc5q" path="res://criteria/no_donuts_criteria.gd" id="4_qeum6"]
+[ext_resource type="Script" uid="uid://bwgi2yfg3d0p1" path="res://criteria/bad_stock_criteria.gd" id="5_mg858"]
+[ext_resource type="Resource" uid="uid://bqjexdlqca131" path="res://UI/dialogue/coolandnormal.dtl" id="6_w7gya"]
+[ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="9_w1w82"]
+[ext_resource type="Resource" uid="uid://nlu2qepn7ijd" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_3_to_5.tres" id="10_51wg6"]
+[ext_resource type="Resource" uid="uid://yuwil7lhdckm" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_6_to_9_plus_protein.tres" id="11_e1sv0"]
+[ext_resource type="Resource" uid="uid://bn7dtg7dtq1mi" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_6_to_9.tres" id="12_1arsg"]
+[ext_resource type="Resource" uid="uid://bu3ks6ji3exxx" path="res://level_data/biscuit_spawns/donut/donut_eye.tres" id="13_0hjhq"]
+[ext_resource type="Resource" uid="uid://h4idhoo153qb" path="res://level_data/biscuit_spawns/donut/donut_no_eye.tres" id="14_vitnb"]
+[ext_resource type="Resource" uid="uid://c6k6dwx66r2h4" path="res://level_data/biscuit_spawns/freckles/freckle_clean.tres" id="15_80px0"]
+[ext_resource type="Resource" uid="uid://d3dwnustqr7iv" path="res://level_data/biscuit_spawns/freckles/freckle_poison.tres" id="16_h77ik"]
+[ext_resource type="Resource" uid="uid://byvrrnec1h6ok" path="res://level_data/biscuit_spawns/choc_chip/evil_biscuit.tres" id="17_qkfmd"]
+[ext_resource type="Resource" uid="uid://m5pnqi0oskiy" path="res://level_data/biscuit_spawns/heart_biscuit/heart_biscuit_normal.tres" id="18_oouxb"]
+[ext_resource type="Resource" uid="uid://c2xq17jbjkxv2" path="res://level_data/biscuit_spawns/heart_biscuit/heart_biscuit_beating.tres" id="19_hm2es"]
+[ext_resource type="Resource" uid="uid://ti42o0wq15xu" path="res://level_data/biscuit_spawns/oat/oat_regular.tres" id="20_6oepw"]
+[ext_resource type="Resource" uid="uid://dl85xip6nani8" path="res://level_data/biscuit_spawns/oat/oat_monster.tres" id="21_qitq0"]
+[ext_resource type="Resource" uid="uid://bpu58cjlpsfea" path="res://level_data/biscuit_spawns/tentacle/tentacle.tres" id="22_vitnb"]
+
+[sub_resource type="Resource" id="Resource_aml4f"]
+script = ExtResource("2_oeg8g")
+operation = 0
+count = 5
+metadata/_custom_type_script = "uid://bg3awv8d0fhd2"
+
+[sub_resource type="Resource" id="Resource_w7gya"]
+script = ExtResource("3_nmkjx")
+metadata/_custom_type_script = "uid://pf48cd5f1hra"
+
+[sub_resource type="Resource" id="Resource_w1w82"]
+script = ExtResource("4_qeum6")
+metadata/_custom_type_script = "uid://coik1fkqmtc5q"
+
+[sub_resource type="Resource" id="Resource_51wg6"]
+script = ExtResource("5_mg858")
+metadata/_custom_type_script = "uid://bwgi2yfg3d0p1"
+
+[sub_resource type="Resource" id="Resource_oqa6u"]
+script = ExtResource("3_ai7qs")
+spawn_events = Dictionary[ExtResource("9_w1w82"), int]({
+ExtResource("10_51wg6"): 3,
+ExtResource("11_e1sv0"): 2,
+ExtResource("12_1arsg"): 4
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[sub_resource type="Resource" id="Resource_2rapk"]
+script = ExtResource("3_ai7qs")
+spawn_events = Dictionary[ExtResource("9_w1w82"), int]({
+ExtResource("10_51wg6"): 3,
+ExtResource("11_e1sv0"): 2,
+ExtResource("12_1arsg"): 4,
+ExtResource("13_0hjhq"): 1,
+ExtResource("14_vitnb"): 2,
+ExtResource("15_80px0"): 2,
+ExtResource("16_h77ik"): 1,
+ExtResource("17_qkfmd"): 2
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[sub_resource type="Resource" id="Resource_xv7me"]
+script = ExtResource("3_ai7qs")
+spawn_events = Dictionary[ExtResource("9_w1w82"), int]({
+ExtResource("18_oouxb"): 3,
+ExtResource("19_hm2es"): 3,
+ExtResource("20_6oepw"): 2,
+ExtResource("21_qitq0"): 2,
+ExtResource("15_80px0"): 1,
+ExtResource("16_h77ik"): 3
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[sub_resource type="Resource" id="Resource_wyufw"]
+script = ExtResource("3_ai7qs")
+spawn_events = Dictionary[ExtResource("9_w1w82"), int]({
+ExtResource("15_80px0"): 3,
+ExtResource("16_h77ik"): 3,
+ExtResource("13_0hjhq"): 3,
+ExtResource("17_qkfmd"): 1
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[sub_resource type="Resource" id="Resource_hbiv3"]
+script = ExtResource("3_ai7qs")
+spawn_events = Dictionary[ExtResource("9_w1w82"), int]({
+ExtResource("10_51wg6"): 2,
+ExtResource("12_1arsg"): 1,
+ExtResource("17_qkfmd"): 1
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[sub_resource type="Resource" id="Resource_80px0"]
+script = ExtResource("3_ai7qs")
+spawn_events = Dictionary[ExtResource("9_w1w82"), int]({
+ExtResource("22_vitnb"): 1
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[resource]
+script = ExtResource("2_de01j")
+level_start_dialogue = ExtResource("6_w7gya")
+conveyor_speed = 1.5
+spawn_interval = 3.0
+critera = Array[ExtResource("1_6elam")]([SubResource("Resource_aml4f"), SubResource("Resource_w7gya"), SubResource("Resource_w1w82"), SubResource("Resource_51wg6")])
+spawn_waves = Array[ExtResource("3_ai7qs")]([SubResource("Resource_oqa6u"), SubResource("Resource_2rapk"), SubResource("Resource_xv7me"), SubResource("Resource_wyufw"), SubResource("Resource_hbiv3"), SubResource("Resource_80px0")])
+metadata/_custom_type_script = "uid://bn1b8j2k5er3j"

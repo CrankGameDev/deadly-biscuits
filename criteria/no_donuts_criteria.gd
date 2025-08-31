@@ -7,4 +7,4 @@ func _check_biscuit(biscuit: Biscuit) -> bool:
 
 
 func _get_text() -> String:
-	return "No doughnuts allowed."
+	return "No doughnuts allowed"

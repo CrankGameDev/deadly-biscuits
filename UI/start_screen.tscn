@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c1dk25u8g2nmn" path="res://assets/backgrounds/backgorundstart.png" id="2_k0fct"]
 [ext_resource type="Theme" uid="uid://dyioliwdb4llg" path="res://UI/button theme.tres" id="2_kwdus"]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
