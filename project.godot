@@ -37,6 +37,7 @@ directories/dtl_directory={
 "dialogue/ANZAC": "res://UI/dialogue/ANZAC.dtl",
 "heartcookies": "res://UI/dialogue/heartcookies.dtl",
 "heartcookies_bad": "res://UI/dialogue/heartcookies_bad.dtl",
+"level4": "res://UI/dialogue/level4.dtl",
 "level_1": "res://level_1.dtl",
 "level_2": "res://UI/dialogue/level_2.dtl",
 "loudspeak_l2": "res://UI/dialogue/loudspeak_l2.dtl",

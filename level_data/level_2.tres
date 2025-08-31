@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://criteria/choc_chip_count_criteria.gd" id="2_42hrf"]
 [ext_resource type="Script" uid="uid://coik1fkqmtc5q" path="res://criteria/no_donuts_criteria.gd" id="3_d82qr"]
 [ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="3_qw5o3"]
-[ext_resource type="Resource" uid="uid://dwwukw0bkd13" path="res://UI/dialogue/doughtnut.dtl" id="4_iu443"]
 [ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="6_cqqjf"]
 [ext_resource type="Resource" uid="uid://nlu2qepn7ijd" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_3_to_5.tres" id="7_iu443"]
 [ext_resource type="Resource" uid="uid://bn7dtg7dtq1mi" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_6_to_9.tres" id="8_kxvgl"]
@@ -22,6 +21,9 @@ metadata/_custom_type_script = "uid://bg3awv8d0fhd2"
 [sub_resource type="Resource" id="Resource_l8v65"]
 script = ExtResource("3_d82qr")
 metadata/_custom_type_script = "uid://coik1fkqmtc5q"
+
+[sub_resource type="Resource" id="Resource_cqqjf"]
+metadata/__load_path__ = "res://UI/dialogue/doughtnut.dtl"
 
 [sub_resource type="Resource" id="Resource_0pvbc"]
 script = ExtResource("3_qw5o3")
@@ -60,7 +62,7 @@ metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 [resource]
 resource_name = "Level 2"
 script = ExtResource("2_4o7op")
-level_start_dialogue = ExtResource("4_iu443")
+level_start_dialogue = SubResource("Resource_cqqjf")
 conveyor_speed = 1.0
 spawn_interval = 3.0
 critera = Array[ExtResource("1_sbqv5")]([SubResource("Resource_8efpb"), SubResource("Resource_l8v65")])
