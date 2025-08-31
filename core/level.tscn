@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=4 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=89 format=4 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://crgaj1isc3jib" path="res://assets/intercom_unwrapped.glb" id="15_pj88p"]
 [ext_resource type="Texture2D" uid="uid://c0npxa02moxax" path="res://UI/dialogue/clipboarde.png" id="15_u2kg0"]
 [ext_resource type="PackedScene" uid="uid://dwcdfsgobmmn2" path="res://UI/ui/checklist.tscn" id="16_u2kg0"]
+[ext_resource type="PackedScene" uid="uid://ct7oybbsvdc5n" path="res://assets/Feetee Creep-1.glb" id="20_2on84"]
 [ext_resource type="Material" uid="uid://d3h7e83iani2f" path="res://assets/materials/MoldyFlore.tres" id="20_bmeqk"]
 [ext_resource type="PackedScene" uid="uid://b6mdrsec0nbbu" path="res://assets/audio/ambient_audio.tscn" id="21_2on84"]
 
@@ -27,34 +28,12 @@ ambient_light_color = Color(0.779157, 0.555735, 0.493454, 1)
 reflected_light_source = 1
 glow_enabled = true
 glow_hdr_luminance_cap = 22.78
+fog_enabled = true
+fog_light_color = Color(0.33, 0.52, 0.35, 1)
+fog_light_energy = 1.15
+fog_sun_scatter = 0.22
+fog_density = 0.03
 adjustment_enabled = true
-
-[sub_resource type="Animation" id="Animation_nuv7q"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Environment:environment:adjustment_brightness")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.01, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Environment:environment:adjustment_saturation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.5, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.01, 1.0]
-}
 
 [sub_resource type="Animation" id="Animation_721q5"]
 length = 0.001
@@ -81,6 +60,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_nuv7q"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Environment:environment:adjustment_brightness")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Environment:environment:adjustment_saturation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bmeqk"]
@@ -1017,6 +1023,12 @@ metadata/extras = {
 }
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2on84"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.461041, 0.59875, 0.572106, 1)
+metallic = 0.57
+metallic_specular = 0.2
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m40be"]
 resource_name = "material_5"
 cull_mode = 2
@@ -1350,6 +1362,7 @@ metadata/extras = {
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
+albedo_color = Color(0.593966, 0.768948, 0.719959, 1)
 albedo_texture = ExtResource("15_u2kg0")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0mn0c"]
@@ -1357,6 +1370,13 @@ size = Vector2(0.5, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pj88p"]
 size = Vector3(0.35, 0.1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmeqk"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.474074, 0.32257, 0.301729, 1)
+metallic = 0.45
+metallic_specular = 0.35
+roughness = 0.2
 
 [node name="Level" type="Node"]
 script = ExtResource("1_v1dmi")
@@ -1549,7 +1569,7 @@ stream = SubResource("AudioStreamRandomizer_nuv7q")
 bus = &"SFX"
 
 [node name="Intercom" parent="." instance=ExtResource("15_pj88p")]
-transform = Transform3D(0.573576, 0.769751, -0.280166, -3.05715e-08, -0.34202, -0.939693, -0.819152, 0.538986, -0.196175, -1.5, 2.1, -0.4)
+transform = Transform3D(0.573576, 0.769751, -0.280167, 2.99003e-08, -0.34202, -0.939693, -0.819152, 0.538986, -0.196175, 0.66, 2.975, 0.189)
 metadata/_edit_group_ = true
 
 [node name="Tube 1" parent="Intercom" index="0"]
@@ -1578,7 +1598,7 @@ pitch_scale = 1.25
 bus = &"SFX"
 
 [node name="Factory" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -3)
 material_override = ExtResource("14_721q5")
 mesh = SubResource("BoxMesh_3rhcs")
 
@@ -1592,6 +1612,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(0.212623, 0, -2.15347, 0, 0.43361, 0, 0.576834, 0, 0.793776, 1.89642, 0.186556, 1.15762)
 mesh = SubResource("BoxMesh_5jcfi")
 skeleton = NodePath("../Lever")
+surface_material_override/0 = ExtResource("20_bmeqk")
 
 [node name="PlaceholderTable2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.0504006, 0, -0.638744, 0, 0.433611, 0, 0.765078, 0, -0.0420782, 3.18687, 0.0167211, -3.56109)
@@ -1633,6 +1654,7 @@ metadata/extras = {
 
 [node name="Cylinder2" type="MeshInstance3D" parent="Lever/Handle"]
 transform = Transform3D(0.0026177, -9.64485e-10, 0.0999657, -6.04429e-10, 0.1, 9.80643e-10, -0.0999657, -6.29893e-10, 0.0026177, 0, 0.6, 0)
+material_override = SubResource("StandardMaterial3D_2on84")
 mesh = SubResource("ArrayMesh_b5frq")
 skeleton = NodePath("")
 metadata/extras = {
@@ -1701,6 +1723,21 @@ shape = SubResource("BoxShape3D_pj88p")
 unique_name_in_owner = true
 visible = false
 
+[node name="Feetee Creep-1" parent="." instance=ExtResource("20_2on84")]
+transform = Transform3D(40, 0, 0, 0, 37, 0, 0, 0, 40, -1.8, 0.1, -6)
+
+[node name="Volume117" parent="Feetee Creep-1/Root" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bmeqk")
+
+[node name="Volume119" parent="Feetee Creep-1/Root" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bmeqk")
+
+[node name="Volume118" parent="Feetee Creep-1/Root" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bmeqk")
+
+[node name="Volume65" parent="Feetee Creep-1/Root" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bmeqk")
+
 [connection signal="biscuit_rejected" from="." to="Conveyor/FurnaceBurnSFX" method="play" unbinds=2]
 [connection signal="changed" from="ConveyorPathing" to="Lever" method="_on_conveyor_pathing_changed"]
 [connection signal="started_rejecting" from="ConveyorPathing" to="Conveyor/Diverter/AnimationTree" method="set" binds= [&"parameters/conditions/is_closed", true]]
@@ -1709,3 +1746,4 @@ visible = false
 [connection signal="input_event" from="Clipboard/ClickableArea" to="Clipboard" method="_on_clickable_area_input_event"]
 
 [editable path="Intercom"]
+[editable path="Feetee Creep-1"]
