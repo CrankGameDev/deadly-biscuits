@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
+[ext_resource type="Resource" uid="uid://dmut8ty270qbu" path="res://level_data/level_2.tres" id="2_bmeqk"]
 [ext_resource type="Script" uid="uid://7bc4aivpmago" path="res://core/lever.gd" id="2_v1dmi"]
-[ext_resource type="Resource" uid="uid://bvrpvl2rvq5u8" path="res://level_data/level_1.tres" id="2_wsccs"]
 [ext_resource type="Script" uid="uid://brcm7tud6e3w5" path="res://core/camera.gd" id="3_nuv7q"]
 [ext_resource type="Material" uid="uid://guk1wyxx10aa" path="res://assets/materials/EmmisiveMaterial.tres" id="5_t0ybl"]
 [ext_resource type="Texture2D" uid="uid://dtycouhfp0pa5" path="res://assets/smoke_puff.png" id="6_0mn0c"]
@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://dssfluiaqf0a" path="res://core/clipboard_object.gd" id="15_3wu0q"]
 [ext_resource type="PackedScene" uid="uid://crgaj1isc3jib" path="res://assets/intercom_unwrapped.glb" id="15_pj88p"]
 [ext_resource type="Texture2D" uid="uid://c0npxa02moxax" path="res://UI/dialogue/clipboarde.png" id="15_u2kg0"]
-[ext_resource type="PackedScene" uid="uid://dwcdfsgobmmn2" path="res://UI/ui/checklist.tscn" id="16_u2kg0"]
+[ext_resource type="PackedScene" uid="uid://dwcdfsgobmmn2" path="res://UI/checklist.tscn" id="16_u2kg0"]
 [ext_resource type="PackedScene" uid="uid://ct7oybbsvdc5n" path="res://assets/Feetee Creep-1.glb" id="20_2on84"]
 [ext_resource type="Material" uid="uid://d3h7e83iani2f" path="res://assets/materials/MoldyFlore.tres" id="20_bmeqk"]
 [ext_resource type="PackedScene" uid="uid://b6mdrsec0nbbu" path="res://assets/audio/ambient_audio.tscn" id="21_2on84"]
@@ -1380,7 +1380,7 @@ roughness = 0.2
 
 [node name="Level" type="Node"]
 script = ExtResource("1_v1dmi")
-level_data = ExtResource("2_wsccs")
+level_data = ExtResource("2_bmeqk")
 
 [node name="Environment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5jcfi")
@@ -1569,7 +1569,7 @@ stream = SubResource("AudioStreamRandomizer_nuv7q")
 bus = &"SFX"
 
 [node name="Intercom" parent="." instance=ExtResource("15_pj88p")]
-transform = Transform3D(0.573576, 0.769751, -0.280167, 2.99003e-08, -0.34202, -0.939693, -0.819152, 0.538986, -0.196175, 0.66, 2.975, 0.189)
+transform = Transform3D(0.573576, 0.769751, -0.280167, 2.99003e-08, -0.34202, -0.939693, -0.819152, 0.538986, -0.196175, -0.54, 2.975, 0.189)
 metadata/_edit_group_ = true
 
 [node name="Tube 1" parent="Intercom" index="0"]

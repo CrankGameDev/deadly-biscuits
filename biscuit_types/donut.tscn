@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://m5n88lfcblhu"]
+[gd_scene load_steps=19 format=4 uid="uid://m5n88lfcblhu"]
 
 [ext_resource type="PackedScene" uid="uid://b433p4cjgtoxq" path="res://core/base_biscuit.tscn" id="1_8u8vy"]
 [ext_resource type="Script" uid="uid://dxy6uqn04ojio" path="res://biscuit_types/donut.gd" id="2_f3fbo"]
@@ -354,6 +354,18 @@ metadata/extras = {
 }
 }
 
+[sub_resource type="GDScript" id="GDScript_f3fbo"]
+script/source = "extends MeshInstance3D
+
+
+func _ready() -> void:
+	set_process(visible)
+
+
+func _process(_delta: float) -> void:
+	look_at(get_viewport().get_camera_3d().global_position, Vector3.UP)
+"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vwa6"]
 resource_name = "material_3"
 cull_mode = 2
@@ -624,11 +636,12 @@ metadata/extras = {
 }
 }
 
-[node name="Biscuit" instance=ExtResource("1_8u8vy")]
+[node name="Donut" instance=ExtResource("1_8u8vy")]
 script = ExtResource("2_f3fbo")
 has_eye = false
 
 [node name="Downut eye" type="Node3D" parent="." index="1"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
 [node name="DonutBaseMesh" type="MeshInstance3D" parent="Downut eye" index="0"]
 transform = Transform3D(1, -7.12661e-10, -8.20926e-11, 7.12661e-10, 1, 8.52741e-10, 8.2089e-11, -8.52741e-10, 1, 2.9397e-11, -0.0418061, 3.35339e-11)
@@ -672,6 +685,7 @@ metadata/extras = {
 transform = Transform3D(0.520987, -1.41462e-10, 1.77636e-15, -2.77922e-17, 0.520986, -2.73456e-10, -1.77636e-15, 6.18353e-18, 0.520986, -2.39489e-10, 0.212165, 1.04685e-17)
 mesh = SubResource("ArrayMesh_5p7af")
 skeleton = NodePath("")
+script = SubResource("GDScript_f3fbo")
 metadata/extras = {
 "nomad": {
 "lock": false,
@@ -688,7 +702,7 @@ metadata/extras = {
 }
 
 [node name="IrisMesh" type="MeshInstance3D" parent="Downut eye/EyeMesh" index="0"]
-transform = Transform3D(0.947419, -0.319996, -7.10543e-15, 0.319996, 0.947419, -1.3289e-24, -3.55271e-15, 8.88178e-16, 1, 0.0244782, 0.0172894, -1.26282e-16)
+transform = Transform3D(-4.13261e-08, 1.42447e-08, 0.999998, 0.319996, 0.947419, -5.24882e-10, -0.947421, 0.319997, -4.37114e-08, -1.06528e-09, 0.0172894, -0.0244782)
 mesh = SubResource("ArrayMesh_2xb61")
 skeleton = NodePath("")
 metadata/extras = {
@@ -707,7 +721,7 @@ metadata/extras = {
 }
 
 [node name="PupilMesh" type="MeshInstance3D" parent="Downut eye/EyeMesh" index="1"]
-transform = Transform3D(0.581094, -0.196268, -1.67539e-26, 0.196268, 0.581094, -1.22375e-25, 5.50325e-26, 1.10579e-25, 0.613344, 0.298391, 0.109805, 6.65959e-26)
+transform = Transform3D(-2.53471e-08, 8.73693e-09, 0.613343, 0.196268, 0.581094, -3.21933e-10, -0.581095, 0.196268, -2.68101e-08, -1.30133e-08, 0.109805, -0.298392)
 mesh = SubResource("ArrayMesh_5o5c8")
 skeleton = NodePath("")
 metadata/extras = {

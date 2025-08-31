@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwcdfsgobmmn2"]
+
+[ext_resource type="Script" uid="uid://b74o31pnod7yj" path="res://checklist.gd" id="1_t7f0y"]
+[ext_resource type="Texture2D" uid="uid://c0npxa02moxax" path="res://UI/dialogue/clipboarde.png" id="2_51e2v"]
+[ext_resource type="FontFile" uid="uid://bl76grad0gmxb" path="res://UI/ui/OpenDyslexic-Regular.otf" id="4_vgfp8"]
+
+[sub_resource type="Theme" id="Theme_laqw0"]
+Label/colors/font_color = Color(0.0666667, 0.00784314, 0.00784314, 1)
+Label/colors/font_shadow_color = Color(0.412084, 0.201091, 0.625031, 0)
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("4_vgfp8")
+
+[sub_resource type="Theme" id="Theme_vgfp8"]
+Label/colors/font_color = Color(0.109804, 0.00784314, 0.0117647, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgfp8"]
+
+[node name="Checklist" type="CanvasLayer"]
+script = ExtResource("1_t7f0y")
+
+[node name="ClipboardArea" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.5
+offset_top = -260.0
+offset_right = 199.5
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ClipboardArea"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.5
+offset_top = -374.0
+offset_right = 1574.5
+offset_bottom = 1546.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.360002, 0.360002)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_51e2v")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ClipboardArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ClipboardArea/VBoxContainer"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+theme = SubResource("Theme_laqw0")
+text = "QA Checklist"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ClipboardArea/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 34
+theme_override_constants/margin_right = 34
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ClipboardArea/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ChecklistItemLabel" type="Label" parent="ClipboardArea/VBoxContainer/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme = SubResource("Theme_vgfp8")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="ClipboardArea/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_vgfp8")
+
+[node name="KeyShortcutLabel" type="Label" parent="ClipboardArea/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_constants/outline_size = 2
+text = "[ Tab ] to toggle"
+horizontal_alignment = 1

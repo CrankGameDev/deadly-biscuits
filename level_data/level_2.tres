@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=19 format=3 uid="uid://dmut8ty270qbu"]
+
+[ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="1_sbqv5"]
+[ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="2_4o7op"]
+[ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://criteria/choc_chip_count_criteria.gd" id="2_42hrf"]
+[ext_resource type="Script" uid="uid://coik1fkqmtc5q" path="res://criteria/no_donuts_criteria.gd" id="3_d82qr"]
+[ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="3_qw5o3"]
+[ext_resource type="Resource" path="res://UI/dialogue/doughtnut.dtl" id="4_iu443"]
+[ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="6_cqqjf"]
+[ext_resource type="Resource" uid="uid://nlu2qepn7ijd" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_3_to_5.tres" id="7_iu443"]
+[ext_resource type="Resource" uid="uid://bn7dtg7dtq1mi" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_6_to_9.tres" id="8_kxvgl"]
+[ext_resource type="Resource" uid="uid://h4idhoo153qb" path="res://level_data/biscuit_spawns/donut/donut_no_eye.tres" id="9_6jmgh"]
+[ext_resource type="Resource" uid="uid://bu3ks6ji3exxx" path="res://level_data/biscuit_spawns/donut/donut_eye.tres" id="9_iu443"]
+[ext_resource type="PackedScene" uid="uid://cpylw10v2xhi3" path="res://biscuit_types/choc_chip_biscuit.tscn" id="11_cqqjf"]
+
+[sub_resource type="Resource" id="Resource_8efpb"]
+script = ExtResource("2_42hrf")
+operation = 0
+count = 5
+metadata/_custom_type_script = "uid://bg3awv8d0fhd2"
+
+[sub_resource type="Resource" id="Resource_l8v65"]
+script = ExtResource("3_d82qr")
+metadata/_custom_type_script = "uid://coik1fkqmtc5q"
+
+[sub_resource type="Resource" id="Resource_0pvbc"]
+script = ExtResource("3_qw5o3")
+spawn_events = Dictionary[ExtResource("6_cqqjf"), int]({
+ExtResource("7_iu443"): 3,
+ExtResource("8_kxvgl"): 5
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[sub_resource type="Resource" id="Resource_q7ejn"]
+script = ExtResource("3_qw5o3")
+spawn_events = Dictionary[ExtResource("6_cqqjf"), int]({
+ExtResource("7_iu443"): 1,
+ExtResource("8_kxvgl"): 5,
+ExtResource("9_6jmgh"): 2
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[sub_resource type="Resource" id="Resource_iu443"]
+script = ExtResource("6_cqqjf")
+biscuit_scene = ExtResource("11_cqqjf")
+spawn_settings = Dictionary[String, Variant]({
+"bug_count": 2,
+"choc_chip_count": 7
+})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"
+
+[sub_resource type="Resource" id="Resource_42hrf"]
+script = ExtResource("3_qw5o3")
+spawn_events = Dictionary[ExtResource("6_cqqjf"), int]({
+SubResource("Resource_iu443"): 1,
+ExtResource("9_iu443"): 1
+})
+metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
+
+[resource]
+resource_name = "Level 2"
+script = ExtResource("2_4o7op")
+level_start_dialogue = ExtResource("4_iu443")
+conveyor_speed = 1.0
+spawn_interval = 3.0
+critera = Array[ExtResource("1_sbqv5")]([SubResource("Resource_8efpb"), SubResource("Resource_l8v65")])
+spawn_waves = Array[ExtResource("3_qw5o3")]([SubResource("Resource_0pvbc"), SubResource("Resource_q7ejn"), SubResource("Resource_42hrf")])
+metadata/_custom_type_script = "uid://bn1b8j2k5er3j"

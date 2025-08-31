@@ -7,7 +7,8 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var checklist_text: String = ""
-	for criteria in LevelManager.get_current_level().critera:
+	
+	for criteria in LevelManager.get_active_level().critera:
 		checklist_text += "\n+ " + criteria._get_text()
 	checklist_item_label.text = checklist_text
 

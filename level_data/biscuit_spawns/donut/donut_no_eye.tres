@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SpawnEvent" load_steps=3 format=3 uid="uid://h4idhoo153qb"]
+
+[ext_resource type="PackedScene" uid="uid://m5n88lfcblhu" path="res://biscuit_types/donut.tscn" id="1_wc24g"]
+[ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="2_q5cc6"]
+
+[resource]
+resource_name = "Donut: No Eyes"
+script = ExtResource("2_q5cc6")
+biscuit_scene = ExtResource("1_wc24g")
+spawn_settings = Dictionary[String, Variant]({
+"has_eye": false
+})
+metadata/_custom_type_script = "uid://60jgksmd2ubi"

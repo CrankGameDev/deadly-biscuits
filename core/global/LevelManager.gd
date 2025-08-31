@@ -9,6 +9,14 @@ func get_current_level() -> LevelData:
 	return LEVEL_LIST.get_level(Persistence.save_data.current_level)
 
 
+func get_active_level() -> LevelData:
+	var level: Level = get_tree().current_scene as Level
+	if level:
+		return level.level_data
+	else:
+		return null
+
+
 func get_level_count() -> int:
 	return LEVEL_LIST.levels.size()
 

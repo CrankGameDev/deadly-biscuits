@@ -103,9 +103,11 @@ func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 	
 	# Randomly add intercom chatter just to make players think it means something :)
 	if not intercom_animation.is_playing() and randi_range(0, 5) == 0:
+		camera.is_overhead = false
 		intercom_animation.play("talk")
 		intercom_sfx.play()
 		intercom_sfx.finished.connect(intercom_animation.stop, CONNECT_ONE_SHOT)
+		intercom_sfx.finished.connect(camera.set.bind("is_overhead", true), CONNECT_ONE_SHOT)
 	
 	var should_be_accepted: bool = true
 	for entry in level_data.critera:
