@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=4 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=92 format=4 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://obd56nsage3q" path="res://assets/audio/sfx/lever_tock.ogg" id="9_wsccs"]
 [ext_resource type="PackedScene" uid="uid://dvycejlthfgxu" path="res://assets/uv_unwrapped_test_scene.glb" id="13_ppale"]
 [ext_resource type="Material" uid="uid://bfxho35wxcpo1" path="res://assets/materials/brick.tres" id="14_721q5"]
+[ext_resource type="Texture2D" uid="uid://odjsgxnv3k8p" path="res://assets/basiliskbiskuit.png" id="14_n4fnk"]
 [ext_resource type="Script" uid="uid://dssfluiaqf0a" path="res://core/clipboard_object.gd" id="15_3wu0q"]
 [ext_resource type="PackedScene" uid="uid://crgaj1isc3jib" path="res://assets/intercom_unwrapped.glb" id="15_pj88p"]
 [ext_resource type="Texture2D" uid="uid://c0npxa02moxax" path="res://UI/dialogue/clipboarde.png" id="15_u2kg0"]
@@ -828,6 +829,15 @@ size = Vector3(12, 6.1, 12)
 [sub_resource type="PlaneMesh" id="PlaneMesh_721q5"]
 size = Vector2(12, 12)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkffv"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("14_n4fnk")
+
+[sub_resource type="QuadMesh" id="QuadMesh_p3mki"]
+size = Vector2(5, 5)
+
 [sub_resource type="BoxMesh" id="BoxMesh_5jcfi"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wsccs"]
@@ -1601,6 +1611,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
 material_override = ExtResource("20_bmeqk")
 mesh = SubResource("PlaneMesh_721q5")
 skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Factory"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.95)
+material_override = SubResource("StandardMaterial3D_gkffv")
+mesh = SubResource("QuadMesh_p3mki")
 
 [node name="PlaceholderTable" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.212623, 0, -2.15347, 0, 0.43361, 0, 0.576834, 0, 0.793776, 1.89642, 0.186556, 1.15762)
