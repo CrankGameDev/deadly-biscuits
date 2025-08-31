@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ctc1kxct57ui3"]
+[gd_scene load_steps=13 format=4 uid="uid://ctc1kxct57ui3"]
 
 [ext_resource type="PackedScene" uid="uid://b433p4cjgtoxq" path="res://core/base_biscuit.tscn" id="1_8feex"]
 [ext_resource type="Script" uid="uid://cq7186f6lpoyg" path="res://biscuit_types/oat_biscuit.gd" id="2_hbbpq"]
@@ -166,6 +166,10 @@ metadata/extras = {
 "wireframe_visible": -1.0
 }
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbbpq"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.531594, 0.473635, 0.433004, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wjna"]
 resource_name = "material_1"
@@ -661,6 +665,7 @@ metadata/extras = {
 script = ExtResource("2_hbbpq")
 
 [node name="Cookie 4" type="Node3D" parent="." index="1"]
+transform = Transform3D(0.333, 0, 0, 0, 0.333, 0, 0, 0, 0.333, 0, 0, 0)
 
 [node name="Cylinder" type="MeshInstance3D" parent="Cookie 4" index="0"]
 transform = Transform3D(0.999872, 0.0147742, 0.00716479, -0.014423, 1.03477, 0.0213355, -0.0068579, -0.0221888, 0.999746, -1.13745e-05, -0.00079666, 1.70828e-05)
@@ -681,200 +686,9 @@ metadata/extras = {
 }
 }
 
-[node name="Curve" type="Node3D" parent="Cookie 4" index="1"]
-transform = Transform3D(0.976746, -0.130111, -0.170409, 0.124544, 0.991282, -0.0430088, 0.174519, 0.0207852, 0.984435, 0.268591, 0.0723075, -0.200785)
-metadata/extras = {
-"nomad": {
-"array_count": [2.0, 1.0, 1.0],
-"array_fit_inside": true,
-"array_offset": [2.0, 2.0, 2.0],
-"curve": {
-"closed": true,
-"normal0": [0.0676504, 0.99743, 0.0236185],
-"points": [[0.0496479, -0.00905847, -0.0357242], [-0.317996, 0.0377112, -0.129557], [-0.594849, 0.0808918, 0.0560858], [-0.587902, 0.096258, 0.380298], [-0.43911, 0.088847, 0.636753], [-0.159766, 0.0532697, 0.635363], [0.0622811, 0.0212907, 0.49639], [0.119404, -0.00147736, 0.272454]],
-"sharps": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-"snap_offset": 0.0,
-"snap_surface": true,
-"snap_vertex": false,
-"type": "spline",
-"uniform": true
-},
-"curve_align": true,
-"curve_count": 7.0,
-"curve_edit_radius": "all",
-"curve_edit_rotate": "none",
-"curve_edit_spiral": "none",
-"curve_pivot": "self",
-"curve_radiuses": [0.999271, 1.00394, 0.533702, 0.767915, 0.998795, 0.998795, 0.998795, 0.998971],
-"curve_rotates": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-"curve_snap": false,
-"curve_spiral_radius": 1.0,
-"curve_spiral_radius_use_radius": true,
-"curve_spiral_scale": 1.0,
-"curve_spiral_scale_use_radius": true,
-"curve_spiral_twist_offset": 0.0,
-"curve_spirals": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-"edit_profile": "none",
-"lock": false,
-"mask_delta": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0],
-"matrix": [0.976746, 0.124544, 0.174519, 0.0, -0.130111, 0.991282, 0.0207852, 0.0, -0.170409, -0.0430088, 0.984435, 0.0, 0.268591, 0.0723075, -0.200785, 0.999988],
-"mirror": [true, false, false],
-"node_collapse": false,
-"pivot_delta": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0],
-"profile_index": 0.0,
-"profile_legacy_center": false,
-"profile_sync_uid": false,
-"profiles": [{
-"closed": true,
-"mirror_x": false,
-"mirror_y": false,
-"points": [[-1.0, -1.0], [1.0, -1.0], [1.0, 1.0], [-1.0, 1.0]],
-"reference_x": 0.0,
-"reference_y": 1.0,
-"sharps": [1.0, 1.0, 1.0, 1.0],
-"type": "spline",
-"ui_snap": true,
-"ui_snap_vertex": true,
-"ui_step": 0.2,
-"ui_step_auto": true,
-"uid": "19d144a7-274f-4e6e-993a-e2a233919e7e",
-"uniform": true
-}, {
-"closed": true,
-"mirror_x": false,
-"mirror_y": false,
-"points": [[-1.0, -1.0], [1.0, -1.0], [1.0, 1.0], [-1.0, 1.0]],
-"reference_x": 0.0,
-"reference_y": 1.0,
-"sharps": [1.0, 1.0, 1.0, 1.0],
-"type": "spline",
-"ui_snap": true,
-"ui_snap_vertex": true,
-"ui_step": 0.2,
-"ui_step_auto": true,
-"uid": "641851a8-ae56-4674-aeb6-a7f7a00cb4c8",
-"uniform": true
-}, {
-"closed": true,
-"mirror_x": false,
-"mirror_y": false,
-"points": [[-1.0, -1.0], [1.0, -1.0], [1.0, 1.0], [-1.0, 1.0]],
-"reference_x": 0.0,
-"reference_y": 1.0,
-"sharps": [1.0, 1.0, 1.0, 1.0],
-"type": "spline",
-"ui_snap": true,
-"ui_snap_vertex": true,
-"ui_step": 0.2,
-"ui_step_auto": true,
-"uid": "476e257f-5069-4973-84e1-48aa24c60f54",
-"uniform": true
-}, {
-"closed": true,
-"mirror_x": false,
-"mirror_y": false,
-"points": [[-1.0, -1.0], [1.0, -1.0], [1.0, 1.0], [-1.0, 1.0]],
-"reference_x": 0.0,
-"reference_y": 1.0,
-"sharps": [1.0, 1.0, 1.0, 1.0],
-"type": "spline",
-"ui_snap": true,
-"ui_snap_vertex": true,
-"ui_step": 0.2,
-"ui_step_auto": true,
-"uid": "ad918bcf-a293-4cc7-a0f4-120c6c285dc6",
-"uniform": true
-}, {
-"closed": true,
-"mirror_x": false,
-"mirror_y": false,
-"points": [[-1.0, -1.0], [1.0, -1.0], [1.0, 1.0], [-1.0, 1.0]],
-"reference_x": 0.0,
-"reference_y": 1.0,
-"sharps": [1.0, 1.0, 1.0, 1.0],
-"type": "spline",
-"ui_snap": true,
-"ui_snap_vertex": true,
-"ui_step": 0.2,
-"ui_step_auto": true,
-"uid": "4c9ac198-7c56-44be-9ea4-978e8a9db898",
-"uniform": true
-}, {
-"closed": true,
-"mirror_x": false,
-"mirror_y": false,
-"points": [[-1.0, -1.0], [1.0, -1.0], [1.0, 1.0], [-1.0, 1.0]],
-"reference_x": 0.0,
-"reference_y": 1.0,
-"sharps": [1.0, 1.0, 1.0, 1.0],
-"type": "spline",
-"ui_snap": true,
-"ui_snap_vertex": true,
-"ui_step": 0.2,
-"ui_step_auto": true,
-"uid": "ab995d29-3198-4cde-96ca-25c77b7e1aff",
-"uniform": true
-}, {
-"closed": true,
-"mirror_x": false,
-"mirror_y": false,
-"points": [[-1.0, -1.0], [1.0, -1.0], [1.0, 1.0], [-1.0, 1.0]],
-"reference_x": 0.0,
-"reference_y": 1.0,
-"sharps": [1.0, 1.0, 1.0, 1.0],
-"type": "spline",
-"ui_snap": true,
-"ui_snap_vertex": true,
-"ui_step": 0.2,
-"ui_step_auto": true,
-"uid": "009f53ad-9bfc-4441-a3fd-4448f692b91a",
-"uniform": true
-}, {
-"closed": true,
-"mirror_x": false,
-"mirror_y": false,
-"points": [[-1.0, -1.0], [1.0, -1.0], [1.0, 1.0], [-1.0, 1.0]],
-"reference_x": 0.0,
-"reference_y": 1.0,
-"sharps": [1.0, 1.0, 1.0, 1.0],
-"type": "spline",
-"ui_snap": true,
-"ui_snap_vertex": true,
-"ui_step": 0.2,
-"ui_step_auto": true,
-"uid": "eeaab9fc-14b9-4d45-a541-0daccc6da02c",
-"uniform": true
-}],
-"radial_count": [1.0, 4.0, 1.0],
-"random": {
-"enable": true,
-"rotate_enable": true,
-"rotate_factor": [0.3, 0.3, 0.3],
-"rotate_seed": 4.27406e+09,
-"rotate_uniform": true,
-"scale_dir": [0.0, 0.0, 0.0],
-"scale_enable": true,
-"scale_factor": [1.268, 0.5, 0.5],
-"scale_seed": 9.58347e+07,
-"scale_uniform": true,
-"translate_dir": [0.0, 0.0, 0.0],
-"translate_enable": true,
-"translate_factor": [0.0, 0.0, 0.0],
-"translate_seed": 2.38083e+09,
-"translate_uniform": true
-},
-"repeat": 0.0,
-"repeat_type": "curve",
-"selected": false,
-"selected_main": false,
-"selected_repeat": -1.0,
-"transform_reset": false,
-"visible": true
-}
-}
-
-[node name="Box" type="MeshInstance3D" parent="Cookie 4/Curve" index="0"]
-transform = Transform3D(0.319267, -0.599719, 0.279503, 0.474488, 0.423821, 0.367349, -0.461119, 0.0208795, 0.571519, -8.54007e-08, -5.17801e-08, -4.31763e-09)
+[node name="Box" type="MeshInstance3D" parent="Cookie 4" index="1"]
+transform = Transform3D(0.328685, -0.644475, 0.127815, 0.529947, 0.344537, 0.374376, -0.388361, -0.0752989, 0.619037, 0.268591, 0.0723074, -0.200785)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_4r0nn")
 skeleton = NodePath("")
 metadata/extras = {
@@ -892,8 +706,9 @@ metadata/extras = {
 }
 }
 
-[node name="Box 1" type="MeshInstance3D" parent="Cookie 4/Curve" index="1"]
-transform = Transform3D(0.57396, -0.160573, 0.309049, 0.0876815, 0.643194, 0.17133, -0.337054, -0.106114, 0.57084, -0.152014, 0.0430138, 0.0790475)
+[node name="Box 1" type="MeshInstance3D" parent="Cookie 4" index="2"]
+transform = Transform3D(0.606642, -0.222442, 0.182294, 0.172896, 0.622152, 0.183776, -0.229818, -0.119116, 0.61945, 0.101045, 0.0926142, -0.148604)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_txdub")
 skeleton = NodePath("")
 metadata/extras = {
@@ -911,8 +726,9 @@ metadata/extras = {
 }
 }
 
-[node name="Box2" type="MeshInstance3D" parent="Cookie 4" index="2"]
+[node name="Box2" type="MeshInstance3D" parent="Cookie 4" index="3"]
 transform = Transform3D(-0.0586611, -0.240751, 0.337366, 0.282596, 0.226014, 0.210419, -0.303177, 0.257253, 0.130858, -0.0387901, 0.0750953, -0.334597)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_4r0nn")
 skeleton = NodePath("")
 metadata/extras = {
@@ -931,8 +747,9 @@ metadata/extras = {
 }
 }
 
-[node name="Box3" type="MeshInstance3D" parent="Cookie 4" index="3"]
+[node name="Box3" type="MeshInstance3D" parent="Cookie 4" index="4"]
 transform = Transform3D(-0.301031, -0.0601573, 0.177954, 0.146565, 0.13504, 0.293578, -0.117497, 0.322574, -0.0897147, -0.270364, 0.0761825, -0.238771)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_4r0nn")
 skeleton = NodePath("")
 metadata/extras = {
@@ -951,8 +768,9 @@ metadata/extras = {
 }
 }
 
-[node name="Box4" type="MeshInstance3D" parent="Cookie 4" index="4"]
+[node name="Box4" type="MeshInstance3D" parent="Cookie 4" index="5"]
 transform = Transform3D(-0.346403, -0.00650487, 0.437915, 0.369417, 0.295562, 0.296615, -0.235243, 0.473719, -0.179051, -0.359185, 0.0775061, -0.00380403)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_4r0nn")
 skeleton = NodePath("")
 metadata/extras = {
@@ -971,8 +789,9 @@ metadata/extras = {
 }
 }
 
-[node name="Box5" type="MeshInstance3D" parent="Cookie 4" index="5"]
+[node name="Box5" type="MeshInstance3D" parent="Cookie 4" index="6"]
 transform = Transform3D(0.0193011, 0.365056, -0.356262, 0.482378, 0.10284, 0.131509, 0.165825, -0.341647, -0.341086, -0.256729, 0.0782139, 0.307752)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_4r0nn")
 skeleton = NodePath("")
 metadata/extras = {
@@ -991,8 +810,9 @@ metadata/extras = {
 }
 }
 
-[node name="Box6" type="MeshInstance3D" parent="Cookie 4" index="6"]
+[node name="Box6" type="MeshInstance3D" parent="Cookie 4" index="7"]
 transform = Transform3D(-0.0198286, 0.303399, -0.492908, 0.560586, 0.132809, 0.0591941, 0.144043, -0.4751, -0.298224, 0.0847174, 0.0786335, 0.354541)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_4r0nn")
 skeleton = NodePath("")
 metadata/extras = {
@@ -1011,8 +831,9 @@ metadata/extras = {
 }
 }
 
-[node name="Box7" type="MeshInstance3D" parent="Cookie 4" index="7"]
+[node name="Box7" type="MeshInstance3D" parent="Cookie 4" index="8"]
 transform = Transform3D(0.477402, -0.223872, -0.348701, 0.404469, 0.367406, 0.317875, 0.0900895, -0.463172, 0.420693, 0.313868, 0.0750834, 0.105033)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_4r0nn")
 skeleton = NodePath("")
 metadata/extras = {
@@ -1031,8 +852,9 @@ metadata/extras = {
 }
 }
 
-[node name="Box 12" type="MeshInstance3D" parent="Cookie 4" index="8"]
+[node name="Box 12" type="MeshInstance3D" parent="Cookie 4" index="9"]
 transform = Transform3D(0.0970168, -0.105681, 0.354611, 0.0715628, 0.365042, 0.0892059, -0.363038, 0.0437163, 0.112349, -0.0904225, 0.092688, -0.183564)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_txdub")
 skeleton = NodePath("")
 metadata/extras = {
@@ -1051,8 +873,9 @@ metadata/extras = {
 }
 }
 
-[node name="Box 13" type="MeshInstance3D" parent="Cookie 4" index="9"]
+[node name="Box 13" type="MeshInstance3D" parent="Cookie 4" index="10"]
 transform = Transform3D(-0.242589, -0.104074, 0.188328, 0.00825707, 0.279106, 0.16487, -0.215014, 0.12814, -0.20615, -0.220214, 0.088601, -0.133004)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_txdub")
 skeleton = NodePath("")
 metadata/extras = {
@@ -1071,8 +894,9 @@ metadata/extras = {
 }
 }
 
-[node name="Box 14" type="MeshInstance3D" parent="Cookie 4" index="10"]
+[node name="Box 14" type="MeshInstance3D" parent="Cookie 4" index="11"]
 transform = Transform3D(-0.343728, -0.24373, 0.287832, 0.00797992, 0.384646, 0.335241, -0.377074, 0.230316, -0.255283, -0.243173, 0.0904488, 0.0444804)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_txdub")
 skeleton = NodePath("")
 metadata/extras = {
@@ -1091,8 +915,9 @@ metadata/extras = {
 }
 }
 
-[node name="Box 15" type="MeshInstance3D" parent="Cookie 4" index="11"]
+[node name="Box 15" type="MeshInstance3D" parent="Cookie 4" index="12"]
 transform = Transform3D(-0.299441, 0.238541, -0.266525, 0.329556, 0.319108, -0.084657, 0.139033, -0.24264, -0.37336, -0.107162, 0.0949926, 0.230829)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_txdub")
 skeleton = NodePath("")
 metadata/extras = {
@@ -1111,8 +936,9 @@ metadata/extras = {
 }
 }
 
-[node name="Box 16" type="MeshInstance3D" parent="Cookie 4" index="12"]
+[node name="Box 16" type="MeshInstance3D" parent="Cookie 4" index="13"]
 transform = Transform3D(-0.206497, 0.2535, -0.416176, 0.303858, 0.420354, 0.10527, 0.380962, -0.197869, -0.309548, 0.0925866, 0.0962686, 0.179159)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_txdub")
 skeleton = NodePath("")
 metadata/extras = {
@@ -1131,8 +957,9 @@ metadata/extras = {
 }
 }
 
-[node name="Box 17" type="MeshInstance3D" parent="Cookie 4" index="13"]
+[node name="Box 17" type="MeshInstance3D" parent="Cookie 4" index="14"]
 transform = Transform3D(0.477825, 0.0409574, -0.322093, 0.0605548, 0.5518, 0.159997, 0.318991, -0.166101, 0.452099, 0.167035, 0.0931228, 0.00882205)
+material_override = SubResource("StandardMaterial3D_hbbpq")
 mesh = SubResource("ArrayMesh_txdub")
 skeleton = NodePath("")
 metadata/extras = {

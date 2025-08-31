@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dwcdfsgobmmn2" path="res://UI/checklist.tscn" id="16_u2kg0"]
 [ext_resource type="PackedScene" uid="uid://ct7oybbsvdc5n" path="res://assets/Feetee Creep-1.glb" id="20_2on84"]
 [ext_resource type="Material" uid="uid://d3h7e83iani2f" path="res://assets/materials/MoldyFlore.tres" id="20_bmeqk"]
+[ext_resource type="Material" uid="uid://clswmjeaawq7j" path="res://assets/materials/tentacle.material" id="20_n4fnk"]
 [ext_resource type="PackedScene" uid="uid://b6mdrsec0nbbu" path="res://assets/audio/ambient_audio.tscn" id="21_2on84"]
 
 [sub_resource type="Environment" id="Environment_5jcfi"]
@@ -1370,13 +1371,6 @@ size = Vector2(0.5, 0.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_pj88p"]
 size = Vector3(0.35, 0.1, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmeqk"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.474074, 0.32257, 0.301729, 1)
-metallic = 0.45
-metallic_specular = 0.35
-roughness = 0.2
-
 [node name="Level" type="Node"]
 script = ExtResource("1_v1dmi")
 
@@ -1725,16 +1719,16 @@ visible = false
 transform = Transform3D(40, 0, 0, 0, 37, 0, 0, 0, 40, -1.8, 0.1, -6)
 
 [node name="Volume117" parent="Feetee Creep-1/Root" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_bmeqk")
+surface_material_override/0 = ExtResource("20_n4fnk")
 
 [node name="Volume119" parent="Feetee Creep-1/Root" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_bmeqk")
+surface_material_override/0 = ExtResource("20_n4fnk")
 
 [node name="Volume118" parent="Feetee Creep-1/Root" index="2"]
-surface_material_override/0 = SubResource("StandardMaterial3D_bmeqk")
+surface_material_override/0 = ExtResource("20_n4fnk")
 
 [node name="Volume65" parent="Feetee Creep-1/Root" index="3"]
-surface_material_override/0 = SubResource("StandardMaterial3D_bmeqk")
+surface_material_override/0 = ExtResource("20_n4fnk")
 
 [connection signal="biscuit_rejected" from="." to="Conveyor/FurnaceBurnSFX" method="play" unbinds=2]
 [connection signal="changed" from="ConveyorPathing" to="Lever" method="_on_conveyor_pathing_changed"]
