@@ -1,8 +1,12 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=16 format=3 uid="uid://c2fo1vt1d0x7p"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=24 format=3 uid="uid://c2fo1vt1d0x7p"]
 
 [ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="1_mh6pl"]
 [ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="2_f4qbb"]
+[ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://criteria/choc_chip_count_criteria.gd" id="2_tbj5p"]
+[ext_resource type="Script" uid="uid://pf48cd5f1hra" path="res://criteria/no_bugs_criteria.gd" id="3_33nbo"]
 [ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="3_ulq04"]
+[ext_resource type="Script" uid="uid://bwgi2yfg3d0p1" path="res://criteria/bad_stock_criteria.gd" id="4_7gkf5"]
+[ext_resource type="Script" uid="uid://coik1fkqmtc5q" path="res://criteria/no_donuts_criteria.gd" id="4_33nbo"]
 [ext_resource type="Resource" uid="uid://byo0sj8afrast" path="res://UI/dialogue/Level3.dtl" id="6_7gkf5"]
 [ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="9_le3j3"]
 [ext_resource type="Resource" uid="uid://c6k6dwx66r2h4" path="res://level_data/biscuit_spawns/freckles/freckle_clean.tres" id="10_wlrpg"]
@@ -11,6 +15,24 @@
 [ext_resource type="Resource" uid="uid://dl85xip6nani8" path="res://level_data/biscuit_spawns/oat/oat_monster.tres" id="13_ccbma"]
 [ext_resource type="Resource" uid="uid://h4idhoo153qb" path="res://level_data/biscuit_spawns/donut/donut_no_eye.tres" id="14_1ib0t"]
 [ext_resource type="Resource" uid="uid://bu3ks6ji3exxx" path="res://level_data/biscuit_spawns/donut/donut_eye.tres" id="15_2s55n"]
+
+[sub_resource type="Resource" id="Resource_ccbma"]
+script = ExtResource("2_tbj5p")
+operation = 0
+count = 5
+metadata/_custom_type_script = "uid://bg3awv8d0fhd2"
+
+[sub_resource type="Resource" id="Resource_vnlno"]
+script = ExtResource("3_33nbo")
+metadata/_custom_type_script = "uid://pf48cd5f1hra"
+
+[sub_resource type="Resource" id="Resource_sh1tt"]
+script = ExtResource("4_33nbo")
+metadata/_custom_type_script = "uid://coik1fkqmtc5q"
+
+[sub_resource type="Resource" id="Resource_64584"]
+script = ExtResource("4_7gkf5")
+metadata/_custom_type_script = "uid://bwgi2yfg3d0p1"
 
 [sub_resource type="Resource" id="Resource_1ib0t"]
 script = ExtResource("3_ulq04")
@@ -52,6 +74,6 @@ script = ExtResource("2_f4qbb")
 level_start_dialogue = ExtResource("6_7gkf5")
 conveyor_speed = 1.0
 spawn_interval = 3.0
-critera = Array[ExtResource("1_mh6pl")]([])
+critera = Array[ExtResource("1_mh6pl")]([SubResource("Resource_ccbma"), SubResource("Resource_vnlno"), SubResource("Resource_sh1tt"), SubResource("Resource_64584")])
 spawn_waves = Array[ExtResource("3_ulq04")]([SubResource("Resource_1ib0t"), SubResource("Resource_2s55n"), SubResource("Resource_4txch"), SubResource("Resource_gunkt")])
 metadata/_custom_type_script = "uid://bn1b8j2k5er3j"
