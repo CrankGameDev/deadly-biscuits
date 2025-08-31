@@ -35,7 +35,7 @@ func get_target_path() -> Path3D:
 
 func _unhandled_input(event: InputEvent) -> void:
 	# TODO: Temporary control
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("toggle_lever"):
 		toggle_rejection()
 		get_viewport().set_input_as_handled()
 

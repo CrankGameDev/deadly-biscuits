@@ -2,7 +2,6 @@ extends Control
 
 
 func _on_start_day_pressed() -> void:
-	var level_number: int = Persistence.save_data.current_level
 	LevelManager.load_level_scene()
 
 

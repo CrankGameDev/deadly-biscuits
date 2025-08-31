@@ -34,7 +34,7 @@
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": "",
-"sound_mood": "Voice Quips"
+"sound_mood": "neutral"
 }
 },
 &"scale": 1.0
