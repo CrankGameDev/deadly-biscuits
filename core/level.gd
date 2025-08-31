@@ -21,6 +21,11 @@ signal biscuit_incorrect(biscuit: Biscuit)
 @onready var environment_animation: AnimationPlayer = %EnvironmentAnimation
 @onready var checklist: CanvasLayer = %Checklist
 
+@onready var tentacle_stage_1: MeshInstance3D = $"Feetee Creep-1/Root/Volume119"
+@onready var tentacle_stage_2: MeshInstance3D = $"Feetee Creep-1/Root/Volume118"
+@onready var tentacle_stage_3: MeshInstance3D = $"Feetee Creep-1/Root/Volume117"
+@onready var tentacle_stage_4: MeshInstance3D = $"Feetee Creep-1/Root/Volume65"
+
 
 var mistakes_made: int = 0
 
@@ -41,6 +46,21 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
+	
+	var level: int = SceneManager.scene_params.get("level", 0)
+	tentacle_stage_1.hide()
+	tentacle_stage_2.hide()
+	tentacle_stage_3.hide()
+	tentacle_stage_4.hide()
+	if level > 1:
+		tentacle_stage_1.show()
+	if level > 2:
+		tentacle_stage_2.show()
+	if level > 3:
+		tentacle_stage_3.show()
+	if level > 4:
+		tentacle_stage_4.show()	
+	
 	if not level_data:
 		printerr("No level data provided.")
 		return
