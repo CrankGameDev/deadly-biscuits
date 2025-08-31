@@ -31,6 +31,7 @@ var level_timer: Timer
 var _spawn_events_left: Array[SpawnEvent]
 
 var active_biscuits: Dictionary[Biscuit, bool]
+var is_failed: bool = false
 
 
 func _enter_tree() -> void:
@@ -123,27 +124,20 @@ func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 		mistakes_made += 1
 		if mistakes_made >= 3:
 			level_failed.emit()
-			_on_level_failed()
+			is_failed = true
+			# Level failed but let's not tell the player, shush.
+			#_on_level_failed()
 	active_biscuits.erase(biscuit)
 	if _spawn_events_left.is_empty() and active_biscuits.is_empty():
 		level_completed.emit()
-		_on_level_succeeded()
+		_on_level_ended()
 	biscuit.queue_free()
 
 
-func _on_level_failed() -> void:
+func _on_level_ended() -> void:
 	environment_animation.play("fade_in", -1, -0.5, true)
 	await environment_animation.animation_finished
-	LevelManager.notify_level_finished(level_data, false, {
-		"mistakes_made": mistakes_made,
-		"biscuits_processed": biscuits_processed,
-	})
-
-
-func _on_level_succeeded() -> void:
-	environment_animation.play_backwards("fade_in")
-	await environment_animation.animation_finished
-	LevelManager.notify_level_finished(level_data, true, {
+	LevelManager.notify_level_finished(level_data, !is_failed, {
 		"mistakes_made": mistakes_made,
 		"biscuits_processed": biscuits_processed,
 	})
