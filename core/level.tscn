@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://dsf6itp1pf21l"]
+[gd_scene load_steps=67 format=4 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/conveyor_pathing.gd" id="1_b0hrx"]
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level.gd" id="1_v1dmi"]
@@ -11,7 +11,10 @@
 [ext_resource type="AudioStream" uid="uid://obd56nsage3q" path="res://assets/audio/sfx/lever_tock.ogg" id="9_wsccs"]
 [ext_resource type="PackedScene" uid="uid://dvycejlthfgxu" path="res://assets/uv_unwrapped_test_scene.glb" id="13_ppale"]
 [ext_resource type="Material" uid="uid://bfxho35wxcpo1" path="res://assets/materials/brick.tres" id="14_721q5"]
+[ext_resource type="Script" uid="uid://dssfluiaqf0a" path="res://core/clipboard_object.gd" id="15_3wu0q"]
 [ext_resource type="PackedScene" uid="uid://crgaj1isc3jib" path="res://assets/intercom_unwrapped.glb" id="15_pj88p"]
+[ext_resource type="Texture2D" uid="uid://c0npxa02moxax" path="res://UI/dialogue/clipboarde.png" id="15_u2kg0"]
+[ext_resource type="PackedScene" uid="uid://dwcdfsgobmmn2" path="res://UI/ui/checklist.tscn" id="16_u2kg0"]
 [ext_resource type="Material" uid="uid://d3h7e83iani2f" path="res://assets/materials/MoldyFlore.tres" id="20_bmeqk"]
 [ext_resource type="PackedScene" uid="uid://b6mdrsec0nbbu" path="res://assets/audio/ambient_audio.tscn" id="21_2on84"]
 
@@ -1249,6 +1252,18 @@ metadata/extras = {
 }
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wu0q"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("15_u2kg0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0mn0c"]
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pj88p"]
+size = Vector3(0.35, 0.1, 0.5)
+
 [node name="Level" type="Node"]
 script = ExtResource("1_v1dmi")
 level_data = ExtResource("2_wsccs")
@@ -1289,7 +1304,7 @@ spot_range = 2.264
 spot_attenuation = -5.08
 spot_angle_attenuation = 2.0
 
-[node name="EnviornmentAnimation" type="AnimationPlayer" parent="Environment"]
+[node name="EnvironmentAnimation" type="AnimationPlayer" parent="Environment"]
 unique_name_in_owner = true
 root_node = NodePath("../..")
 libraries = {
@@ -1551,10 +1566,32 @@ metadata/extras = {
 
 [node name="ambient_audio" parent="." instance=ExtResource("21_2on84")]
 
+[node name="Clipboard" type="Node3D" parent="."]
+transform = Transform3D(0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, 2.1, 0.474679, 1.1)
+script = ExtResource("15_3wu0q")
+
+[node name="ClipboardMesh" type="MeshInstance3D" parent="Clipboard"]
+material_override = SubResource("StandardMaterial3D_3wu0q")
+mesh = SubResource("PlaneMesh_0mn0c")
+skeleton = NodePath("../..")
+
+[node name="ClickableArea" type="Area3D" parent="Clipboard"]
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="Shape" type="CollisionShape3D" parent="Clipboard/ClickableArea"]
+shape = SubResource("BoxShape3D_pj88p")
+
+[node name="Checklist" parent="." instance=ExtResource("16_u2kg0")]
+unique_name_in_owner = true
+visible = false
+
 [connection signal="biscuit_rejected" from="." to="Conveyor/FurnaceBurnSFX" method="play" unbinds=2]
 [connection signal="changed" from="ConveyorPathing" to="Lever" method="_on_conveyor_pathing_changed"]
 [connection signal="started_rejecting" from="ConveyorPathing" to="Conveyor/Diverter/AnimationTree" method="set" binds= [&"parameters/conditions/is_closed", true]]
 [connection signal="stopped_rejecting" from="ConveyorPathing" to="Conveyor/Diverter/AnimationTree" method="set" binds= [&"parameters/conditions/is_closed", false]]
 [connection signal="input_event" from="Lever/ClickableArea" to="Lever" method="_on_clickable_area_input_event"]
+[connection signal="input_event" from="Clipboard/ClickableArea" to="Clipboard" method="_on_clickable_area_input_event"]
 
 [editable path="Intercom"]

@@ -18,7 +18,8 @@ signal biscuit_incorrect(biscuit: Biscuit)
 @onready var camera: LevelCamera3D = $Camera
 @onready var intercom_sfx: AudioStreamPlayer3D = %IntercomSFX
 @onready var intercom_animation: AnimationPlayer = %IntercomAnimation
-@onready var enviornment_animation: AnimationPlayer = %EnviornmentAnimation
+@onready var environment_animation: AnimationPlayer = %EnvironmentAnimation
+@onready var checklist: CanvasLayer = %Checklist
 
 
 var mistakes_made: int = 0
@@ -51,6 +52,7 @@ func _ready() -> void:
 	
 	camera.is_overhead = true
 	# Maybe await alignment?
+	checklist.show()
 	
 	level_timer = Timer.new()
 	level_timer.autostart = true
@@ -130,8 +132,8 @@ func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 
 
 func _on_level_failed() -> void:
-	enviornment_animation.play("fade_in", -1, -0.5, true)
-	await enviornment_animation.animation_finished
+	environment_animation.play("fade_in", -1, -0.5, true)
+	await environment_animation.animation_finished
 	LevelManager.notify_level_finished(level_data, false, {
 		"mistakes_made": mistakes_made,
 		"biscuits_processed": biscuits_processed,
@@ -139,8 +141,8 @@ func _on_level_failed() -> void:
 
 
 func _on_level_succeeded() -> void:
-	enviornment_animation.play_backwards("fade_in")
-	await enviornment_animation.animation_finished
+	environment_animation.play_backwards("fade_in")
+	await environment_animation.animation_finished
 	LevelManager.notify_level_finished(level_data, true, {
 		"mistakes_made": mistakes_made,
 		"biscuits_processed": biscuits_processed,
