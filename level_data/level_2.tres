@@ -1,10 +1,7 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=23 format=3 uid="uid://dmut8ty270qbu"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=17 format=3 uid="uid://dmut8ty270qbu"]
 
 [ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="1_sbqv5"]
 [ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="2_4o7op"]
-[ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://criteria/choc_chip_count_criteria.gd" id="2_42hrf"]
-[ext_resource type="Script" uid="uid://coik1fkqmtc5q" path="res://criteria/no_donuts_criteria.gd" id="3_d82qr"]
-[ext_resource type="Script" uid="uid://pf48cd5f1hra" path="res://criteria/no_bugs_criteria.gd" id="3_kxvgl"]
 [ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="3_qw5o3"]
 [ext_resource type="Resource" uid="uid://bgeukpn2enptm" path="res://UI/dialogue/level_2.dtl" id="5_6jmgh"]
 [ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="6_cqqjf"]
@@ -14,20 +11,6 @@
 [ext_resource type="Resource" uid="uid://bu3ks6ji3exxx" path="res://level_data/biscuit_spawns/donut/donut_eye.tres" id="9_iu443"]
 [ext_resource type="PackedScene" uid="uid://cpylw10v2xhi3" path="res://biscuit_types/choc_chip_biscuit.tscn" id="11_cqqjf"]
 [ext_resource type="Resource" uid="uid://yuwil7lhdckm" path="res://level_data/biscuit_spawns/choc_chip/choc_chip_6_to_9_plus_protein.tres" id="12_6jmgh"]
-
-[sub_resource type="Resource" id="Resource_8efpb"]
-script = ExtResource("2_42hrf")
-operation = 0
-count = 5
-metadata/_custom_type_script = "uid://bg3awv8d0fhd2"
-
-[sub_resource type="Resource" id="Resource_6jmgh"]
-script = ExtResource("3_kxvgl")
-metadata/_custom_type_script = "uid://pf48cd5f1hra"
-
-[sub_resource type="Resource" id="Resource_l8v65"]
-script = ExtResource("3_d82qr")
-metadata/_custom_type_script = "uid://coik1fkqmtc5q"
 
 [sub_resource type="Resource" id="Resource_0pvbc"]
 resource_name = "Plain ol Choc Chips"
@@ -81,6 +64,6 @@ script = ExtResource("2_4o7op")
 level_start_dialogue = ExtResource("5_6jmgh")
 conveyor_speed = 1.0
 spawn_interval = 3.0
-critera = Array[ExtResource("1_sbqv5")]([SubResource("Resource_8efpb"), SubResource("Resource_6jmgh"), SubResource("Resource_l8v65")])
+critera = Array[ExtResource("1_sbqv5")]([])
 spawn_waves = Array[ExtResource("3_qw5o3")]([SubResource("Resource_0pvbc"), SubResource("Resource_q7ejn"), SubResource("Resource_kxvgl"), SubResource("Resource_42hrf")])
 metadata/_custom_type_script = "uid://bn1b8j2k5er3j"
