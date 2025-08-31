@@ -26,7 +26,10 @@ func load_level_scene(level_number: int = Persistence.save_data.current_level) -
 	if not level_data:
 		push_error("No data for level '%d'" % level_number)
 		return
-	SceneManager.change_scene_to_packed(LEVEL_SCENE, { "level_data": level_data })
+	SceneManager.change_scene_to_packed(LEVEL_SCENE, { 
+		"level_data": level_data,
+		"level": level_number,
+	})
 
 
 func notify_level_finished(level: LevelData, passed: bool, stats: Dictionary) -> void:

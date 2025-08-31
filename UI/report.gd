@@ -2,6 +2,9 @@ extends Control
 
 const MAIN_MENU_SCENE: PackedScene = preload("uid://bia5rf3vkvbx7")
 
+const FREED_ENDING: PackedScene = preload("uid://78lun7tgsj4w")
+const INCINERATED_ENDING: PackedScene = preload("uid://bcako21f33r4")
+
 @onready var day_label: Label = $"Report stats/DayLabel"
 @onready var mistakes_label: Label = %MistakesLabel
 @onready var processed_label: Label = %ProcessedLabel
@@ -41,8 +44,10 @@ func _on_next_level_pressed() -> void:
 	if level < LevelManager.get_level_count():
 		LevelManager.load_level_scene(level + 1)
 	else:
-		print("You finished the game!")
-		# TODO: End of game scene.
+		if SceneManager.scene_params.stats.tentacle_freed:
+			SceneManager.change_scene_to_packed(FREED_ENDING)
+		else:
+			SceneManager.change_scene_to_packed(INCINERATED_ENDING)
 
 
 func _on_quit_pressed() -> void:

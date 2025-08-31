@@ -38,6 +38,14 @@ var _spawn_events_left: Array[SpawnEvent]
 var active_biscuits: Dictionary[Biscuit, bool]
 var is_failed: bool = false
 
+enum TentacleState {
+	NO_TENTACLE = 0,
+	TENTACLE_INCINERATED = 1,
+	TENTACLE_FREED = 2,
+}
+
+var tentacle_state: TentacleState = TentacleState.NO_TENTACLE
+
 
 func _enter_tree() -> void:
 	var data_param: Variant = SceneManager.scene_params.get("level_data")
@@ -46,7 +54,6 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
-	
 	var level: int = SceneManager.scene_params.get("level", 0)
 	tentacle_stage_1.hide()
 	tentacle_stage_2.hide()
@@ -59,7 +66,7 @@ func _ready() -> void:
 	if level > 3:
 		tentacle_stage_3.show()
 	if level > 4:
-		tentacle_stage_4.show()	
+		tentacle_stage_4.show()
 	
 	if not level_data:
 		printerr("No level data provided.")
@@ -134,6 +141,9 @@ func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 			should_be_accepted = false
 			break	
 	var was_correct: bool = accepted == should_be_accepted
+	if biscuit is TentacleObject:
+		was_correct = true
+		tentacle_state = TentacleState.TENTACLE_FREED if accepted else TentacleState.TENTACLE_INCINERATED
 	if accepted:
 		biscuit_accepted.emit(biscuit, was_correct)
 	else:
@@ -158,7 +168,13 @@ func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 func _on_level_ended() -> void:
 	environment_animation.play("fade_in", -1, -0.5, true)
 	await environment_animation.animation_finished
-	LevelManager.notify_level_finished(level_data, !is_failed, {
+	var stats: Dictionary = {
 		"mistakes_made": mistakes_made,
 		"biscuits_processed": biscuits_processed,
-	})
+	}
+	if tentacle_state != TentacleState.NO_TENTACLE:
+		if tentacle_state == TentacleState.TENTACLE_FREED:
+			stats["tentacle_freed"] = true
+		else:
+			stats["tentacle_freed"] = false
+	LevelManager.notify_level_finished(level_data, !is_failed, stats)
