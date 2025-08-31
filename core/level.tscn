@@ -19,7 +19,14 @@
 [ext_resource type="Material" uid="uid://guk1wyxx10aa" path="res://assets/materials/EmmisiveMaterial.tres" id="14_0mn0c"]
 [ext_resource type="Material" uid="uid://bfxho35wxcpo1" path="res://assets/materials/brick.tres" id="14_721q5"]
 [ext_resource type="PackedScene" uid="uid://crgaj1isc3jib" path="res://assets/intercom_unwrapped.glb" id="15_pj88p"]
+<<<<<<< Updated upstream
 [ext_resource type="Material" uid="uid://d3h7e83iani2f" path="res://assets/materials/MoldyFlore.tres" id="16_bmeqk"]
+=======
+[ext_resource type="PackedScene" uid="uid://swm4smwsor4w" path="res://assets/materials/Feetee Creep-1.glb" id="15_u2kg0"]
+[ext_resource type="Material" uid="uid://dv81n2v4yerkx" path="res://assets/materials/dark.tres" id="16_u2kg0"]
+[ext_resource type="Material" uid="uid://d3h7e83iani2f" path="res://assets/materials/MoldyFlore.tres" id="20_bmeqk"]
+[ext_resource type="PackedScene" uid="uid://b6mdrsec0nbbu" path="res://assets/audio/ambient_audio.tscn" id="21_2on84"]
+>>>>>>> Stashed changes
 
 [sub_resource type="Resource" id="Resource_fgh25"]
 script = ExtResource("8_pj88p")
@@ -76,6 +83,7 @@ ambient_light_color = Color(0.779157, 0.555735, 0.493454, 1)
 reflected_light_source = 1
 glow_enabled = true
 glow_hdr_luminance_cap = 22.78
+<<<<<<< Updated upstream
 
 [sub_resource type="BoxMesh" id="BoxMesh_choak"]
 flip_faces = true
@@ -98,6 +106,74 @@ albedo_color = Color(0.152941, 0.0941176, 0.0666667, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yitki"]
 size = Vector3(0.025, 0.5, 0.5)
+=======
+fog_enabled = true
+fog_light_color = Color(0.330277, 0.5249, 0.356915, 1)
+fog_light_energy = 1.15
+fog_sun_scatter = 0.22
+fog_density = 0.0298
+adjustment_enabled = true
+
+[sub_resource type="Animation" id="Animation_721q5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Environment:environment:adjustment_brightness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Environment:environment:adjustment_saturation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_nuv7q"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Environment:environment:adjustment_brightness")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Environment:environment:adjustment_saturation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bmeqk"]
+_data = {
+&"RESET": SubResource("Animation_721q5"),
+&"fade_in": SubResource("Animation_nuv7q")
+}
+>>>>>>> Stashed changes
 
 [sub_resource type="Curve3D" id="Curve3D_v1l5v"]
 _data = {
@@ -1307,13 +1383,20 @@ angular_limit/lower = -0.0872665
 unique_name_in_owner = true
 script = ExtResource("1_b0hrx")
 
+<<<<<<< Updated upstream
 [node name="BasePath" type="Path3D" parent="ConveyorPathing"]
 curve = SubResource("Curve3D_v1l5v")
+=======
+[node name="Intercom" parent="." instance=ExtResource("15_pj88p")]
+transform = Transform3D(0.573576, 0.769751, -0.280166, -3.05715e-08, -0.34202, -0.939693, -0.819152, 0.538986, -0.196175, -0.658752, 2.97642, 0.189049)
+metadata/_edit_group_ = true
+>>>>>>> Stashed changes
 
 [node name="AcceptedPath" type="Path3D" parent="ConveyorPathing"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 curve = SubResource("Curve3D_pqt5l")
 
+<<<<<<< Updated upstream
 [node name="DeniedPath" type="Path3D" parent="ConveyorPathing"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 curve = SubResource("Curve3D_choak")
@@ -1321,6 +1404,45 @@ curve = SubResource("Curve3D_choak")
 [node name="PlaceholderTable" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.212623, 0, -2.15347, 0, 0.43361, 0, 0.576834, 0, 0.793776, 1.89642, 0.186556, 1.15762)
 mesh = SubResource("BoxMesh_3wu0q")
+=======
+[node name="Tube" parent="Intercom" index="1"]
+material_override = SubResource("StandardMaterial3D_u2kg0")
+
+[node name="Triplanar" parent="Intercom" index="2"]
+material_override = SubResource("StandardMaterial3D_u2kg0")
+
+[node name="Cylinder" parent="Intercom" index="3"]
+material_override = SubResource("StandardMaterial3D_u2kg0")
+
+[node name="IntercomAnimation" type="AnimationPlayer" parent="Intercom"]
+unique_name_in_owner = true
+root_node = NodePath("../Tube 1")
+libraries = {
+&"": SubResource("AnimationLibrary_3wu0q")
+}
+
+[node name="IntercomSFX" type="AudioStreamPlayer3D" parent="Intercom"]
+unique_name_in_owner = true
+stream = ExtResource("6_setdq")
+pitch_scale = 1.25
+bus = &"SFX"
+
+[node name="Factory" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -2.11316)
+material_override = ExtResource("14_721q5")
+mesh = SubResource("BoxMesh_3rhcs")
+
+[node name="Floor" type="MeshInstance3D" parent="Factory"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+material_override = ExtResource("20_bmeqk")
+mesh = SubResource("PlaneMesh_721q5")
+skeleton = NodePath("../..")
+
+[node name="PlaceholderTable" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.212623, 0, -2.06897, 0, 0.43361, 0, 0.576834, 0, 0.762628, 1.83791, 0.186556, 1.17919)
+material_override = ExtResource("20_bmeqk")
+mesh = SubResource("BoxMesh_5jcfi")
+>>>>>>> Stashed changes
 skeleton = NodePath("../Lever")
 
 [node name="PlaceholderTable2" type="MeshInstance3D" parent="."]
@@ -1474,9 +1596,36 @@ libraries = {
 &"": SubResource("AnimationLibrary_3wu0q")
 }
 
+<<<<<<< Updated upstream
+=======
+[node name="Feetee Creep-1" parent="." instance=ExtResource("15_u2kg0")]
+transform = Transform3D(40.1461, 0, 0, 0, 37.8169, 0, 0, 0, 40.1461, -1.83302, 0.107494, -5.95956)
+
+[node name="Volume117" parent="Feetee Creep-1/Root" index="0"]
+material_override = ExtResource("16_u2kg0")
+
+[node name="Volume119" parent="Feetee Creep-1/Root" index="1"]
+surface_material_override/0 = ExtResource("16_u2kg0")
+
+[node name="Volume118" parent="Feetee Creep-1/Root" index="2"]
+material_override = ExtResource("16_u2kg0")
+
+[node name="Volume65" parent="Feetee Creep-1/Root" index="3"]
+material_override = ExtResource("16_u2kg0")
+
+[node name="Shader_M" parent="Feetee Creep-1/Root" index="4"]
+material_override = ExtResource("16_u2kg0")
+
+[connection signal="biscuit_rejected" from="." to="Conveyor/FurnaceBurnSFX" method="play" unbinds=2]
+>>>>>>> Stashed changes
 [connection signal="changed" from="ConveyorPathing" to="Lever" method="_on_conveyor_pathing_changed"]
 [connection signal="started_rejecting" from="ConveyorPathing" to="uv_unwrapped_test_scene/Diverter/DiverterAnimation" method="play_backwards" binds= [&"open", 0.5]]
 [connection signal="stopped_rejecting" from="ConveyorPathing" to="uv_unwrapped_test_scene/Diverter/DiverterAnimation" method="play" binds= [&"open", 0.5]]
 [connection signal="input_event" from="Lever/ClickableArea" to="Lever" method="_on_clickable_area_input_event"]
 
+<<<<<<< Updated upstream
 [editable path="intercom_unwrapped"]
+=======
+[editable path="Intercom"]
+[editable path="Feetee Creep-1"]
+>>>>>>> Stashed changes
