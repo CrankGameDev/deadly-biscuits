@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dyioliwdb4llg"]
+[gd_resource type="Theme" format=3 uid="uid://dyioliwdb4llg"]
 
 [ext_resource type="FontFile" uid="uid://bl76grad0gmxb" path="res://UI/ui/OpenDyslexic-Regular.otf" id="1_bfwqm"]
 [ext_resource type="StyleBox" uid="uid://cey5hud7kirsw" path="res://UI/ui/buttons/pressed.tres" id="3_2klwg"]

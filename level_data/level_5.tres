@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=29 format=3 uid="uid://camqpb57yo5y7"]
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://camqpb57yo5y7"]
 
 [ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="1_6elam"]
 [ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="2_de01j"]
@@ -21,7 +21,6 @@
 
 [sub_resource type="Resource" id="Resource_q6gp6"]
 script = ExtResource("2_oeg8g")
-operation = 0
 count = 5
 metadata/_custom_type_script = "uid://bg3awv8d0fhd2"
 
@@ -62,7 +61,6 @@ metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 
 [sub_resource type="Resource" id="Resource_xv7me"]
 script = ExtResource("3_ai7qs")
-spawn_events = Dictionary[ExtResource("9_w1w82"), int]({})
 metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 
 [sub_resource type="Resource" id="Resource_wyufw"]
@@ -95,7 +93,6 @@ metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 script = ExtResource("2_de01j")
 level_start_dialogue = ExtResource("6_w7gya")
 conveyor_speed = 1.5
-spawn_interval = 3.0
 critera = Array[ExtResource("1_6elam")]([SubResource("Resource_q6gp6"), SubResource("Resource_fpu1x"), SubResource("Resource_7unbe"), SubResource("Resource_0hjhq")])
 spawn_waves = Array[ExtResource("3_ai7qs")]([SubResource("Resource_oqa6u"), SubResource("Resource_2rapk"), SubResource("Resource_xv7me"), SubResource("Resource_wyufw"), SubResource("Resource_hbiv3"), SubResource("Resource_80px0")])
 metadata/_custom_type_script = "uid://bn1b8j2k5er3j"

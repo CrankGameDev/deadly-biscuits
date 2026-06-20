@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bia5rf3vkvbx7"]
+[gd_scene format=3 uid="uid://bia5rf3vkvbx7"]
 
 [ext_resource type="Script" uid="uid://ya2x7s3qql4g" path="res://UI/start_screen.gd" id="1_trqcy"]
 [ext_resource type="Texture2D" uid="uid://c1dk25u8g2nmn" path="res://assets/backgrounds/backgorundstart.png" id="2_k0fct"]
 [ext_resource type="Theme" uid="uid://dyioliwdb4llg" path="res://UI/button theme.tres" id="2_kwdus"]
 
-[node name="Control2" type="Control"]
+[node name="Control2" type="Control" unique_id=715680955]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_trqcy")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=634908778]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_k0fct")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=361598334]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -43,7 +43,7 @@ size_flags_horizontal = 4
 theme = ExtResource("2_kwdus")
 text = "Basilisk Bakery Corp"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1107775742]
 custom_minimum_size = Vector2(120, 80)
 layout_mode = 1
 anchors_preset = 8
@@ -61,17 +61,17 @@ scale = Vector2(1.08398, 1.17598)
 theme = ExtResource("2_kwdus")
 theme_override_constants/separation = 8
 
-[node name="Start Day" type="Button" parent="VBoxContainer"]
+[node name="Start Day" type="Button" parent="VBoxContainer" unique_id=301583178]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Start Day"
 
-[node name="Quit Job" type="Button" parent="VBoxContainer"]
+[node name="Quit Job" type="Button" parent="VBoxContainer" unique_id=1464643194]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Quit Job"
 
-[node name="ResetSave" type="Button" parent="."]
+[node name="ResetSave" type="Button" parent="." unique_id=479868495]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -85,7 +85,7 @@ size_flags_vertical = 3
 theme = ExtResource("2_kwdus")
 text = "Reset Save"
 
-[node name="ResetSaveConfirmation" type="ConfirmationDialog" parent="ResetSave"]
+[node name="ResetSaveConfirmation" type="ConfirmationDialog" parent="ResetSave" unique_id=201661960]
 initial_position = 2
 size = Vector2i(397, 133)
 dialog_text = "Reset save data?"

@@ -8,19 +8,27 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Basilisk Biskuits"
 run/main_scene="uid://bia5rf3vkvbx7"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://assets/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://dqyfynkwycinu"
 
 [autoload]
 
 SceneManager="*res://core/global/SceneManager.gd"
 LevelManager="*res://core/global/LevelManager.gd"
 Persistence="*res://core/global/Persistence.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
@@ -67,6 +75,10 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+layout/style_directory={
+"": "res://UI/dialogue/style.tres",
+"style": "res://UI/dialogue/style.tres"
+}
 
 [display]
 
@@ -76,6 +88,12 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://build/": "orange"
+}
 
 [global_group]
 
