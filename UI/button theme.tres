@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://dyioliwdb4llg"]
 
-[ext_resource type="FontFile" uid="uid://bl76grad0gmxb" path="res://UI/ui/OpenDyslexic-Regular.otf" id="1_bfwqm"]
-[ext_resource type="StyleBox" uid="uid://cey5hud7kirsw" path="res://UI/ui/buttons/pressed.tres" id="3_2klwg"]
+[ext_resource type="FontFile" uid="uid://bl76grad0gmxb" path="res://ui/ui/OpenDyslexic-Regular.otf" id="1_bfwqm"]
+[ext_resource type="StyleBox" uid="uid://cey5hud7kirsw" path="res://ui/ui/buttons/pressed.tres" id="3_2klwg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu2uj"]
 content_margin_left = 4.0

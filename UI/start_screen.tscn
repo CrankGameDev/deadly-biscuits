@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bia5rf3vkvbx7"]
 
-[ext_resource type="Script" uid="uid://ya2x7s3qql4g" path="res://UI/start_screen.gd" id="1_trqcy"]
+[ext_resource type="Script" uid="uid://ya2x7s3qql4g" path="res://ui/start_screen.gd" id="1_trqcy"]
 [ext_resource type="Texture2D" uid="uid://c1dk25u8g2nmn" path="res://assets/backgrounds/backgorundstart.png" id="2_k0fct"]
-[ext_resource type="Theme" uid="uid://dyioliwdb4llg" path="res://UI/button theme.tres" id="2_kwdus"]
+[ext_resource type="Theme" uid="uid://dyioliwdb4llg" path="res://ui/button theme.tres" id="2_kwdus"]
 
 [node name="Control2" type="Control" unique_id=715680955]
 layout_mode = 3

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bl76grad0gmxb"
-path="res://.godot/imported/OpenDyslexic-Regular.otf-888eeb538c0b1b4683314bfb2d197f71.fontdata"
+path="res://.godot/imported/OpenDyslexic-Regular.otf-fbfe90af6bbc9f0e69d34ec6a9012e65.fontdata"
 
 [deps]
 
-source_file="res://UI/ui/OpenDyslexic-Regular.otf"
-dest_files=["res://.godot/imported/OpenDyslexic-Regular.otf-888eeb538c0b1b4683314bfb2d197f71.fontdata"]
+source_file="res://ui/ui/OpenDyslexic-Regular.otf"
+dest_files=["res://.godot/imported/OpenDyslexic-Regular.otf-fbfe90af6bbc9f0e69d34ec6a9012e65.fontdata"]
 
 [params]
 
@@ -21,6 +21,7 @@ msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
+modulate_color_glyphs=false
 hinting=1
 subpixel_positioning=4
 keep_rounding_remainders=true

@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwcdfsgobmmn2"]
+[gd_scene format=3 uid="uid://dwcdfsgobmmn2"]
 
 [ext_resource type="Script" uid="uid://b74o31pnod7yj" path="res://checklist.gd" id="1_t7f0y"]
-[ext_resource type="Texture2D" uid="uid://c0npxa02moxax" path="res://UI/dialogue/clipboarde.png" id="2_51e2v"]
-[ext_resource type="FontFile" uid="uid://bl76grad0gmxb" path="res://UI/ui/OpenDyslexic-Regular.otf" id="4_vgfp8"]
+[ext_resource type="Texture2D" uid="uid://c0npxa02moxax" path="res://ui/dialogue/clipboarde.png" id="2_51e2v"]
+[ext_resource type="FontFile" uid="uid://bl76grad0gmxb" path="res://ui/ui/OpenDyslexic-Regular.otf" id="4_vgfp8"]
 
 [sub_resource type="Theme" id="Theme_laqw0"]
 Label/colors/font_color = Color(0.0666667, 0.00784314, 0.00784314, 1)
@@ -15,10 +15,10 @@ Label/colors/font_color = Color(0.109804, 0.00784314, 0.0117647, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgfp8"]
 
-[node name="Checklist" type="CanvasLayer"]
+[node name="ChecklistUI" type="CanvasLayer" unique_id=1360084608]
 script = ExtResource("1_t7f0y")
 
-[node name="ClipboardArea" type="Control" parent="."]
+[node name="ClipboardArea" type="Control" parent="." unique_id=553941516]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 8
@@ -33,7 +33,7 @@ offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="ClipboardArea"]
+[node name="TextureRect" type="TextureRect" parent="ClipboardArea" unique_id=940483103]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,7 +52,7 @@ size_flags_vertical = 4
 texture = ExtResource("2_51e2v")
 stretch_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ClipboardArea"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ClipboardArea" unique_id=1612245221]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,7 +60,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="ClipboardArea/VBoxContainer"]
+[node name="Label" type="Label" parent="ClipboardArea/VBoxContainer" unique_id=1849390231]
 custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 theme = SubResource("Theme_laqw0")
@@ -69,18 +69,18 @@ horizontal_alignment = 1
 vertical_alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="ClipboardArea/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ClipboardArea/VBoxContainer" unique_id=808779075]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 34
 theme_override_constants/margin_right = 34
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ClipboardArea/VBoxContainer/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ClipboardArea/VBoxContainer/MarginContainer" unique_id=1858617802]
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="ChecklistItemLabel" type="Label" parent="ClipboardArea/VBoxContainer/MarginContainer/ScrollContainer"]
+[node name="ChecklistItemLabel" type="Label" parent="ClipboardArea/VBoxContainer/MarginContainer/ScrollContainer" unique_id=484095369]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
@@ -90,12 +90,12 @@ theme = SubResource("Theme_vgfp8")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="ClipboardArea/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="ClipboardArea/VBoxContainer" unique_id=1025863318]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_vgfp8")
 
-[node name="KeyShortcutLabel" type="Label" parent="ClipboardArea/VBoxContainer"]
+[node name="KeyShortcutLabel" type="Label" parent="ClipboardArea/VBoxContainer" unique_id=1786414477]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_constants/outline_size = 2

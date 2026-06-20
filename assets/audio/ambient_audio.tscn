@@ -1,18 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6mdrsec0nbbu"]
+[gd_scene format=3 uid="uid://b6mdrsec0nbbu"]
 
 [ext_resource type="AudioStream" uid="uid://bgpyfcxglo22n" path="res://assets/audio/ambient/rattlyfan_ambient.ogg" id="1_7f5g4"]
 [ext_resource type="AudioStream" uid="uid://bk31dstt6aiqc" path="res://assets/audio/ambient/conveyor.ogg" id="2_rioae"]
 
-[node name="ambient_audio" type="Node"]
+[node name="AmbientAudio" type="Node" unique_id=151988119]
 
-[node name="RattlyfanAmbient" type="AudioStreamPlayer" parent="."]
+[node name="RattlyfanAmbient" type="AudioStreamPlayer" parent="." unique_id=1540818316]
 stream = ExtResource("1_7f5g4")
 volume_db = -27.444
 pitch_scale = 1.08
 autoplay = true
 parameters/looping = true
 
-[node name="Conveyor" type="AudioStreamPlayer" parent="."]
+[node name="Conveyor" type="AudioStreamPlayer" parent="." unique_id=2107948492]
 stream = ExtResource("2_rioae")
 volume_db = -24.556
 pitch_scale = 0.47

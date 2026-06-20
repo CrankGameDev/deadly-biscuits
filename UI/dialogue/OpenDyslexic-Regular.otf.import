@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://822ppajjhiia"
-path="res://.godot/imported/OpenDyslexic-Regular.otf-d2307b1dc3497d8cca70b6daadde6f10.fontdata"
+path="res://.godot/imported/OpenDyslexic-Regular.otf-d37c188a1b53d989ade20da775951a0d.fontdata"
 
 [deps]
 
-source_file="res://UI/dialogue/OpenDyslexic-Regular.otf"
-dest_files=["res://.godot/imported/OpenDyslexic-Regular.otf-d2307b1dc3497d8cca70b6daadde6f10.fontdata"]
+source_file="res://ui/dialogue/OpenDyslexic-Regular.otf"
+dest_files=["res://.godot/imported/OpenDyslexic-Regular.otf-d37c188a1b53d989ade20da775951a0d.fontdata"]
 
 [params]
 
@@ -21,6 +21,7 @@ msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
+modulate_color_glyphs=false
 hinting=1
 subpixel_positioning=4
 keep_rounding_remainders=true
