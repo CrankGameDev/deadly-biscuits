@@ -1,6 +1,6 @@
 extends Node
 
-const LEVEL_SCENE: PackedScene = preload("uid://dsf6itp1pf21l")
+const LEVEL_SCENE_PATH: String = "uid://dsf6itp1pf21l"
 const REPORT_SCENE: PackedScene = preload("uid://bcgjkpkf7p7bg")
 const LEVEL_LIST: LevelList = preload("uid://dkjf0raciy1bl")
 
@@ -26,10 +26,12 @@ func load_level_scene(level_number: int = Persistence.save_data.current_level) -
 	if not level_data:
 		push_error("No data for level '%d'" % level_number)
 		return
-	SceneManager.change_scene_to_packed(LEVEL_SCENE, { 
+	var error: Error = await SceneManager.change_scene_to_file(LEVEL_SCENE_PATH, { 
 		"level_data": level_data,
 		"level": level_number,
 	})
+	if error:
+		push_error("Error loading level scene for level '%d': %s" % [level_number, error_string(error)])
 
 
 func notify_level_finished(level: LevelData, passed: bool, stats: Dictionary) -> void:

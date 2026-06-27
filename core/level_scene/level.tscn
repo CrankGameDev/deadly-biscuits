@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level_scene/level.gd" id="1_a5xre"]
-[ext_resource type="Resource" uid="uid://c2fo1vt1d0x7p" path="res://game_data/levels/level_3.tres" id="2_a5xre"]
 [ext_resource type="PackedScene" uid="uid://b6mdrsec0nbbu" path="res://assets/audio/ambient_audio.tscn" id="3_q2sjp"]
 [ext_resource type="Script" uid="uid://brcm7tud6e3w5" path="res://core/level_scene/camera.gd" id="4_a5xre"]
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/level_scene/conveyor_pathing.gd" id="5_a5xre"]
@@ -631,7 +630,6 @@ size = Vector3(0.35, 0.1, 0.5)
 
 [node name="Level" type="Node" unique_id=1423860115]
 script = ExtResource("1_a5xre")
-level_data = ExtResource("2_a5xre")
 
 [node name="AmbientAudio" parent="." unique_id=33836271 instance=ExtResource("3_q2sjp")]
 

@@ -23,6 +23,13 @@ signal scene_changed(new_scene_path: String, old_scene_path: String)
 ## A signal emitted when the current scene is reloaded.
 signal scene_reloaded
 
+## Whether to use the loading screen to transition to scenes which have not been loaded.
+var use_loading_screen: bool = true
+
+const LoadingScene: Script = preload("uid://ci54pa5d1sclr")
+
+const LOADING_SCENE_PATH: String = "uid://pujolvn42iou"
+
 
 ## A helper function to retrieve the scene file path of a given node, if it is available.
 static func get_node_scene_path(node: Node) -> String:
@@ -45,9 +52,22 @@ func change_scene_to_file(path: String, params: Dictionary = {}) -> Error:
 	await get_tree().process_frame
 	var old_path: String = get_node_scene_path(get_tree().current_scene)
 	scene_changing.emit(path, get_tree().current_scene.scene_file_path)
+
+	if (
+		use_loading_screen
+		and not ResourceLoader.has_cached(path)
+		and ResourceLoader.exists(LOADING_SCENE_PATH, &"PackedScene")
+	):
+		var loading_scene: LoadingScene = preload(LOADING_SCENE_PATH).instantiate() as LoadingScene
+		loading_scene.resource_paths.append(path)
+		var loading_screen_error: Error = get_tree().change_scene_to_node(loading_scene)
+		if loading_screen_error:
+			push_error("Error changing to loading scene at \"%s\": %s" % [LOADING_SCENE_PATH, error_string(loading_screen_error)])
+		else:
+			await loading_scene.finished
+	
 	var error: Error = get_tree().change_scene_to_file(path)
 	if not error:
-		await get_tree().node_added
 		scene_params = params
 		scene_changed.emit(path, old_path)
 		scene_reset.emit()
@@ -64,7 +84,6 @@ func change_scene_to_packed(packed_scene: PackedScene, params: Dictionary = {}) 
 	scene_params = params
 	var error: Error = get_tree().change_scene_to_packed(packed_scene)
 	if not error:
-		await get_tree().node_added
 		scene_changed.emit(new_path, old_path)
 		scene_reset.emit()
 	return error
