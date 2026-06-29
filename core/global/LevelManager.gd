@@ -1,7 +1,8 @@
 extends Node
 
 const LEVEL_SCENE_PATH: String = "uid://dsf6itp1pf21l"
-const REPORT_SCENE: PackedScene = preload("uid://bcgjkpkf7p7bg")
+const REPORT_SCENE_PATH: String = "uid://bcgjkpkf7p7bg"
+
 const LEVEL_LIST: LevelList = preload("uid://dkjf0raciy1bl")
 
 
@@ -44,7 +45,7 @@ func notify_level_finished(level: LevelData, passed: bool, stats: Dictionary) ->
 		if (Persistence.save_data.current_level < next_level) and LEVEL_LIST.has_level(next_level):
 			Persistence.save_data.current_level = next_level
 		Persistence.save_game()
-	SceneManager.change_scene_to_packed(REPORT_SCENE, {
+	SceneManager.change_scene_to_file(REPORT_SCENE_PATH, {
 		"failed": !passed,
 		"level": level_number,
 		"stats": stats,

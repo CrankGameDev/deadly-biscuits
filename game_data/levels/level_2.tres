@@ -12,7 +12,6 @@
 [ext_resource type="Resource" uid="uid://bn7dtg7dtq1mi" path="res://game_data/levels/biscuit_spawns/choc_chip/choc_chip_6_to_9.tres" id="8_kxvgl"]
 [ext_resource type="Resource" uid="uid://h4idhoo153qb" path="res://game_data/levels/biscuit_spawns/donut/donut_no_eye.tres" id="9_6jmgh"]
 [ext_resource type="Resource" uid="uid://bu3ks6ji3exxx" path="res://game_data/levels/biscuit_spawns/donut/donut_eye.tres" id="9_iu443"]
-[ext_resource type="PackedScene" uid="uid://cpylw10v2xhi3" path="res://biscuit_types/choc_chip_biscuit.tscn" id="11_cqqjf"]
 [ext_resource type="Resource" uid="uid://yuwil7lhdckm" path="res://game_data/levels/biscuit_spawns/choc_chip/choc_chip_6_to_9_plus_protein.tres" id="12_6jmgh"]
 
 [sub_resource type="Resource" id="Resource_6jmgh"]
@@ -58,7 +57,6 @@ metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 
 [sub_resource type="Resource" id="Resource_iu443"]
 script = ExtResource("6_cqqjf")
-biscuit_scene = ExtResource("11_cqqjf")
 spawn_settings = Dictionary[String, Variant]({
 "bug_count": 2,
 "choc_chip_count": 7
