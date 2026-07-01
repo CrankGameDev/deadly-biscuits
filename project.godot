@@ -25,6 +25,7 @@ buses/default_bus_layout="uid://dqyfynkwycinu"
 
 [autoload]
 
+ResourceCache="*uid://cfwb0ima7db57"
 SceneManager="*res://core/global/SceneManager.gd"
 LevelManager="*res://core/global/LevelManager.gd"
 Persistence="*res://core/global/Persistence.gd"
