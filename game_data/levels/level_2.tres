@@ -57,6 +57,7 @@ metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 
 [sub_resource type="Resource" id="Resource_iu443"]
 script = ExtResource("6_cqqjf")
+biscuit_scene_path = "uid://cpylw10v2xhi3"
 spawn_settings = Dictionary[String, Variant]({
 "bug_count": 2,
 "choc_chip_count": 7

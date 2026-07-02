@@ -8,6 +8,8 @@ signal resource_loaded(path: String)
 @export_file_path("*.tres", "*.res", "*.tscn")
 var resource_paths: PackedStringArray
 
+@export var cache_resources: bool = false
+
 var loading_resources: Dictionary[String, float]
 var completed_resources: Dictionary[String, Resource]
 
@@ -58,6 +60,8 @@ func _update_progress() -> void:
 			loading_resources.erase(path)
 			completed_resources.set(path, ResourceLoader.load_threaded_get(path))
 			resource_loaded.emit(path)
+			if cache_resources:
+				ResourceCache.cache_resource(completed_resources[path])
 			continue
 		current_load += progress_ref[0]
 	if not progress_bar:
