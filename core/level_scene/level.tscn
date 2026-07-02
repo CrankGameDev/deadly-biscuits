@@ -438,7 +438,7 @@ size = Vector3(0.1, 0.5, 0.5)
 albedo_color = Color(0.152941, 0.0941176, 0.0666667, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yitki"]
-size = Vector3(0.025, 0.5, 0.5)
+size = Vector3(0.025, 0.5, 1)
 
 [sub_resource type="Curve" id="Curve_721q5"]
 _data = [Vector2(0.0971129, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.9503, 0.0, 0, 0]
