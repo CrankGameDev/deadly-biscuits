@@ -13,6 +13,7 @@ signal biscuit_correct(biscuit: Biscuit)
 signal biscuit_incorrect(biscuit: Biscuit)
 
 @export var level_data: LevelData
+@export var nausea_mode: bool = false
 
 @onready var conveyor_pathing: ConveyorPathing = %ConveyorPathing
 @onready var camera: LevelCamera3D = $Camera
@@ -25,7 +26,6 @@ signal biscuit_incorrect(biscuit: Biscuit)
 @onready var tentacle_stage_2: MeshInstance3D = $"Feetee Creep-1/Root/Volume118"
 @onready var tentacle_stage_3: MeshInstance3D = $"Feetee Creep-1/Root/Volume117"
 @onready var tentacle_stage_4: MeshInstance3D = $"Feetee Creep-1/Root/Volume65"
-
 
 var mistakes_made: int = 0
 
@@ -129,11 +129,12 @@ func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 	
 	# Randomly add intercom chatter just to make players think it means something :)
 	if not intercom_animation.is_playing() and randi_range(0, 5) == 0:
-		camera.is_overhead = false
 		intercom_animation.play("talk")
 		intercom_sfx.play()
 		intercom_sfx.finished.connect(intercom_animation.stop, CONNECT_ONE_SHOT)
-		intercom_sfx.finished.connect(camera.set.bind("is_overhead", true), CONNECT_ONE_SHOT)
+		if nausea_mode:
+			camera.is_overhead = false
+			intercom_sfx.finished.connect(camera.set.bind("is_overhead", true), CONNECT_ONE_SHOT)
 	
 	var should_be_accepted: bool = true
 	var failed_criteria: Criteria
