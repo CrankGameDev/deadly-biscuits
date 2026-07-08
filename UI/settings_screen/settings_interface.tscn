@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://jnlpl51k3cg2"]
+
+[ext_resource type="Script" uid="uid://dvraw6c3b3r3c" path="res://ui/settings_screen/settings_interface.gd" id="1_7a85w"]
+[ext_resource type="Script" uid="uid://buc841rmwpjfc" path="res://ui/settings_screen/components/volume_slider_control.gd" id="2_cv30n"]
+[ext_resource type="AudioStream" uid="uid://bw3ninqnfisvl" path="res://ui/settings_screen/audio_sample_master.tres" id="3_sg2l4"]
+[ext_resource type="AudioStream" uid="uid://biuyattppv4oq" path="res://ui/settings_screen/audio_sample_sfx.tres" id="4_jj88d"]
+
+[node name="SettingsInterface" type="Control" unique_id=150000391]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7a85w")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1229094569]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -243.5
+offset_right = 243.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBox" unique_id=619128078]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Game Settings"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox" unique_id=1613563903]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="SettingsList" type="VBoxContainer" parent="VBox/ScrollContainer" unique_id=1554503500]
+layout_mode = 2
+size_flags_horizontal = 6
+alignment = 1
+
+[node name="AudioSettingsTitle" type="Label" parent="VBox/ScrollContainer/SettingsList" unique_id=1766670054]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Audio Settings"
+horizontal_alignment = 1
+
+[node name="AudioSettingsGrid" type="GridContainer" parent="VBox/ScrollContainer/SettingsList" unique_id=862216490]
+layout_mode = 2
+columns = 2
+
+[node name="MasterVolumeLabel" type="Label" parent="VBox/ScrollContainer/SettingsList/AudioSettingsGrid" unique_id=177633629]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Master Volume"
+horizontal_alignment = 2
+
+[node name="MasterVolumeControl" type="HBoxContainer" parent="VBox/ScrollContainer/SettingsList/AudioSettingsGrid" unique_id=920706417]
+layout_mode = 2
+script = ExtResource("2_cv30n")
+audio_sample = ExtResource("3_sg2l4")
+audio_bus = &"Master"
+metadata/_custom_type_script = "uid://buc841rmwpjfc"
+
+[node name="SFXLabel" type="Label" parent="VBox/ScrollContainer/SettingsList/AudioSettingsGrid" unique_id=989180518]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Sound Effects"
+horizontal_alignment = 2
+
+[node name="SFXVolumeControl" type="HBoxContainer" parent="VBox/ScrollContainer/SettingsList/AudioSettingsGrid" unique_id=2119913499]
+layout_mode = 2
+script = ExtResource("2_cv30n")
+audio_sample = ExtResource("4_jj88d")
+audio_bus = &"SFX"
+metadata/_custom_type_script = "uid://buc841rmwpjfc"
+
+[node name="AmbienceLabel" type="Label" parent="VBox/ScrollContainer/SettingsList/AudioSettingsGrid" unique_id=1805927985]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Ambience"
+horizontal_alignment = 2
+
+[node name="AmbienceVolumeControl" type="HBoxContainer" parent="VBox/ScrollContainer/SettingsList/AudioSettingsGrid" unique_id=1569212042]
+layout_mode = 2
+script = ExtResource("2_cv30n")
+audio_bus = &"Ambience"
+metadata/_custom_type_script = "uid://buc841rmwpjfc"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBox" unique_id=683191137]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBox/MarginContainer" unique_id=153473539]
+layout_mode = 2
+alignment = 2
+
+[node name="UnsavedChangesLabel" type="Label" parent="VBox/MarginContainer/VBoxContainer" unique_id=77159758]
+unique_name_in_owner = true
+layout_mode = 2
+text = "You have unsaved changes"
+horizontal_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="VBox/MarginContainer/VBoxContainer" unique_id=1007035615]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="ApplyButton" type="Button" parent="VBox/MarginContainer/VBoxContainer/HBox" unique_id=1228792891]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Apply"
+
+[node name="RevertButton" type="Button" parent="VBox/MarginContainer/VBoxContainer/HBox" unique_id=175887973]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Revert"
+
+[node name="RestoreDefaultsButton" type="Button" parent="VBox/MarginContainer/VBoxContainer/HBox" unique_id=50483527]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Restore Defaults"
+
+[node name="RestoreDefaultsConfirmationDialog" type="ConfirmationDialog" parent="VBox/MarginContainer/VBoxContainer/HBox/RestoreDefaultsButton" unique_id=545189805]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(480, 128)
+ok_button_text = "Confirm"
+dialog_text = "Are you sure you want to restore all settings to defaults values?"
+dialog_autowrap = true
+
+[node name="BackButton" type="Button" parent="VBox/MarginContainer/VBoxContainer" unique_id=913906694]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Go Back"
+
+[node name="BackButtonConfirmationDialog" type="ConfirmationDialog" parent="VBox/MarginContainer/VBoxContainer/BackButton" unique_id=651950708]
+unique_name_in_owner = true
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(480, 128)
+ok_button_text = "Discard Changes"
+dialog_text = "Are you sure you want to go back?
+You have unsaved changes."
+dialog_autowrap = true
+
+[connection signal="pressed" from="VBox/MarginContainer/VBoxContainer/HBox/ApplyButton" to="." method="_on_apply_button_pressed"]
+[connection signal="pressed" from="VBox/MarginContainer/VBoxContainer/HBox/RevertButton" to="." method="_on_revert_button_pressed"]
+[connection signal="pressed" from="VBox/MarginContainer/VBoxContainer/HBox/RestoreDefaultsButton" to="VBox/MarginContainer/VBoxContainer/HBox/RestoreDefaultsButton/RestoreDefaultsConfirmationDialog" method="show"]
+[connection signal="confirmed" from="VBox/MarginContainer/VBoxContainer/HBox/RestoreDefaultsButton/RestoreDefaultsConfirmationDialog" to="." method="_on_restore_defaults_confirmed"]
+[connection signal="pressed" from="VBox/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="confirmed" from="VBox/MarginContainer/VBoxContainer/BackButton/BackButtonConfirmationDialog" to="." method="_on_back_button_confirmed"]

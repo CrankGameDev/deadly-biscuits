@@ -10,6 +10,7 @@ stream = ExtResource("1_7f5g4")
 volume_db = -27.444
 pitch_scale = 1.08
 autoplay = true
+bus = &"Ambience"
 parameters/looping = true
 
 [node name="Conveyor" type="AudioStreamPlayer" parent="." unique_id=2107948492]
@@ -17,4 +18,5 @@ stream = ExtResource("2_rioae")
 volume_db = -24.556
 pitch_scale = 0.47
 autoplay = true
+bus = &"Ambience"
 parameters/looping = true

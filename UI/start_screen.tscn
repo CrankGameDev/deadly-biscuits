@@ -66,6 +66,10 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Start Day"
 
+[node name="GameSettingsButton" type="Button" parent="VBoxContainer" unique_id=1722245989]
+layout_mode = 2
+text = "Game Settings"
+
 [node name="Quit Job" type="Button" parent="VBoxContainer" unique_id=1464643194]
 layout_mode = 2
 size_flags_vertical = 3
@@ -91,6 +95,7 @@ size = Vector2i(397, 133)
 dialog_text = "Reset save data?"
 
 [connection signal="pressed" from="VBoxContainer/Start Day" to="." method="_on_start_day_pressed"]
+[connection signal="pressed" from="VBoxContainer/GameSettingsButton" to="." method="_on_game_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit Job" to="." method="_on_quit_job_pressed"]
 [connection signal="pressed" from="ResetSave" to="ResetSave/ResetSaveConfirmation" method="show"]
 [connection signal="confirmed" from="ResetSave/ResetSaveConfirmation" to="." method="_on_reset_save_confirmed"]

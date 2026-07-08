@@ -22,6 +22,7 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/use_filter=false
 boot_splash/image="uid://odjsgxnv3k8p"
 config/icon="res://assets/icon.svg"
+config/settings_file="user://game_settings.cfg"
 
 [audio]
 
@@ -29,6 +30,7 @@ buses/default_bus_layout="uid://dqyfynkwycinu"
 
 [autoload]
 
+GameSettings="*uid://1sx8cu4w3f43"
 ResourceCache="*uid://cfwb0ima7db57"
 SceneManager="*res://core/global/SceneManager.gd"
 LevelManager="*res://core/global/LevelManager.gd"

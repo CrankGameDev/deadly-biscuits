@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://bqwdmngrp0ewl"]
+
+[ext_resource type="AudioStream" uid="uid://dmjhcyim8ulhq" path="res://assets/audio/sfx/flame.ogg" id="1_tq77c"]
+
+[resource]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("1_tq77c")

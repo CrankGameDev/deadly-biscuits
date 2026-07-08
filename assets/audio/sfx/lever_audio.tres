@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://cmkbkplriybqc"]
+
+[ext_resource type="AudioStream" uid="uid://obd56nsage3q" path="res://assets/audio/sfx/lever_tock.ogg" id="1_bxgje"]
+
+[resource]
+random_pitch = 1.05
+streams_count = 1
+stream_0/stream = ExtResource("1_bxgje")
