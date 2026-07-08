@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://pujolvn42iou"]
 
-[ext_resource type="Script" uid="uid://ci54pa5d1sclr" path="res://core/loading_screen/loading_screen.gd" id="1_7vypc"]
+[ext_resource type="Script" uid="uid://ci54pa5d1sclr" path="res://ui/loading_screen/loading_screen.gd" id="1_7vypc"]
 
 [node name="LoadingScreen" type="Node" unique_id=1568109437 node_paths=PackedStringArray("progress_bar")]
 script = ExtResource("1_7vypc")
