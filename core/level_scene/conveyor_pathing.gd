@@ -41,9 +41,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func toggle_rejection() -> void:
-		reject_product = !reject_product
-		changed.emit(reject_product)
-		if reject_product:
-			started_rejecting.emit()
-		else:
-			stopped_rejecting.emit()
+	reject_product = !reject_product
+	changed.emit(reject_product)
+	if reject_product:
+		started_rejecting.emit()
+	else:
+		stopped_rejecting.emit()
