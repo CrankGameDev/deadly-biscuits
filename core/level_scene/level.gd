@@ -78,14 +78,15 @@ func _ready() -> void:
 		%IntercomAnimation.stop()
 	
 	camera.is_overhead = true
-	# Maybe await alignment?
 	checklist.show()
 	
 	level_timer = Timer.new()
-	level_timer.autostart = true
 	level_timer.wait_time = level_data.spawn_interval
 	level_timer.timeout.connect(_on_spawn_interval)
 	add_child(level_timer, false, Node.INTERNAL_MODE_FRONT)
+	
+	# Start the level once the checklist is closed.
+	checklist.hidden.connect(level_timer.start, CONNECT_ONE_SHOT)
 	
 	conveyor_pathing.conveyor_speed = level_data.conveyor_speed
 	

@@ -1,13 +1,19 @@
 extends CanvasLayer
 
+signal hidden
+signal shown
+
 @onready var clipboard_area: Control = %ClipboardArea
 @onready var checklist_item_label: Label = %ChecklistItemLabel
+
+
+func _init() -> void:
+	visibility_changed.connect(_on_visibility_changed)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var checklist_text: String = ""
-	
 	var level: LevelData = LevelManager.get_active_level()
 	if not level:
 		level = LevelManager.get_current_level()
@@ -30,3 +36,10 @@ func _input(event: InputEvent) -> void:
 	):
 		# Hide the clipboard when the mouse is clicked outside of its area.
 		hide()
+
+
+func _on_visibility_changed() -> void:
+	if visible:
+		shown.emit()
+	else:
+		hidden.emit()
