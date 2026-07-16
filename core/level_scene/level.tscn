@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dsf6itp1pf21l"]
 
 [ext_resource type="Script" uid="uid://bi61gg5vj041t" path="res://core/level_scene/level.gd" id="1_a5xre"]
+[ext_resource type="PackedScene" uid="uid://di6vpafpk5vjx" path="res://UI/settings_screen/pause_menu.tscn" id="2_q76jn"]
 [ext_resource type="PackedScene" uid="uid://b6mdrsec0nbbu" path="res://assets/audio/ambient_audio.tscn" id="3_q2sjp"]
 [ext_resource type="Script" uid="uid://brcm7tud6e3w5" path="res://core/level_scene/camera.gd" id="4_a5xre"]
 [ext_resource type="Script" uid="uid://nb2kv32vytr8" path="res://core/level_scene/conveyor_pathing.gd" id="5_a5xre"]
@@ -20,10 +21,10 @@
 [ext_resource type="ArrayMesh" uid="uid://6pf4o85u3fec" path="res://core/level_scene/meshes/lever_base.mesh" id="18_itk7u"]
 [ext_resource type="AudioStream" uid="uid://cmkbkplriybqc" path="res://assets/audio/sfx/lever_audio.tres" id="18_wwqd1"]
 [ext_resource type="Script" uid="uid://dssfluiaqf0a" path="res://core/level_scene/clipboard_object.gd" id="18_yd0sg"]
-[ext_resource type="Texture2D" uid="uid://c0npxa02moxax" path="res://ui/dialogue/clipboarde.png" id="19_eor44"]
+[ext_resource type="Texture2D" uid="uid://c0npxa02moxax" path="res://UI/dialogue/clipboarde.png" id="19_eor44"]
 [ext_resource type="ArrayMesh" uid="uid://qccfadg6yfmg" path="res://core/level_scene/meshes/lever_handle.mesh" id="19_wwqd1"]
 [ext_resource type="ArrayMesh" uid="uid://bd2s1ln2e2ws0" path="res://core/level_scene/meshes/lever_wire.mesh" id="20_q76jn"]
-[ext_resource type="PackedScene" uid="uid://dwcdfsgobmmn2" path="res://ui/checklist.tscn" id="20_vht4x"]
+[ext_resource type="PackedScene" uid="uid://dwcdfsgobmmn2" path="res://UI/checklist.tscn" id="20_vht4x"]
 [ext_resource type="PackedScene" uid="uid://ct7oybbsvdc5n" path="res://assets/Feetee Creep-1.glb" id="21_fyf0m"]
 [ext_resource type="Material" uid="uid://clswmjeaawq7j" path="res://assets/materials/tentacle.material" id="22_jko8i"]
 
@@ -381,6 +382,9 @@ size = Vector3(0.35, 0.1, 0.5)
 [node name="Level" type="Node" unique_id=1423860115]
 script = ExtResource("1_a5xre")
 
+[node name="PauseMenu" parent="." unique_id=1555832885 instance=ExtResource("2_q76jn")]
+visible = false
+
 [node name="AmbientAudio" parent="." unique_id=33836271 instance=ExtResource("3_q2sjp")]
 
 [node name="Environment" type="WorldEnvironment" parent="." unique_id=10914052]
@@ -578,16 +582,16 @@ bus = &"SFX"
 transform = Transform3D(0.573576, 0.769751, -0.280167, 2.99003e-08, -0.34202, -0.939693, -0.819152, 0.538986, -0.196175, -0.54, 2.975, 0.189)
 metadata/_edit_group_ = true
 
-[node name="Tube 1" parent="Intercom" index="0"]
+[node name="Tube 1" parent="Intercom" index="0" unique_id=168413575]
 material_override = SubResource("StandardMaterial3D_u2kg0")
 
-[node name="Tube" parent="Intercom" index="1"]
+[node name="Tube" parent="Intercom" index="1" unique_id=110364842]
 material_override = SubResource("StandardMaterial3D_u2kg0")
 
-[node name="Triplanar" parent="Intercom" index="2"]
+[node name="Triplanar" parent="Intercom" index="2" unique_id=1516631985]
 material_override = SubResource("StandardMaterial3D_u2kg0")
 
-[node name="Cylinder" parent="Intercom" index="3"]
+[node name="Cylinder" parent="Intercom" index="3" unique_id=1537542641]
 material_override = SubResource("StandardMaterial3D_u2kg0")
 
 [node name="IntercomAnimation" type="AnimationPlayer" parent="Intercom" unique_id=1879832627]
@@ -740,16 +744,16 @@ visible = false
 [node name="Feetee Creep-1" parent="." unique_id=1294112683 instance=ExtResource("21_fyf0m")]
 transform = Transform3D(40, 0, 0, 0, 37, 0, 0, 0, 40, -1.8, 0.1, -6)
 
-[node name="Volume117" parent="Feetee Creep-1/Root" index="0"]
+[node name="Volume117" parent="Feetee Creep-1/Root" parent_id_path=PackedInt32Array(1294112683, 896021967) index="0" unique_id=2015903604]
 surface_material_override/0 = ExtResource("22_jko8i")
 
-[node name="Volume119" parent="Feetee Creep-1/Root" index="1"]
+[node name="Volume119" parent="Feetee Creep-1/Root" parent_id_path=PackedInt32Array(1294112683, 896021967) index="1" unique_id=181815044]
 surface_material_override/0 = ExtResource("22_jko8i")
 
-[node name="Volume118" parent="Feetee Creep-1/Root" index="2"]
+[node name="Volume118" parent="Feetee Creep-1/Root" parent_id_path=PackedInt32Array(1294112683, 896021967) index="2" unique_id=814904628]
 surface_material_override/0 = ExtResource("22_jko8i")
 
-[node name="Volume65" parent="Feetee Creep-1/Root" index="3"]
+[node name="Volume65" parent="Feetee Creep-1/Root" parent_id_path=PackedInt32Array(1294112683, 896021967) index="3" unique_id=1062843427]
 surface_material_override/0 = ExtResource("22_jko8i")
 
 [connection signal="biscuit_rejected" from="." to="Conveyor/FurnaceBurnSFX" method="play" unbinds=2]

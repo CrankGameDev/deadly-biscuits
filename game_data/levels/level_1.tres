@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cighbn48ftkn1" path="res://core/criteria.gd" id="1_mpmwp"]
 [ext_resource type="Script" uid="uid://bg3awv8d0fhd2" path="res://game_scripts/criteria/choc_chip_count_criteria.gd" id="2_l1rhe"]
-[ext_resource type="Resource" uid="uid://b24sp30sbn0el" path="res://ui/dialogue/Level1.dtl" id="3_x1yre"]
+[ext_resource type="Resource" uid="uid://b24sp30sbn0el" path="res://UI/dialogue/Level1.dtl" id="3_x1yre"]
 [ext_resource type="Script" uid="uid://bn1b8j2k5er3j" path="res://core/level_data.gd" id="4_32dv8"]
 [ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="5_g4of5"]
 [ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="6_aeate"]

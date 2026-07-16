@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://db5bbalojibr5"
-path="res://.godot/imported/OpenDyslexic-Bold.otf-fe8f5af62c58b7e6394f53e881d63906.fontdata"
+path="res://.godot/imported/OpenDyslexic-Bold.otf-e0316d2652d63358f0e056ee1f7678b1.fontdata"
 
 [deps]
 
-source_file="res://ui/ui/OpenDyslexic-Bold.otf"
-dest_files=["res://.godot/imported/OpenDyslexic-Bold.otf-fe8f5af62c58b7e6394f53e881d63906.fontdata"]
+source_file="res://UI/ui/OpenDyslexic-Bold.otf"
+dest_files=["res://.godot/imported/OpenDyslexic-Bold.otf-e0316d2652d63358f0e056ee1f7678b1.fontdata"]
 
 [params]
 

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bcgjkpkf7p7bg"]
 
-[ext_resource type="Script" uid="uid://p5sc4syqrpg1" path="res://ui/report.gd" id="1_c0r6n"]
-[ext_resource type="StyleBox" uid="uid://djumibdifdqnx" path="res://ui/ui/buttons/buttons2.tres" id="2_4qlgn"]
+[ext_resource type="Script" uid="uid://p5sc4syqrpg1" path="res://UI/report.gd" id="1_c0r6n"]
+[ext_resource type="StyleBox" uid="uid://djumibdifdqnx" path="res://UI/ui/buttons/buttons2.tres" id="2_4qlgn"]
 [ext_resource type="Texture2D" uid="uid://c1dk25u8g2nmn" path="res://assets/backgrounds/backgorundstart.png" id="2_tq27r"]
+[ext_resource type="FontFile" uid="uid://dqd3iv560xxdy" path="res://UI/font/old_stamper.ttf" id="3_2mk7m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fskqw"]
 bg_color = Color(0.521751, 0.154608, 0.499388, 1)
@@ -60,7 +61,7 @@ Label/constants/line_spacing = 3
 Label/constants/outline_size = 10
 Label/font_sizes/font_size = 24
 
-[node name="Report" type="Control"]
+[node name="Report" type="Control" unique_id=860050557]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,7 +77,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_c0r6n")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1109920226]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -92,28 +93,28 @@ grow_vertical = 2
 scale = Vector2(0.767539, 0.767539)
 texture = ExtResource("2_tq27r")
 
-[node name="report card" type="Control" parent="."]
+[node name="report card" type="Control" parent="." unique_id=1012549141]
 anchors_preset = 0
 offset_left = -228.0
 offset_top = -100.0
 offset_right = -188.0
 offset_bottom = -60.0
 
-[node name="background" type="ColorRect" parent="report card"]
+[node name="background" type="ColorRect" parent="report card" unique_id=891606701]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(22.1073, 12.1234)
 color = Color(0.737255, 0.596078, 0.494118, 1)
 
-[node name="ColorRect" type="ColorRect" parent="report card"]
+[node name="ColorRect" type="ColorRect" parent="report card" unique_id=1853757144]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(22.0694, 2.76)
 color = Color(0.615686, 0.470588, 0.368627, 1)
 
-[node name="Label" type="Label" parent="report card"]
+[node name="Label" type="Label" parent="report card" unique_id=1018711876]
 layout_mode = 0
 offset_left = 255.0
 offset_top = 7.0
@@ -122,14 +123,14 @@ offset_bottom = 62.0
 theme = SubResource("Theme_fskqw")
 text = "End of Day Report "
 
-[node name="Report stats" type="Control" parent="."]
+[node name="Report stats" type="Control" parent="." unique_id=1684076137]
 anchors_preset = 0
 offset_left = 200.0
 offset_top = 253.0
 offset_right = 240.0
 offset_bottom = 293.0
 
-[node name="DayLabel" type="Label" parent="Report stats"]
+[node name="DayLabel" type="Label" parent="Report stats" unique_id=1861707878]
 layout_mode = 0
 offset_left = -53.0
 offset_top = -280.0
@@ -137,7 +138,7 @@ offset_right = 72.0
 offset_bottom = -250.0
 text = "Day {level}"
 
-[node name="CenterContainer" type="CenterContainer" parent="Report stats"]
+[node name="CenterContainer" type="CenterContainer" parent="Report stats" unique_id=1835558161]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -149,41 +150,43 @@ offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="Report stats/CenterContainer"]
+[node name="GridContainer" type="GridContainer" parent="Report stats/CenterContainer" unique_id=987678497]
 layout_mode = 2
 columns = 2
 
-[node name="Feedback" type="Label" parent="Report stats/CenterContainer/GridContainer"]
+[node name="Feedback" type="Label" parent="Report stats/CenterContainer/GridContainer" unique_id=1424249169]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Supervisor feedback: "
 
-[node name="PassLabel" type="Label" parent="Report stats/CenterContainer/GridContainer"]
+[node name="PassLabel" type="Label" parent="Report stats/CenterContainer/GridContainer" unique_id=1032631540]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.19607843, 0.13725491, 1)
+theme_override_fonts/font = ExtResource("3_2mk7m")
 text = "{failed}"
 autowrap_mode = 3
 
-[node name="Biscuits_processed" type="Label" parent="Report stats/CenterContainer/GridContainer"]
+[node name="Biscuits_processed" type="Label" parent="Report stats/CenterContainer/GridContainer" unique_id=1873413292]
 layout_mode = 2
 text = "Biscuits Processed:"
 
-[node name="ProcessedLabel" type="Label" parent="Report stats/CenterContainer/GridContainer"]
+[node name="ProcessedLabel" type="Label" parent="Report stats/CenterContainer/GridContainer" unique_id=56780710]
 unique_name_in_owner = true
 layout_mode = 2
 text = "{biscuits_processed}"
 
-[node name="Label" type="Label" parent="Report stats/CenterContainer/GridContainer"]
+[node name="Label" type="Label" parent="Report stats/CenterContainer/GridContainer" unique_id=222017566]
 layout_mode = 2
 text = "Mistakes Made: "
 
-[node name="MistakesLabel" type="Label" parent="Report stats/CenterContainer/GridContainer"]
+[node name="MistakesLabel" type="Label" parent="Report stats/CenterContainer/GridContainer" unique_id=1266861208]
 unique_name_in_owner = true
 layout_mode = 2
 text = "{mistakes_made}"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Report stats"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Report stats" unique_id=968890243]
 layout_mode = 0
 offset_left = 299.0
 offset_top = -331.0
@@ -191,17 +194,17 @@ offset_right = 423.0
 offset_bottom = -251.0
 theme = SubResource("Theme_pk2du")
 
-[node name="Retry" type="Button" parent="Report stats/VBoxContainer"]
+[node name="Retry" type="Button" parent="Report stats/VBoxContainer" unique_id=2038418309]
 layout_mode = 2
 text = "Retry Day"
 
-[node name="NextLevel" type="Button" parent="Report stats/VBoxContainer"]
+[node name="NextLevel" type="Button" parent="Report stats/VBoxContainer" unique_id=1818431751]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Next Day"
 
-[node name="Quit" type="Button" parent="Report stats"]
-layout_mode = 2
+[node name="Quit" type="Button" parent="Report stats" unique_id=459164681]
+layout_mode = 0
 offset_left = -409.0
 offset_top = -321.0
 offset_right = -270.0

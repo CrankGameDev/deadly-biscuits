@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://pf48cd5f1hra" path="res://game_scripts/criteria/no_bugs_criteria.gd" id="3_nxjmq"]
 [ext_resource type="Script" uid="uid://coik1fkqmtc5q" path="res://game_scripts/criteria/no_donuts_criteria.gd" id="4_12st7"]
 [ext_resource type="Script" uid="uid://bwgi2yfg3d0p1" path="res://game_scripts/criteria/bad_stock_criteria.gd" id="5_nxjmq"]
-[ext_resource type="Resource" uid="uid://lrus1mhncq66" path="res://ui/dialogue/level4.dtl" id="6_12st7"]
+[ext_resource type="Resource" uid="uid://lrus1mhncq66" path="res://UI/dialogue/level4.dtl" id="6_12st7"]
 [ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="9_38m3b"]
 [ext_resource type="Resource" uid="uid://bn7dtg7dtq1mi" path="res://game_data/levels/biscuit_spawns/choc_chip/choc_chip_6_to_9.tres" id="12_2ixar"]
 [ext_resource type="Resource" uid="uid://byvrrnec1h6ok" path="res://game_data/levels/biscuit_spawns/choc_chip/evil_biscuit.tres" id="13_dhq6w"]

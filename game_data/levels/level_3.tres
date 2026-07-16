@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://c7wi2gp6nyc57" path="res://core/spawning/spawn_wave.gd" id="3_ulq04"]
 [ext_resource type="Script" uid="uid://bwgi2yfg3d0p1" path="res://game_scripts/criteria/bad_stock_criteria.gd" id="4_7gkf5"]
 [ext_resource type="Script" uid="uid://coik1fkqmtc5q" path="res://game_scripts/criteria/no_donuts_criteria.gd" id="4_33nbo"]
-[ext_resource type="Resource" uid="uid://byo0sj8afrast" path="res://ui/dialogue/Level3.dtl" id="6_7gkf5"]
+[ext_resource type="Resource" uid="uid://byo0sj8afrast" path="res://UI/dialogue/Level3.dtl" id="6_7gkf5"]
 [ext_resource type="Script" uid="uid://60jgksmd2ubi" path="res://core/spawning/spawn_event.gd" id="9_le3j3"]
 [ext_resource type="Resource" uid="uid://c6k6dwx66r2h4" path="res://game_data/levels/biscuit_spawns/freckles/freckle_clean.tres" id="10_wlrpg"]
 [ext_resource type="Resource" uid="uid://d3dwnustqr7iv" path="res://game_data/levels/biscuit_spawns/freckles/freckle_poison.tres" id="11_iejuj"]

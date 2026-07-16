@@ -40,23 +40,23 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
-"Boss": "res://ui/dialogue/Boss.dch",
-"WTF": "res://ui/dialogue/WTF.dch"
+"Boss": "res://UI/dialogue/Boss.dch",
+"WTF": "res://UI/dialogue/WTF.dch"
 }
 directories/dtl_directory={
-"ANZAC": "res://ui/dialogue/ANZAC.dtl",
-"Level1": "res://ui/dialogue/Level1.dtl",
-"Level3": "res://ui/dialogue/Level3.dtl",
-"anzac_bad": "res://ui/dialogue/anzac_bad.dtl",
-"coolandnormal": "res://ui/dialogue/coolandnormal.dtl",
-"heartcookies": "res://ui/dialogue/heartcookies.dtl",
-"heartcookies_bad": "res://ui/dialogue/heartcookies_bad.dtl",
-"level4": "res://ui/dialogue/level4.dtl",
+"ANZAC": "res://UI/dialogue/ANZAC.dtl",
+"Level1": "res://UI/dialogue/Level1.dtl",
+"Level3": "res://UI/dialogue/Level3.dtl",
+"anzac_bad": "res://UI/dialogue/anzac_bad.dtl",
+"coolandnormal": "res://UI/dialogue/coolandnormal.dtl",
+"heartcookies": "res://UI/dialogue/heartcookies.dtl",
+"heartcookies_bad": "res://UI/dialogue/heartcookies_bad.dtl",
+"level4": "res://UI/dialogue/level4.dtl",
 "level_1": "res://level_1.dtl",
-"level_2": "res://ui/dialogue/level_2.dtl",
-"loudspeak_l2": "res://ui/dialogue/loudspeak_l2.dtl",
-"rainbowcooke_1": "res://ui/dialogue/rainbowcooke_1.dtl",
-"secondtolastlevel": "res://ui/dialogue/secondtolastlevel.dtl"
+"level_2": "res://UI/dialogue/level_2.dtl",
+"loudspeak_l2": "res://UI/dialogue/loudspeak_l2.dtl",
+"rainbowcooke_1": "res://UI/dialogue/rainbowcooke_1.dtl",
+"secondtolastlevel": "res://UI/dialogue/secondtolastlevel.dtl"
 }
 layout/style_list=["res://UI/dialogue/style.tres"]
 layout/default_style="res://UI/dialogue/style.tres"
@@ -130,6 +130,11 @@ toggle_lever={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
+pause={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

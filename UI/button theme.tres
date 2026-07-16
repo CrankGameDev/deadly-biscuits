@@ -1,7 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://dyioliwdb4llg"]
 
-[ext_resource type="FontFile" uid="uid://bl76grad0gmxb" path="res://ui/ui/OpenDyslexic-Regular.otf" id="1_bfwqm"]
-[ext_resource type="StyleBox" uid="uid://cey5hud7kirsw" path="res://ui/ui/buttons/pressed.tres" id="3_2klwg"]
+[ext_resource type="FontFile" uid="uid://bl76grad0gmxb" path="res://UI/ui/OpenDyslexic-Regular.otf" id="1_bfwqm"]
+[ext_resource type="StyleBox" uid="uid://cey5hud7kirsw" path="res://UI/ui/buttons/pressed.tres" id="3_2klwg"]
+[ext_resource type="FontFile" uid="uid://byhgsm8sl7ehm" path="res://UI/font/Dead Font Walking.otf" id="3_pu2uj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu2uj"]
 content_margin_left = 4.0
@@ -50,17 +51,18 @@ corner_radius_bottom_left = 8
 corner_detail = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfwqm"]
-bg_color = Color(0.451462, 0.158087, 0.0859648, 1)
+bg_color = Color(0.23847187, 0.16040036, 0.10834535, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 14
-border_color = Color(0.362461, 0.209052, 0.174432, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-corner_detail = 4
+border_color = Color(0.16862746, 0, 0.003921569, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.11372549, 0, 0, 0.7647059)
+shadow_size = 2
 
 [resource]
 Button/colors/font_color = Color(0.880174, 0.906788, 0.942921, 1)
@@ -87,9 +89,10 @@ Button/styles/focus = SubResource("StyleBoxFlat_wcepo")
 Button/styles/hover = SubResource("StyleBoxFlat_ihxos")
 Button/styles/normal = SubResource("StyleBoxFlat_bfwqm")
 Button/styles/pressed = ExtResource("3_2klwg")
-Label/colors/font_color = Color(0.414381, 1.10701e-06, 0.0553172, 1)
+Label/colors/font_color = Color(0.53475046, 0.36825043, 0.38678452, 1)
 Label/colors/font_outline_color = Color(0.111232, 2.0982e-07, 0.00481443, 1)
 Label/colors/font_shadow_color = Color(0.595633, 0.483443, 0.354024, 0)
 Label/constants/line_spacing = 10
-Label/constants/outline_size = 20
-Label/font_sizes/font_size = 32
+Label/constants/outline_size = 30
+Label/font_sizes/font_size = 42
+Label/fonts/font = ExtResource("3_pu2uj")
