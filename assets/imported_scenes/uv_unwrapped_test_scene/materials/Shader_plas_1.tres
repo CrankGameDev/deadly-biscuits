@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ucyj4npdejib"]
+
+[resource]
+resource_name = "Shader_plas_1"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+roughness = 0.20000002

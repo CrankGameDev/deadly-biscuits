@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b433p4cjgtoxq" path="res://core/base_biscuit.tscn" id="1_8feex"]
 [ext_resource type="Script" uid="uid://cq7186f6lpoyg" path="res://biscuit_types/oat_biscuit.gd" id="2_hbbpq"]
-[ext_resource type="ArrayMesh" uid="uid://be1hnukyynccs" path="res://assets/models/oat_biscuit_base.mesh" id="3_fblpo"]
-[ext_resource type="ArrayMesh" uid="uid://c3nnm8hrs8g0d" path="res://assets/models/oat_biscuit_detail_a.mesh" id="4_l7imn"]
+[ext_resource type="ArrayMesh" uid="uid://be1hnukyynccs" path="res://assets/meshes/oat_biscuit_base.mesh" id="3_fblpo"]
+[ext_resource type="ArrayMesh" uid="uid://c3nnm8hrs8g0d" path="res://assets/meshes/oat_biscuit_detail_a.mesh" id="4_l7imn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbbpq"]
 vertex_color_use_as_albedo = true

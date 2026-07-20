@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b433p4cjgtoxq" path="res://core/base_biscuit.tscn" id="1_f24f1"]
 [ext_resource type="Script" uid="uid://sfv1htkwjem8" path="res://biscuit_types/oat_monster_biscuit.gd" id="2_j7xiu"]
-[ext_resource type="ArrayMesh" uid="uid://luc5xy1nd0bo" path="res://assets/models/oat_monster.mesh" id="3_j2gqb"]
+[ext_resource type="ArrayMesh" uid="uid://luc5xy1nd0bo" path="res://assets/meshes/oat_monster.mesh" id="3_j2gqb"]
 
 [sub_resource type="Animation" id="Animation_j2gqb"]
 length = 0.001

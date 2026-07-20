@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c6jvbl8k0m2m6"]
+
+[resource]
+resource_name = "Shader_ss"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+roughness = 0.6509804

@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dx338wrl1in8p"]
+[gd_scene format=3 uid="uid://dx338wrl1in8p"]
 
 [ext_resource type="PackedScene" uid="uid://b433p4cjgtoxq" path="res://core/base_biscuit.tscn" id="1_662fu"]
-[ext_resource type="ArrayMesh" uid="uid://d30vgh5gti186" path="res://assets/models/biscuit.mesh" id="2_662fu"]
+[ext_resource type="ArrayMesh" uid="uid://d30vgh5gti186" path="res://assets/meshes/biscuit.mesh" id="2_662fu"]
 [ext_resource type="Script" uid="uid://dl2grakgr8nx2" path="res://biscuit_types/freckles_biscuit.gd" id="2_k1mej"]
-[ext_resource type="ArrayMesh" uid="uid://57o50bqwyshl" path="res://assets/models/freckle.mesh" id="3_1sq1u"]
-[ext_resource type="ArrayMesh" uid="uid://d1beg8ancxwf" path="res://assets/models/freckle_mushroom.mesh" id="4_y1is5"]
+[ext_resource type="ArrayMesh" uid="uid://57o50bqwyshl" path="res://assets/meshes/freckle.mesh" id="3_1sq1u"]
+[ext_resource type="ArrayMesh" uid="uid://d1beg8ancxwf" path="res://assets/meshes/freckle_mushroom.mesh" id="4_y1is5"]
 
 [node name="FrecklesBiscuit" instance=ExtResource("1_662fu")]
 script = ExtResource("2_k1mej")

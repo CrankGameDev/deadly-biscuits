@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bgq87ghddhkhy"]
+
+[resource]
+resource_name = "Shader_trivia"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+metallic = 0.8117648
+roughness = 0.20000002

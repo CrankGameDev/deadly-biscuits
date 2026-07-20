@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://b433p4cjgtoxq" path="res://core/base_biscuit.tscn" id="1_8u8vy"]
 [ext_resource type="Script" uid="uid://dxy6uqn04ojio" path="res://biscuit_types/donut.gd" id="2_f3fbo"]
-[ext_resource type="ArrayMesh" uid="uid://522rmaborks5" path="res://assets/models/donut_base.mesh" id="3_dncsc"]
-[ext_resource type="ArrayMesh" uid="uid://fcfnnnxad7hx" path="res://assets/models/donut_icing.mesh" id="4_qv7gw"]
-[ext_resource type="ArrayMesh" uid="uid://bgb55r776jqb7" path="res://assets/models/donut_eye_base.mesh" id="5_ho8fb"]
-[ext_resource type="ArrayMesh" uid="uid://c5q8e4u8nxax7" path="res://assets/models/donut_eye_iris.mesh" id="6_bxik7"]
-[ext_resource type="ArrayMesh" uid="uid://dqwv756upe21p" path="res://assets/models/donut_eye_pupil.mesh" id="7_owwa5"]
+[ext_resource type="ArrayMesh" uid="uid://522rmaborks5" path="res://assets/meshes/donut_base.mesh" id="3_dncsc"]
+[ext_resource type="ArrayMesh" uid="uid://fcfnnnxad7hx" path="res://assets/meshes/donut_icing.mesh" id="4_qv7gw"]
+[ext_resource type="ArrayMesh" uid="uid://bgb55r776jqb7" path="res://assets/meshes/donut_eye_base.mesh" id="5_ho8fb"]
+[ext_resource type="ArrayMesh" uid="uid://c5q8e4u8nxax7" path="res://assets/meshes/donut_eye_iris.mesh" id="6_bxik7"]
+[ext_resource type="ArrayMesh" uid="uid://dqwv756upe21p" path="res://assets/meshes/donut_eye_pupil.mesh" id="7_owwa5"]
 
 [sub_resource type="GDScript" id="GDScript_f3fbo"]
 script/source = "extends MeshInstance3D

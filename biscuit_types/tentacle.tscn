@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://b433p4cjgtoxq" path="res://core/base_biscuit.tscn" id="1_tho3h"]
 [ext_resource type="Script" uid="uid://dq5qf1hn6b7fb" path="res://biscuit_types/tentacle.gd" id="2_6np1g"]
 [ext_resource type="Material" uid="uid://clswmjeaawq7j" path="res://assets/materials/tentacle.material" id="2_y3u1j"]
-[ext_resource type="ArrayMesh" uid="uid://bocdc0h3vqya" path="res://assets/models/tentacle.mesh" id="4_xfs8p"]
-[ext_resource type="ArrayMesh" uid="uid://522rmaborks5" path="res://assets/models/donut_base.mesh" id="5_nfb82"]
-[ext_resource type="ArrayMesh" uid="uid://fcfnnnxad7hx" path="res://assets/models/donut_icing.mesh" id="6_fvqmm"]
+[ext_resource type="ArrayMesh" uid="uid://bocdc0h3vqya" path="res://assets/meshes/tentacle.mesh" id="4_xfs8p"]
+[ext_resource type="ArrayMesh" uid="uid://522rmaborks5" path="res://assets/meshes/donut_base.mesh" id="5_nfb82"]
+[ext_resource type="ArrayMesh" uid="uid://fcfnnnxad7hx" path="res://assets/meshes/donut_icing.mesh" id="6_fvqmm"]
 
 [node name="Tentacle" unique_id=971166949 instance=ExtResource("1_tho3h")]
 transform = Transform3D(-4.37114e-08, 0, -0.999996, 0, 0.999996, 0, 1, 0, -4.37112e-08, 0, 0.2, 0.2)

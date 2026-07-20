@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://b433p4cjgtoxq" path="res://core/base_biscuit.tscn" id="1_1xq0o"]
 [ext_resource type="Script" uid="uid://cof42lmbteqh6" path="res://biscuit_types/choc_chip_biscuit.gd" id="2_km0pl"]
-[ext_resource type="ArrayMesh" uid="uid://d30vgh5gti186" path="res://assets/models/biscuit.mesh" id="3_6hw0k"]
+[ext_resource type="ArrayMesh" uid="uid://d30vgh5gti186" path="res://assets/meshes/biscuit.mesh" id="3_6hw0k"]
 [ext_resource type="Material" uid="uid://bhaq0043whmth" path="res://testcookiemat.tres" id="4_yredn"]
-[ext_resource type="ArrayMesh" uid="uid://blfnlgxkkl20s" path="res://assets/models/choc_chip_b.mesh" id="5_6hw0k"]
+[ext_resource type="ArrayMesh" uid="uid://blfnlgxkkl20s" path="res://assets/meshes/choc_chip_b.mesh" id="5_6hw0k"]
 [ext_resource type="Shader" uid="uid://bncf5urr3nayd" path="res://assets/shaders/radial_running_bugs.particles.visual_shader.tres" id="6_yredn"]
-[ext_resource type="ArrayMesh" uid="uid://dl86mun6kylam" path="res://assets/models/choc_chip_bug.mesh" id="7_6hw0k"]
+[ext_resource type="ArrayMesh" uid="uid://dl86mun6kylam" path="res://assets/meshes/choc_chip_bug.mesh" id="7_6hw0k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhplf"]
 shading_mode = 0

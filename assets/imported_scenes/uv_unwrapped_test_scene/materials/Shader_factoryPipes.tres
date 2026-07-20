@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dylxtut5prxb7"]
+
+[resource]
+resource_name = "Shader_factoryPipes"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+metallic = 1.0
+roughness = 0.20000003

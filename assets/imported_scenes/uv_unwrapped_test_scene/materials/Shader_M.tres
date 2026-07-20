@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://mx06uoa6ngg0"]
+
+[resource]
+resource_name = "Shader_M"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+metallic = 0.8117652
+roughness = 0.19999991

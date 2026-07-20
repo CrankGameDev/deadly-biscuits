@@ -3,21 +3,25 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dvycejlthfgxu"
-path="res://.godot/imported/uv_unwrapped_test_scene.glb-e52826cd6cedcffc95abe2d90b76d796.scn"
+uid="uid://ct7oybbsvdc5n"
+path="res://.godot/imported/feetee_creep.glb-3db9cef84637d5c4933f95eb71211af5.scn"
 
 [deps]
 
-source_file="res://assets/uv_unwrapped_test_scene.glb"
-dest_files=["res://.godot/imported/uv_unwrapped_test_scene.glb-e52826cd6cedcffc95abe2d90b76d796.scn"]
+source_file="res://assets/imported_scenes/feetee_creep/feetee_creep.glb"
+dest_files=["res://.godot/imported/feetee_creep.glb-3db9cef84637d5c4933f95eb71211af5.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -32,6 +36,10 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
+materials/extract=1
+materials/extract_format=0
+materials/extract_path="res://assets/imported_scenes/feetee_creep/materials"
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=2
 gltf/embedded_image_handling=1
+gltf/texture_map_mode=0

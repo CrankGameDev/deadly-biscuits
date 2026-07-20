@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://2u4qusgt83cm"]
+
+[resource]
+resource_name = "Shader_plas_"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+metallic = 0.81176513
+roughness = 0.19999993
