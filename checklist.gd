@@ -17,9 +17,8 @@ func _ready() -> void:
 	var level: LevelData = LevelManager.get_active_level()
 	if not level:
 		level = LevelManager.get_current_level()
-	
 	for criteria in level.critera:
-		checklist_text += "\n• " + criteria._get_text()
+		checklist_text += "\n• " + criteria.get_text()
 	checklist_item_label.text = checklist_text
 
 

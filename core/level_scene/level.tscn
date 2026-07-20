@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://crgaj1isc3jib" path="res://assets/intercom_unwrapped.glb" id="11_b4346"]
 [ext_resource type="AudioStream" uid="uid://bqwdmngrp0ewl" path="res://assets/audio/sfx/furnace_audio.tres" id="11_itk7u"]
 [ext_resource type="AudioStream" uid="uid://droye24uthduy" path="res://assets/audio/boss/voice_quips.tres" id="12_p4ri7"]
+[ext_resource type="PackedScene" uid="uid://bjg8ediiqip28" path="res://core/level_scene/components/distribution_indicators.tscn" id="13_8wjoq"]
 [ext_resource type="Material" uid="uid://bfxho35wxcpo1" path="res://assets/materials/brick.tres" id="13_4105a"]
 [ext_resource type="Material" uid="uid://d3h7e83iani2f" path="res://assets/materials/MoldyFlore.tres" id="14_is1tr"]
 [ext_resource type="Texture2D" uid="uid://odjsgxnv3k8p" path="res://assets/basiliskbiskuit.png" id="15_kha2a"]
@@ -26,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://dwcdfsgobmmn2" path="res://ui/checklist.tscn" id="20_vht4x"]
 [ext_resource type="PackedScene" uid="uid://ct7oybbsvdc5n" path="res://assets/Feetee Creep-1.glb" id="21_fyf0m"]
 [ext_resource type="Material" uid="uid://clswmjeaawq7j" path="res://assets/materials/tentacle.material" id="22_jko8i"]
+[ext_resource type="Script" uid="uid://car4uxbq386li" path="res://ui/level_duration_debug_bar.gd" id="27_q76jn"]
 
 [sub_resource type="Environment" id="Environment_5jcfi"]
 background_mode = 1
@@ -110,7 +112,7 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_pqt5l"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 1, 0, 0, 3, 0.65, 0.3, -1.5, 0, 0, 0, 0, 0, 4.4, 0.65, 0.3),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3, 0.65, 0.3, 0, 0, 0, 0, 0, 0, 4.4, 0.65, 0.3),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -574,6 +576,10 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 13.6, 2.8, -13.2)
 stream = ExtResource("11_itk7u")
 bus = &"SFX"
 
+[node name="DistributionIndicators" parent="Conveyor" unique_id=1964294250 instance=ExtResource("13_8wjoq")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4000025, 5.2577167, -1.2)
+
 [node name="Intercom" parent="." unique_id=1907060274 instance=ExtResource("11_b4346")]
 transform = Transform3D(0.573576, 0.769751, -0.280167, 2.99003e-08, -0.34202, -0.939693, -0.819152, 0.538986, -0.196175, -0.54, 2.975, 0.189)
 metadata/_edit_group_ = true
@@ -751,6 +757,20 @@ surface_material_override/0 = ExtResource("22_jko8i")
 
 [node name="Volume65" parent="Feetee Creep-1/Root" index="3"]
 surface_material_override/0 = ExtResource("22_jko8i")
+
+[node name="LevelDurationDebugBar" type="ProgressBar" parent="." unique_id=1392441803]
+custom_minimum_size = Vector2(0, 8)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+step = 0.0
+show_percentage = false
+script = ExtResource("27_q76jn")
 
 [connection signal="biscuit_rejected" from="." to="Conveyor/FurnaceBurnSFX" method="play" unbinds=2]
 [connection signal="changed" from="ConveyorPathing" to="Table/Lever" method="_on_conveyor_pathing_changed"]

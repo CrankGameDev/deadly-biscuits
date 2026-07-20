@@ -7,8 +7,14 @@ var level_start_dialogue: DialogicTimeline
 @export_range(0.01, 10.0, 0.01, "or_greater", "suffix:m/s")
 var conveyor_speed: float = 1.0
 
-@export_range(0.01, 10.0, 0.01, "or_greater", "suffix:seconds")
-var spawn_interval: float = 3.0
+@export_range(0.01, 300.0, 0.01, "or_greater", "suffix:s")
+var level_duration: float = 60.0
+
+#@export_range(0.01, 10.0, 0.01, "or_greater", "suffix:s")
+#var spawn_interval: float = 3.0
+
+@export_range(0.0, 1.0, 0.01, "or_greater", "suffix:m")
+var min_biscuit_distance: float = 0.6
 
 @export var critera: Array[Criteria]
 

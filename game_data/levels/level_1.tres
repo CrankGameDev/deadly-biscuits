@@ -21,6 +21,7 @@ script = ExtResource("5_g4of5")
 spawn_events = Dictionary[ExtResource("6_aeate"), int]({
 ExtResource("9_tcshw"): 3
 })
+wave_duration = 18.0
 metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 
 [sub_resource type="Resource" id="Resource_gjr3k"]
@@ -30,6 +31,7 @@ spawn_events = Dictionary[ExtResource("6_aeate"), int]({
 ExtResource("10_v1bcw"): 3,
 ExtResource("11_rkdwg"): 3
 })
+wave_duration = 18.0
 metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 
 [sub_resource type="Resource" id="Resource_nsa63"]
@@ -53,6 +55,8 @@ metadata/_custom_type_script = "uid://c7wi2gp6nyc57"
 resource_name = "Level 1"
 script = ExtResource("4_32dv8")
 level_start_dialogue = ExtResource("3_x1yre")
+conveyor_speed = 0.5
+level_duration = 40.0
 critera = Array[ExtResource("1_mpmwp")]([SubResource("Resource_fgh25")])
 spawn_waves = Array[ExtResource("5_g4of5")]([SubResource("Resource_sjcnv"), SubResource("Resource_gjr3k"), SubResource("Resource_ssd3e")])
 metadata/_custom_type_script = "uid://bn1b8j2k5er3j"

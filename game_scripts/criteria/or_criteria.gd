@@ -26,3 +26,7 @@ func _get_text() -> String:
 		return ""
 	# Re-capitalize the sentence.
 	return result[0].to_upper() + result.substr(1, -1)
+
+
+func _get_failure_reason_text(biscuit: Biscuit) -> String:
+	return ""

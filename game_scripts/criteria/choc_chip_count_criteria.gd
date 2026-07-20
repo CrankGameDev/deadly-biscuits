@@ -38,6 +38,12 @@ func _check_biscuit(biscuit: Biscuit) -> bool:
 		return true
 
 
+func _get_failure_message(biscuit: Biscuit) -> String:
+	if biscuit is ChocChipBiscuit:
+		return "Product had %d chocolate chips." % biscuit.choc_chip_count
+	return ""
+
+
 func _get_text() -> String:
 	var operation_text: String
 	match operation:
@@ -49,7 +55,14 @@ func _get_text() -> String:
 			operation_text = str("Exactly ", count)
 		Operation.NOT_EQUALS:
 			operation_text = str("Not ", count)
-	return str(operation_text, " chocolate chips")
+	return str(operation_text, " chocolate chips.")
+
+
+func _get_failure_reason_text(biscuit: Biscuit) -> String:
+	if biscuit is ChocChipBiscuit:
+		var chip_count: int = biscuit.choc_chip_count
+		return "Product contained %d chocolate chips." % chip_count
+	return ""
 
 
 func _set(property: StringName, value: Variant) -> bool:

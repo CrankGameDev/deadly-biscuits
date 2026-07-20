@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 		match get_parent():
 			conveyor_pathing.base_path:
 				reparent(conveyor_pathing.get_target_path())
-				progress = 0.0
+				progress = conveyor_pathing.conveyor_speed * delta
 			conveyor_pathing.accepted_path:
 				destination_reached.emit(true)
 				set_process(false)

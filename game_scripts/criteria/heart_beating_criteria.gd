@@ -12,6 +12,15 @@ func _check_biscuit(biscuit: Biscuit) -> bool:
 		return true
 
 
+func _get_failure_reason_text(biscuit: Biscuit) -> String:
+	if biscuit is HeartBiscuit:
+		if biscuit.is_evil and not should_beat:
+			return "Product had apparent beating."
+		elif not biscuit.is_evil and should_beat:
+			return "Product lacked apparent beating."
+	return ""
+
+
 func _get_text() -> String:
 	if should_beat:
 		return "Hearts must be beating."

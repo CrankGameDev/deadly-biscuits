@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bjg8ediiqip28"]
+
+[ext_resource type="Script" uid="uid://b38iqcxcf3nge" path="res://core/level_scene/components/distribution_indicators.gd" id="1_3rrsr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wjoq"]
+albedo_color = Color(18.892157, 0, 0, 1)
+emission = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_b5xnx"]
+radius = 0.2
+height = 0.4
+radial_segments = 16
+rings = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q76jn"]
+albedo_color = Color(18.892157, 18.892157, 0, 1)
+emission = Color(1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fq3nn"]
+albedo_color = Color(0, 18.892157, 0, 1)
+emission = Color(0, 1, 0, 1)
+
+[node name="DistributionIndicators" type="Node3D" unique_id=1964294250]
+script = ExtResource("1_3rrsr")
+
+[node name="RedIndicator" type="MeshInstance3D" parent="." unique_id=2115661627]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.79999995)
+material_override = SubResource("StandardMaterial3D_8wjoq")
+mesh = SubResource("SphereMesh_b5xnx")
+skeleton = NodePath("../..")
+
+[node name="YellowIndicator" type="MeshInstance3D" parent="." unique_id=2102423887]
+unique_name_in_owner = true
+material_override = SubResource("StandardMaterial3D_q76jn")
+mesh = SubResource("SphereMesh_b5xnx")
+skeleton = NodePath("../..")
+
+[node name="GreenIndicator" type="MeshInstance3D" parent="." unique_id=1260920130]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8)
+material_override = SubResource("StandardMaterial3D_fq3nn")
+mesh = SubResource("SphereMesh_b5xnx")
+skeleton = NodePath("../..")
