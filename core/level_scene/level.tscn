@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bjg8ediiqip28" path="res://core/level_scene/components/distribution_indicators.tscn" id="13_8wjoq"]
 [ext_resource type="Material" uid="uid://bfxho35wxcpo1" path="res://assets/materials/brick.tres" id="13_4105a"]
 [ext_resource type="Material" uid="uid://d3h7e83iani2f" path="res://assets/materials/MoldyFlore.tres" id="14_is1tr"]
-[ext_resource type="Texture2D" uid="uid://odjsgxnv3k8p" path="res://assets/images/basiliskbiskuit.png" id="15_kha2a"]
+[ext_resource type="Texture2D" uid="uid://odjsgxnv3k8p" path="res://assets/images/basilisk_biskuits_logo.png" id="15_kha2a"]
 [ext_resource type="Script" uid="uid://7bc4aivpmago" path="res://core/lever.gd" id="16_24thj"]
 [ext_resource type="ArrayMesh" uid="uid://6pf4o85u3fec" path="res://core/level_scene/meshes/lever_base.mesh" id="18_itk7u"]
 [ext_resource type="AudioStream" uid="uid://cmkbkplriybqc" path="res://assets/audio/sfx/lever_audio.tres" id="18_wwqd1"]

@@ -21,7 +21,7 @@ config/project_settings_override="user://engine_settings.cfg"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/use_filter=false
 boot_splash/image="uid://odjsgxnv3k8p"
-config/icon="res://assets/icons/godot_icon.svg"
+config/icon="uid://c7b53xoct53b3"
 config/settings_file="user://game_settings.cfg"
 
 [audio]
