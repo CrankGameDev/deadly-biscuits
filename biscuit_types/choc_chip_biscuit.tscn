@@ -342,7 +342,7 @@ metadata/extras = {
 
 [node name="BugParticles" type="GPUParticles3D" parent="." index="2" unique_id=1768785419]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, -2.84217e-14, 0, 1, 0, 0.065, 0)
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 0.99999994, 0, -3.1974423e-14, 0, 0.99999994, 0, 0.075, 0)
 amount = 4
 lifetime = 600.0
 explosiveness = 1.0
