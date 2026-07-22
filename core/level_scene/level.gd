@@ -234,6 +234,7 @@ func _on_biscuit_destination_reached(accepted: bool, biscuit: Biscuit) -> void:
 
 
 func _on_duration_timeout() -> void:
+	_flag_spawning_complete()
 	level_duration_timer.stop()
 	level_duration_elapsed.emit()
 	if not active_biscuits.is_empty():
