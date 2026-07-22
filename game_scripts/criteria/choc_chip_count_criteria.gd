@@ -48,14 +48,14 @@ func _get_text() -> String:
 	var operation_text: String
 	match operation:
 		Operation.GREATER_THAN:
-			operation_text = str(count + 1, " or more")
+			operation_text = str("have ", count + 1, " or more")
 		Operation.LESS_THAN:
-			operation_text = str(count - 1, " or less")
+			operation_text = str("have ", count - 1, " or less")
 		Operation.EQUALS:
-			operation_text = str("Exactly ", count)
+			operation_text = str("have exactly ", count)
 		Operation.NOT_EQUALS:
-			operation_text = str("Not ", count)
-	return str(operation_text, " chocolate chips.")
+			operation_text = str("not have ", count)
+	return str("Choc chip biscuits must ", operation_text, " chocolate chips.")
 
 
 func _get_failure_reason_text(biscuit: Biscuit) -> String:
