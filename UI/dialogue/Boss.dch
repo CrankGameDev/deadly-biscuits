@@ -4,6 +4,7 @@
 &"_translation_id": "",
 &"color": Color(1, 1, 1, 1),
 &"custom_info": {
+"prefix": "",
 "sound_mood_default": "neutral",
 "sound_moods": {
 "neutral": {
@@ -17,7 +18,8 @@
 "volume_variance": 0.0
 }
 },
-"style": "style"
+"style": "style",
+"suffix": ""
 },
 &"default_portrait": "boss",
 &"description": "",
@@ -26,19 +28,11 @@
 &"nicknames": ["Boss"],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"New portrait": {
-"export_overrides": {
-"image": ""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
 "boss": {
 "export_overrides": {
 "image": "\"res://UI/dialogue/loud-speaker.png\""
 },
+"ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,

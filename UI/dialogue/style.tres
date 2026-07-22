@@ -23,7 +23,7 @@ scene = ExtResource("3_rshnf")
 script = ExtResource("1_24sq4")
 scene = ExtResource("4_1q4xc")
 overrides = {
-"box_size": "Vector2(900.001, 220)",
+"box_size": "Vector2(900, 220)",
 "name_label_color_mode": "2",
 "name_label_custom_color": "Color(0.894531, 0.714358, 0.684875, 1)",
 "name_label_custom_size": "30.0",
@@ -61,4 +61,4 @@ layer_info = {
 "15": SubResource("Resource_bshvp"),
 "16": SubResource("Resource_r0r6d")
 }
-metadata/_latest_layer = "12"
+metadata/_latest_layer = ""

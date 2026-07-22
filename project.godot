@@ -52,7 +52,6 @@ directories/dtl_directory={
 "heartcookies": "res://ui/dialogue/heartcookies.dtl",
 "heartcookies_bad": "res://ui/dialogue/heartcookies_bad.dtl",
 "level4": "res://ui/dialogue/level4.dtl",
-"level_1": "res://level_1.dtl",
 "level_2": "res://ui/dialogue/level_2.dtl",
 "loudspeak_l2": "res://ui/dialogue/loudspeak_l2.dtl",
 "rainbowcooke_1": "res://ui/dialogue/rainbowcooke_1.dtl",
