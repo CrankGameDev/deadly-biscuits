@@ -44,10 +44,13 @@ func _on_next_level_pressed() -> void:
 	if level < LevelManager.get_level_count():
 		LevelManager.load_level_scene(level + 1)
 	else:
-		if SceneManager.scene_params.stats.tentacle_freed:
-			SceneManager.change_scene_to_packed(FREED_ENDING)
+		if SceneManager.scene_params.stats.has(&"tentacle_freed"):
+			if SceneManager.scene_params.stats.tentacle_freed:
+				SceneManager.change_scene_to_packed(FREED_ENDING)
+			else:
+				SceneManager.change_scene_to_packed(INCINERATED_ENDING)
 		else:
-			SceneManager.change_scene_to_packed(INCINERATED_ENDING)
+			SceneManager.change_scene_to_packed(MAIN_MENU_SCENE)
 
 
 func _on_quit_pressed() -> void:
